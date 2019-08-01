@@ -1,0 +1,52 @@
+/*=============================================
+FOOTER
+=============================================*/
+
+footer{
+	margin-top:20px;
+	border-top:8px solid #06B0EF;
+	background: #06B0EF;
+	padding:20px 0;
+}
+
+.footerCategorias h4 a{
+	color:#000000;
+}
+
+.footerCategorias li a{
+	color:#fff;
+	transition: all .5s ease;
+}
+
+.footerCategorias hr{
+	border:1px solid #333;
+}
+.footerCategorias li a:hover{
+	color: #F4FA58;
+  transition: all .5s ease;
+}
+
+.infoContacto h5{
+	color:#000;
+}
+
+.formContacto h4{
+	color:#000;
+}
+
+.final{
+	padding:20px 0;
+	background: black;
+}
+
+.final ul li{
+	display:inline;
+	line-height:30px;
+	margin:0px 5px;
+	color:white;
+}
+
+.final .social ul li a i{
+	font-size:18px;
+	margin:0 1px;
+}
