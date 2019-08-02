@@ -1081,6 +1081,26 @@ MODAL EDITAR PRODUCTO
 
               </div>
 
+             <!-- PALOMINO : SE MODIFICARA EL TAMAÑO DE STOCK INICIAL -->
+
+              <!-- STOCK -->
+
+              <div class="col-md-3 col-xs-12">
+  
+                <div class="panel">STOCK</div>
+              
+                <div class="input-group">
+              
+                  <span class="input-group-addon"><i class="fa fa-list-alt"></i></span> 
+
+                  <input type="number" class="form-control input-lg stock" min="0" step="any" value="0">
+
+                </div>
+
+              </div>
+
+              <!-- PALOMINO : SE MODIFICARA EL TAMAÑO DE STOCK INICIAL / FIN -->
+
             </div>
 
             <!--=====================================
