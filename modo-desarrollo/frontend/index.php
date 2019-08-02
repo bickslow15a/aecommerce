@@ -23,3 +23,5 @@ require_once "extensiones/vendor/autoload.php";
 
 $plantilla = new ControladorPlantilla();
 $plantilla -> plantilla();
+
+//jajajajajajja
