@@ -42,13 +42,23 @@ MENU
   <li><a href="banner"><i class="fa fa-map-o"></i> <span>Gestor Banner</span></a></li>
 
   <?php
-
+// *********CHAPIAMA  EDICION DE MENUS VENTAS********
   if($_SESSION["perfil"] == "administrador"){
 
-  echo '<li><a href="ventas"><i class="fa fa-shopping-cart"></i> <span>Gestor Ventas</span></a></li>';
+  echo '<li class="treeview">
+        <a><i class="fa fa-th"></i><span> Ventas</span><span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="ventas"><i class="fa fa-circle-o"></i><span>Gestor Ventas</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o"></i><span>Administrar Ventas</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o"></i><span>Crear Ventas</span></a></li>
+        </ul>
+  </li>';
 
   }
-
+//*********************** */
   ?>
 
   <li><a href="visitas"><i class="fa fa-map-marker"></i> <span>Gestor Visitas</span></a></li>

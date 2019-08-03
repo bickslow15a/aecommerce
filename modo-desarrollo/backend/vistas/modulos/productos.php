@@ -52,6 +52,7 @@
                <th>Multimedia</th>
                <th>Detalles</th>
                <th>Precio</th>
+               <!-- <th>Stock</th> -->
                <th>Peso</th>
                <th>Tiempo de Entrega</th>
                <th>Tipo de Oferta</th>
@@ -403,7 +404,7 @@ MODAL AGREGAR PRODUCTO
               
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span> 
 
-                <textarea type="text" maxlength="320" rows="3" class="form-control input-lg descripcionProducto" placeholder="Ingresar descripción producto"></textarea>
+                <textarea type="text"  class="form-control input-lg descripcionProducto" placeholder="Ingresar descripción producto"></textarea>
 
               </div>
 
@@ -458,7 +459,7 @@ MODAL AGREGAR PRODUCTO
             </div>
 
             <!--=====================================
-            AGREGAR PRECIO, PESO Y ENTREGA
+            AGREGAR PRECIO, PESO ,ENTREGA Y STOCK
             ======================================-->
 
             <div class="form-group row">
