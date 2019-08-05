@@ -30,7 +30,7 @@ $(".actualizarNotificaciones").click(function(e){
 
       	    	if(item == "nuevasVentas"){
 
-      	    		window.location = "ventas";
+      	    		window.location = "ventas-online";
       	    	}
 
       	    	if(item == "nuevasVisitas"){

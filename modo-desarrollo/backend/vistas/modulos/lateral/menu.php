@@ -46,14 +46,17 @@ MENU
   if($_SESSION["perfil"] == "administrador"){
 
   echo '<li class="treeview">
-        <a><i class="fa fa-th"></i><span> Ventas</span><span class="pull-right-container">
+        <a>
+        <i class="fa fa-th"></i>
+        <span>Gestor Ventas</span>
+        <span class="pull-right-container">
         <i class="fa fa-angle-left pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
-        <li><a href="ventas"><i class="fa fa-circle-o"></i><span>Gestor Ventas</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o"></i><span>Administrar Ventas</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o"></i><span>Crear Ventas</span></a></li>
+        <li><a href="ventas"><i class="fa fa-circle-o"></i><span>Administrar Ventas</span></a></li>
+        <li><a href="crear-venta"><i class="fa fa-circle-o"></i><span>Crear Ventas</span></a></li>
+        <li><a href="ventas-online"><i class="fa fa-circle-o"></i><span>Ventas OnLine</span></a></li>
         </ul>
   </li>';
 
@@ -63,7 +66,18 @@ MENU
 
   <li><a href="visitas"><i class="fa fa-map-marker"></i> <span>Gestor Visitas</span></a></li>
 
-  <li><a href="usuarios"><i class="fa fa-users"></i> <span>Gestor Usuarios</span></a></li>
+  <li class="treeview">
+    <a>
+      <i class="fa fa-users"></i>
+      <span>Gestor Usuarios</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+    </a>
+        <ul class="treeview-menu">
+          <li><a href="usuarios"><i class="fa fa-circle-o"></i><span>Usuarios Página</span></a></li>
+          <li><a href="clientes"><i class="fa fa-circle-o"></i><span>Clientes</span></a></li>
+        </ul>
+  </li>
 
   <?php
 

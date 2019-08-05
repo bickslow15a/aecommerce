@@ -75,7 +75,7 @@ FOOTER
 
 				<h5>
 
-					<i class="fa fa-phone-square" aria-hidden="true"></i> (555) 555-55-55
+					<i class="fa fa-phone-square" aria-hidden="true"></i> (051) 945 344 223 
 
 					<br><br>
 
@@ -83,15 +83,13 @@ FOOTER
 
 					<br><br>
 
-					<i class="fa fa-map-marker" aria-hidden="true"></i> jr.carlos dellepiane 4009
+					<i class="fa fa-map-marker" aria-hidden="true"></i> jLos heraldos y magnolias mz.A Lt. 23 SJL.
 
 					<br><br>
 					Lima | Perú
 
 				</h5>
-
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.8250635426643!2d-76.97707078561895!3d-11.986603644046745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c505ec5aa74d%3A0x65027b9d77f37530!2sS+J+L!5e0!3m2!1ses!2spe!4v1563643613995!5m2!1ses!2spe" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
-
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.1331968405843!2d-76.9889276851882!3d-11.965278691521625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDU3JzU1LjAiUyA3NsKwNTknMTIuMyJX!5e0!3m2!1ses!2spe!4v1565024421956!5m2!1ses!2spe" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
 
 			<!--=====================================

@@ -192,7 +192,7 @@ INFOPRODUCTOS
 
 							<p class="subTotal'.$infoproducto["id"].' subtotales">
 						
-								<strong>USD $<span>'.$infoproducto["precio"].'</span></strong>
+								<strong>PEN S/.<span>'.$infoproducto["precio"].'</span></strong>
 
 							</p>
 
@@ -205,7 +205,7 @@ INFOPRODUCTOS
 
 							<p class="subTotal'.$infoproducto["id"].' subtotales">
 						
-								<strong>USD $<span>'.$infoproducto["precioOferta"].'</span></strong>
+								<strong>PEN S/.<span>'.$infoproducto["precioOferta"].'</span></strong>
 
 							</p>
 
@@ -308,7 +308,7 @@ INFOPRODUCTOS
 
 						if($infoproducto["oferta"] == 0){
 
-							echo '<h2 class="text-muted">USD $'.$infoproducto["precio"].'</h2>';
+							echo '<h2 class="text-muted">PEN S/.'.$infoproducto["precio"].'</h2>';
 
 						}else{
 
@@ -316,7 +316,7 @@ INFOPRODUCTOS
 
 								<span>
 								
-									<strong class="oferta">USD $'.$infoproducto["precio"].'</strong>
+									<strong class="oferta">PEN S/.'.$infoproducto["precio"].'</strong>
 
 								</span>
 
@@ -1206,7 +1206,7 @@ ARTÏCULOS RELACIONADOS
 
 										<small>
 					
-											<strong class="oferta">USD $'.$value["precio"].'</strong>
+											<strong class="oferta">PEN S/.'.$value["precio"].'</strong>
 
 										</small>
 
@@ -1216,7 +1216,7 @@ ARTÏCULOS RELACIONADOS
 
 							}else{
 
-								echo '<h2><small>USD $'.$value["precio"].'</small></h2>';
+								echo '<h2><small>PEN S/.'.$value["precio"].'</small></h2>';
 
 							}
 							
@@ -1394,17 +1394,17 @@ VENTANA MODAL PARA CHECKOUT
 								
 								<tr>
 									<td>Subtotal</td>	
-									<td><span class="cambioDivisa">USD</span> $<span class="valorSubtotal" valor="0">0</span></td>	
+									<td><span class="cambioDivisa">PEN</span> S/.<span class="valorSubtotal" valor="0">0</span></td>	
 								</tr>
 
 								<tr>
 									<td>Envío</td>	
-									<td><span class="cambioDivisa">USD</span> $<span class="valorTotalEnvio" valor="0">0</span></td>	
+									<td><span class="cambioDivisa">PEN</span> S/.<span class="valorTotalEnvio" valor="0">0</span></td>	
 								</tr>
 
 								<tr>
 									<td>Impuesto</td>	
-									<td><span class="cambioDivisa">USD</span> $<span class="valorTotalImpuesto" valor="0">0</span></td>	
+									<td><span class="cambioDivisa">PEN</span> S/.<span class="valorTotalImpuesto" valor="0">0</span></td>	
 								</tr>
 
 								<tr>

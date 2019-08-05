@@ -9,7 +9,7 @@ session_start();
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Tienda Online | Panel de Control</title>
+  <title>Tantum | Panel de Control</title>
 
   <link rel="icon" href="vistas/img/plantilla/icono.png">
 
@@ -168,8 +168,11 @@ session_start();
            $_GET["ruta"]== "productos" ||
            $_GET["ruta"]== "banner" ||
            $_GET["ruta"]== "ventas" ||
+           $_GET["ruta"]== "ventas-online" ||
+           $_GET["ruta"]== "crear-venta" ||
            $_GET["ruta"]== "visitas" ||
            $_GET["ruta"]== "usuarios" ||
+           $_GET["ruta"]== "clientes" ||
            $_GET["ruta"]== "mensajes" ||
            $_GET["ruta"]== "perfiles" ||
            $_GET["ruta"]== "perfil" ||
