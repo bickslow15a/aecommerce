@@ -52,9 +52,9 @@
                <th>Multimedia</th>
                <th>Detalles</th>
                <th>Precio</th>
-               <!-- <th>Stock</th> -->
                <th>Peso</th>
                <th>Tiempo de Entrega</th>
+               <th>Stock</th> 
                <th>Tipo de Oferta</th>
                <th>Valor Oferta</th>
                <th>Imagen Oferta</th>

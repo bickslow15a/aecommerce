@@ -79,7 +79,7 @@ FOOTER
 
 					<br><br>
 
-					<i class="fa fa-envelope" aria-hidden="true"></i> soporte@tiendavirtual.com
+					<i class="fa fa-envelope" aria-hidden="true"></i> soporte@tamtun.com.pe
 
 					<br><br>
 
@@ -148,7 +148,7 @@ FINAL
 
 			<div class="col-sm-6 col-xs-12 text-left text-muted">
 
-				<h5>&copy; 2019 Todos los derechos reservados. Sitio elaborado por la Compañía</h5>
+				<h5>&copy; 2019 Todos los derechos reservados. Sitio elaborado Tantum</h5>
 
 			</div>
 
@@ -163,14 +163,14 @@ FINAL
 				$jsonRedesSociales = json_decode($social["redesSociales"],true);
 
 				foreach ($jsonRedesSociales as $key => $value) {
-
+			if($value["activo"] != 0){
 					echo '<li>
 							<a href="'.$value["url"].'" target="_blank">
-								<i class="fa '.$value["red"].' redSocial '.$value["estilo"].'" aria-hidden="true"></i>
+								<i class="fa '.$value["red"].' '.$value["estilo"].' redSocial"></i>
 							</a>
 						</li>';
 				}
-
+			}
 			?>
 
 			</ul>

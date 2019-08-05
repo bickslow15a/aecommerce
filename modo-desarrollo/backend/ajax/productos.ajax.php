@@ -87,6 +87,7 @@ class AjaxProductos{
 	public $precio;
 	public $peso;
 	public $entrega;
+	public $stock;
 	public $multimedia;
 	public $fotoPortada;
 	public $fotoPrincipal;
@@ -116,6 +117,7 @@ class AjaxProductos{
 			"precio"=>$this->precio,
 			"peso"=>$this->peso,
 			"entrega"=>$this->entrega,
+			"stock"=>$this->stock,
 			"multimedia"=>$this->multimedia,
 			"fotoPortada"=>$this->fotoPortada,
 			"fotoPrincipal"=>$this->fotoPrincipal,
@@ -168,6 +170,7 @@ class AjaxProductos{
 			"precio"=>$this->precio,
 			"peso"=>$this->peso,
 			"entrega"=>$this->entrega,
+			"stock"=>$this->stock,
 			"multimedia"=>$this->multimedia,
 			"fotoPortada"=>$this->fotoPortada,
 			"fotoPrincipal"=>$this->fotoPrincipal,
@@ -243,6 +246,7 @@ if(isset($_POST["tituloProducto"])){
 	$producto -> precio = $_POST["precio"];
 	$producto -> peso = $_POST["peso"];
 	$producto -> entrega = $_POST["entrega"];
+	$producto -> stock =$_POST["stock"];
 	$producto -> multimedia = $_POST["multimedia"];
 
 	if(isset($_FILES["fotoPortada"])){
@@ -314,6 +318,7 @@ if(isset($_POST["id"])){
 	$editarProducto -> precio = $_POST["precio"];
 	$editarProducto -> peso = $_POST["peso"];
 	$editarProducto -> entrega = $_POST["entrega"];
+	$editarProducto -> stock = $_POST["stock"];
 	$editarProducto -> multimedia = $_POST["multimedia"];
 
 	if(isset($_FILES["fotoPortada"])){

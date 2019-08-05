@@ -636,9 +636,10 @@ function agregarMiProducto(imagen){
 	    var seleccionarSubCategoria = $(".seleccionarSubCategoria").val();
 	    var descripcionProducto = $(".descripcionProducto").val();
 	    var pClavesProducto = $(".pClavesProducto").val();
-	    var precio = $(".precio").val();
-	    var peso = $(".peso").val();
-	    var entrega = $(".entrega").val();
+		var precio = $(".precio").val();
+		var peso = $(".peso").val();	
+		var entrega = $(".entrega").val();
+		var stock = $(".stock").val();
 	    var selActivarOferta = $(".selActivarOferta").val();
 	    var precioOferta = $(".precioOferta").val();
 	    var descuentoOferta = $(".descuentoOferta").val();
@@ -674,6 +675,7 @@ function agregarMiProducto(imagen){
 		datosProducto.append("precio", precio);
 		datosProducto.append("peso", peso);
 		datosProducto.append("entrega", entrega);	
+		datosProducto.append("stock", stock);
 
 		datosProducto.append("multimedia", imagen);
 		
@@ -1042,11 +1044,12 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 			$("#modalEditarProducto .antiguaFotoPrincipal").val(respuesta[0]["portada"]);
 
 			/*=============================================
-			CARGAMOS EL PRECIO, PESO Y DIAS DE ENTREGA
+			CARGAMOS EL PRECIO, PESO ,DIAS DE ENTREGA y STOCK
 			=============================================*/
 			$("#modalEditarProducto .precio").val(respuesta[0]["precio"]);
 			$("#modalEditarProducto .peso").val(respuesta[0]["peso"]);
 			$("#modalEditarProducto .entrega").val(respuesta[0]["entrega"]);
+			$("#modalEditarProducto .stock").val(respuesta[0]["stock"]);
 
 			/*=============================================
 			PREGUNTAMOS SI EXITE OFERTA
@@ -1269,13 +1272,14 @@ function editarMiProducto(imagen){
 	var tituloProducto = $("#modalEditarProducto .tituloProducto").val();
 	var rutaProducto = $("#modalEditarProducto .rutaProducto").val();
 	var seleccionarTipo = $("#modalEditarProducto .seleccionarTipo").val();
-		var seleccionarCategoria = $("#modalEditarProducto .seleccionarCategoria").val();
+	var seleccionarCategoria = $("#modalEditarProducto .seleccionarCategoria").val();
 	var seleccionarSubCategoria = $("#modalEditarProducto .seleccionarSubCategoria").val();
 	var descripcionProducto = $("#modalEditarProducto .descripcionProducto").val();
 	var pClavesProducto = $("#modalEditarProducto .pClavesProducto").val();
 	var precio = $("#modalEditarProducto .precio").val();
 	var peso = $("#modalEditarProducto .peso").val();
 	var entrega = $("#modalEditarProducto .entrega").val();
+	var stock = $("#modalEditarProducto .stock").val();
 	var selActivarOferta = $("#modalEditarProducto .selActivarOferta").val();
 	var precioOferta = $("#modalEditarProducto .precioOferta").val();
 	var descuentoOferta = $("#modalEditarProducto .descuentoOferta").val();
@@ -1291,7 +1295,7 @@ function editarMiProducto(imagen){
 	   					"Certificado": $("#modalEditarProducto .detalleCertificado").val()};
 	}else{
 
-		var detalles = {"Talla": $("#modalEditarProducto .detalleTalla").tagsinput('items'),							
+		var detalles = {"Talla": $("#modalEditarProducto .detalleTalla").tagsinput('items'),		
 		       			"Color": $("#modalEditarProducto .detalleColor").tagsinput('items'),
 		       			"Marca": $("#modalEditarProducto .detalleMarca").tagsinput('items')};
 
@@ -1319,6 +1323,7 @@ function editarMiProducto(imagen){
 	datosProducto.append("precio", precio);
 	datosProducto.append("peso", peso);
 	datosProducto.append("entrega", entrega);
+	datosProducto.append("stock", stock);
 
 	if(imagen == null){
 
