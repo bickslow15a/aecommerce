@@ -639,6 +639,7 @@ function agregarMiProducto(imagen){
 	    var precio = $(".precio").val();
 	    var peso = $(".peso").val();
 	    var entrega = $(".entrega").val();
+	    var stock = $(".stock").val();
 	    var selActivarOferta = $(".selActivarOferta").val();
 	    var precioOferta = $(".precioOferta").val();
 	    var descuentoOferta = $(".descuentoOferta").val();
@@ -674,9 +675,8 @@ function agregarMiProducto(imagen){
 		datosProducto.append("precio", precio);
 		datosProducto.append("peso", peso);
 		datosProducto.append("entrega", entrega);	
-
+		datosProducto.append("stock", stock);
 		datosProducto.append("multimedia", imagen);
-		
 		datosProducto.append("fotoPortada", imagenPortada);
 		datosProducto.append("fotoPrincipal", imagenFotoPrincipal);
 		datosProducto.append("selActivarOferta", selActivarOferta);
@@ -710,6 +710,14 @@ function agregarMiProducto(imagen){
 
 							}
 						})
+					
+					}else{
+						  swal({
+						    type: 'error',
+  							title: 'El producto no se ha guardado',
+  							showConfirmButton: true,
+						    confirmButtonText: "Cerrar"
+						  })
 					}
 
 				}
