@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-08-2019 a las 18:17:34
+-- Tiempo de generación: 06-08-2019 a las 18:12:10
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -42,8 +42,8 @@ CREATE TABLE `administradores` (
 --
 
 INSERT INTO `administradores` (`id`, `nombre`, `email`, `foto`, `password`, `perfil`, `estado`, `fecha`) VALUES
-(1, 'Tienda Virtual', 'admin@naimcomputer.com', 'vistas/img/perfiles/499.png', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'administrador', 1, '2019-08-01 16:52:34'),
-(2, 'Editor de la Tienda', 'editor@naimcomputer.com', 'vistas/img/perfiles/477.png', '$2a$07$asxx54ahjppf45sd87a5au6fAHIlFrQ7jQ4XHf7fycZYUNBysO4Bq', 'editor', 1, '2019-07-12 19:23:56');
+(1, 'Tienda Virtual', 'admin@tantum.com.pe', 'vistas/img/perfiles/499.png', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'administrador', 1, '2019-08-05 20:53:01'),
+(2, 'Editor de la Tienda', 'editor@tantum.com.pe', 'vistas/img/perfiles/477.png', '$2a$07$asxx54ahjppf45sd87a5au6fAHIlFrQ7jQ4XHf7fycZYUNBysO4Bq', 'editor', 1, '2019-08-05 20:53:15');
 
 -- --------------------------------------------------------
 
@@ -65,10 +65,7 @@ CREATE TABLE `banner` (
 --
 
 INSERT INTO `banner` (`id`, `ruta`, `tipo`, `img`, `estado`, `fecha`) VALUES
-(1, 'sin-categoria', 'sin-categoria', 'vistas/img/banner/default.jpg', 1, '2018-03-26 13:29:51'),
-(3, 'desarrollo-web', 'subcategorias', 'vistas/img/banner/web.jpg', 1, '2018-03-26 15:05:48'),
-(4, 'calzado', 'categorias', 'vistas/img/banner/ropaHombre.jpg', 1, '2018-03-26 15:46:29'),
-(5, 'tecnologia', 'categorias', 'vistas/img/banner/slide3.jpg.jpg', 1, '2019-07-11 21:24:35');
+(1, 'sin-categoria', 'sin-categoria', 'vistas/img/banner/default.jpg', 1, '2018-03-26 13:29:51');
 
 -- --------------------------------------------------------
 
@@ -152,14 +149,16 @@ INSERT INTO `comentarios` (`id`, `id_usuario`, `id_producto`, `calificacion`, `c
 (8, 13, 447, 0, '', '2019-07-12 11:56:46'),
 (9, 1, 468, 0.5, 'asd', '2019-07-18 22:48:59'),
 (10, 1, 468, 0, '', '2019-07-12 13:06:36'),
-(11, 4, 3, 5, 'asdsa', '2019-07-18 22:47:39'),
+(11, 4, 3, 5, 'muy buen producto', '2019-08-05 21:10:24'),
 (12, 4, 182, 1.5, 'mal producto', '2019-07-21 03:30:04'),
 (13, 4, 1, 5, 'muy buenoo', '2019-07-21 03:29:21'),
 (14, 4, 4, 0, '', '2019-07-22 21:44:02'),
 (15, 4, 468, 0, '', '2019-07-22 21:45:52'),
 (16, 4, 3, 0, '', '2019-08-03 00:14:27'),
 (17, 4, 464, 0, '', '2019-08-03 00:29:07'),
-(18, 4, 4, 0, '', '2019-08-03 01:41:19');
+(18, 4, 4, 0, '', '2019-08-03 01:41:19'),
+(19, 4, 3, 0, '', '2019-08-05 21:10:13'),
+(20, 4, 2, 0, '', '2019-08-05 21:14:00');
 
 -- --------------------------------------------------------
 
@@ -215,7 +214,8 @@ CREATE TABLE `compras` (
 --
 
 INSERT INTO `compras` (`id`, `id_usuario`, `id_producto`, `envio`, `metodo`, `email`, `direccion`, `pais`, `pago`, `fecha`) VALUES
-(33, 4, 4, 0, 'paypal', 'chapiamadurand15-buyer@gmail.com', 'jr.peru123, lima, lima, 051', 'PE', 29, '2019-08-03 01:41:19');
+(34, 4, 3, 2, 'paypal', 'chapiamadurand15-buyer@gmail.com', 'jr.peru123, lima, lima, 051', 'PE', 35, '2019-08-05 21:15:58'),
+(35, 4, 2, 2, 'paypal', 'chapiamadurand15-buyer@gmail.com', 'jr.peru123, lima, lima, 051', 'PE', 2, '2019-08-05 21:15:57');
 
 -- --------------------------------------------------------
 
@@ -246,7 +246,9 @@ INSERT INTO `deseos` (`id`, `id_usuario`, `id_producto`, `fecha`) VALUES
 (9, 13, 469, '2019-07-12 11:57:17'),
 (10, 13, 468, '2019-07-12 11:57:19'),
 (11, 13, 501, '2019-07-12 19:35:32'),
-(18, 4, 2, '2019-07-21 03:31:55');
+(18, 4, 2, '2019-07-21 03:31:55'),
+(19, 4, 1, '2019-08-05 20:51:46'),
+(20, 4, 3, '2019-08-05 20:51:49');
 
 -- --------------------------------------------------------
 
@@ -266,7 +268,7 @@ CREATE TABLE `notificaciones` (
 --
 
 INSERT INTO `notificaciones` (`id`, `nuevosUsuarios`, `nuevasVentas`, `nuevasVisitas`) VALUES
-(1, 8, 3, 15);
+(1, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -294,7 +296,7 @@ CREATE TABLE `plantilla` (
 --
 
 INSERT INTO `plantilla` (`id`, `barraSuperior`, `textoSuperior`, `colorFondo`, `colorTexto`, `logo`, `icono`, `redesSociales`, `apiFacebook`, `pixelFacebook`, `googleAnalytics`, `fecha`) VALUES
-(1, '#ff35d7', '#ffffff', '#ff35d7', '#ffffff', 'vistas/img/plantilla/logo.jpg', 'vistas/img/plantilla/icono.jpg', '[{\"red\":\"fa-facebook\",\"estilo\":\"facebookBlanco\",\"url\":\"http://facebook.com/TiendasTantum/\",\"activo\":1},{\"red\":\"fa-youtube\",\"estilo\":\"youtubeBlanco\",\"url\":\"http://youtube.com/\",\"activo\":0},{\"red\":\"fa-twitter\",\"estilo\":\"twitterBlanco\",\"url\":\"http://twitter.com/\",\"activo\":0},{\"red\":\"fa-google-plus\",\"estilo\":\"google-plusBlanco\",\"url\":\"http://google.com/\",\"activo\":0},{\"red\":\"fa-instagram\",\"estilo\":\"instagramBlanco\",\"url\":\"http://instagram.com/tiendastantum/\",\"activo\":1}]', '\n      		\n<script>\n  window.fbAsyncInit = function() {\n    FB.init({\n      appId      : \'2395436377404827\',\n      cookie     : true,\n      xfbml      : true,\n      version    : \'v3.3\'\n    });\n      \n    FB.AppEvents.logPageView();   \n      \n  };\n\n  (function(d, s, id){\n     var js, fjs = d.getElementsByTagName(s)[0];\n     if (d.getElementById(id)) {return;}\n     js = d.createElement(s); js.id = id;\n     js.src = \"https://connect.facebook.net/en_US/sdk.js\";\n     fjs.parentNode.insertBefore(js, fjs);\n   }(document, \'script\', \'facebook-jssdk\'));\n</script>\n      		\n      		\n      		', '\n  			\n  			\n  			\n  			<!-- Facebook Pixel Code --> 	<script> 	  !function(f,b,e,v,n,t,s) 	  {if(f.fbq)return;n=f.fbq=function(){n.callMethod? 	  n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 	  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=\'2.0\'; 	  n.queue=[];t=b.createElement(e);t.async=!0; 	  t.src=v;s=b.getElementsByTagName(e)[0]; 	  s.parentNode.insertBefore(t,s)}(window, document,\'script\', 	  \'https://connect.facebook.net/en_US/fbevents.js\'); 	  fbq(\'init\', \'131737410786111\'); 	  fbq(\'track\', \'PageView\'); 	</script> 	<noscript><img height=\"1\" width=\"1\" style=\"display:none\" 	  src=\"https://www.facebook.com/tr?id=149877372404434&ev=PageView&noscript=1\" 	/></noscript> <!-- End Facebook Pixel Code -->    \n  			    \n  			    \n  			    \n  			', '\n  			\n  			\n  			  \n  				<!-- Global site tag (gtag.js) - Google Analytics --> 	<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-999999-1\"></script> 	<script> 	  window.dataLayer = window.dataLayer || []; 	  function gtag(){dataLayer.push(arguments);} 	  gtag(\'js\', new Date());  	  gtag(\'config\', \'UA-9999999-1\'); 	</script>      \n            \n            \n            \n            \n  			      \n  			      \n  			', '2019-08-03 17:07:36');
+(1, '#ff35d7', '#ffffff', '#ff35d7', '#ffffff', 'vistas/img/plantilla/logo.jpg', 'vistas/img/plantilla/icono.jpg', '[{\"red\":\"fa-facebook\",\"estilo\":\"facebookBlanco\",\"url\":\"http://facebook.com/TiendasTantum/\",\"activo\":1},{\"red\":\"fa-youtube\",\"estilo\":\"youtubeBlanco\",\"url\":\"http://youtube.com/\",\"activo\":0},{\"red\":\"fa-twitter\",\"estilo\":\"twitterBlanco\",\"url\":\"http://twitter.com/\",\"activo\":0},{\"red\":\"fa-google-plus\",\"estilo\":\"google-plusBlanco\",\"url\":\"http://google.com/\",\"activo\":0},{\"red\":\"fa-instagram\",\"estilo\":\"instagramBlanco\",\"url\":\"http://instagram.com/tiendastantum/\",\"activo\":1},{\"red\":\"fa-whatsapp\",\"estilo\":\"whatsappBlanco\",\"url\":\"https://api.whatsapp.com/send?phone=51945344223&text=Hola!%20Bienvenido%20a%20Tiendas%20tantum\",\"activo\":1}\r\n]\r\n', '      		\r\n<script>\r\n  window.fbAsyncInit = function() {\r\n    FB.init({\r\n      appId      : \'2395436377404827\',\r\n      cookie     : true,\r\n      xfbml      : true,\r\n      version    : \'v3.3\'\r\n    });\r\n      \r\n    FB.AppEvents.logPageView();   \r\n      \r\n  };\r\n\r\n  (function(d, s, id){\r\n     var js, fjs = d.getElementsByTagName(s)[0];\r\n     if (d.getElementById(id)) {return;}\r\n     js = d.createElement(s); js.id = id;\r\n     js.src = \"https://connect.facebook.net/en_US/sdk.js\";\r\n     fjs.parentNode.insertBefore(js, fjs);\r\n   }(document, \'script\', \'facebook-jssdk\'));\r\n</script>\r\n      		\r\n      		\r\n      		', '  			\r\n  			\r\n  			\r\n  			<!-- Facebook Pixel Code --> 	<script> 	  !function(f,b,e,v,n,t,s) 	  {if(f.fbq)return;n=f.fbq=function(){n.callMethod? 	  n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 	  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=\'2.0\'; 	  n.queue=[];t=b.createElement(e);t.async=!0; 	  t.src=v;s=b.getElementsByTagName(e)[0]; 	  s.parentNode.insertBefore(t,s)}(window, document,\'script\', 	  \'https://connect.facebook.net/en_US/fbevents.js\'); 	  fbq(\'init\', \'131737410786111\'); 	  fbq(\'track\', \'PageView\'); 	</script> 	<noscript><img height=\"1\" width=\"1\" style=\"display:none\" 	  src=\"https://www.facebook.com/tr?id=149877372404434&ev=PageView&noscript=1\" 	/></noscript> <!-- End Facebook Pixel Code -->    \r\n  			    \r\n  			    \r\n  			    \r\n  			', '  			\r\n  			\r\n  			  \r\n  				<!-- Global site tag (gtag.js) - Google Analytics --> 	<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-999999-1\"></script> 	<script> 	  window.dataLayer = window.dataLayer || []; 	  function gtag(){dataLayer.push(arguments);} 	  gtag(\'js\', new Date());  	  gtag(\'config\', \'UA-9999999-1\'); 	</script>      \r\n            \r\n            \r\n            \r\n            \r\n  			      \r\n  			      \r\n  			', '2019-08-05 22:20:28');
 
 -- --------------------------------------------------------
 
@@ -338,9 +340,9 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`, `estado`, `titulo`, `titular`, `descripcion`, `multimedia`, `detalles`, `precio`, `stock`, `portada`, `vistas`, `ventas`, `vistasGratis`, `ventasGratis`, `ofertadoPorCategoria`, `ofertadoPorSubCategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `peso`, `entrega`, `fecha`) VALUES
-(1, 1, 1, 'fisico', 'vestido-clasico-11', 1, 'Vestido Clásico', 'asdsadas...', 'asdsadas', '[{\"foto\":\"vistas/img/multimedia/tennis-verde/img-01.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-02.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-03.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-04.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-05.jpg\"}]', '{\"Talla\":[\"36\",\"38\",\"40\"],\"Color\":[\"rojo\",\"negro\",\"blanco\"],\"Marca\":[]}', 14, 11, 'vistas/img/productos/ropa/ropa02.jpg', 0, 0, 55, 12, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, 10, '2019-08-05 16:08:48'),
-(2, 1, 3, 'fisico', 'top-dama-11', 1, 'Top Dama', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus, consectetur beatae fugit odio iure repudiandae quia distinctio, id ducimus molestiae. Obcaecati, unde. Illo molestiae dolorum, saepe nisi enim iusto.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto maxime quas modi, eveniet fugiat. Alias voluptatem cum consectetur nobis quod, excepturi recusandae, itaque facere minima officiis autem illum, perferendis provident! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto maxime quas modi, eveniet fugiat. Alias voluptatem cum consectetur nobis quod, excepturi recusandae, itaque facere minima officiis autem illum, perferendis provident!', '[{\"foto\":\"vistas/img/multimedia/tennis-verde/img-01.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-02.jpg\"}, 	{\"foto\":\"vistas/img/multimedia/tennis-verde/img-03.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-04.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-05.jpg\"}]', '{\"Talla\": [36,38,40],\"Color\": [\"rojo\",\"negro\",\"blanco\"],\"Marca\":\"\"}', 2, 10, 'vistas/img/productos/ropa/ropa06.jpg', 0, 0, 56, 12, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, 10, '2019-08-05 16:07:09'),
-(3, 1, 1, 'fisico', 'jean-blushe', 1, 'jean blushe', 'jean blushe con ultimo mooda blebleble...', 'jean blushe con ultimo mooda blebleble', '[{\"foto\":\"vistas/img/multimedia/jean-blushe/images (2).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images (1).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images.jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/DVDA00428CE26.jpg\"}]', '{\"Talla\":[\"28\",\"30\",\"32\",\"34\"],\"Color\":[\"negro\",\"azul\",\"vintage\"],\"Marca\":[]}', 35, 5, 'vistas/img/productos/jean-blushe.jpg', 3, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1.3, 2, '2019-08-05 16:07:12');
+(1, 1, 1, 'fisico', 'vestido-clasico-11', 1, 'Vestido Clásico', 'asdsadas...', 'asdsadas', '[{\"foto\":\"vistas/img/multimedia/tennis-verde/img-01.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-02.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-03.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-04.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-05.jpg\"}]', '{\"Talla\":[\"36\",\"38\",\"40\"],\"Color\":[\"rojo\",\"negro\",\"blanco\"],\"Marca\":[]}', 14, 11, 'vistas/img/productos/ropa/ropa02.jpg', 1, 0, 55, 12, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, 10, '2019-08-05 17:17:12'),
+(2, 1, 3, 'fisico', 'top-dama-11', 1, 'Top Dama', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus, consectetur beatae fugit odio iure repudiandae quia distinctio, id ducimus molestiae. Obcaecati, unde. Illo molestiae dolorum, saepe nisi enim iusto.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto maxime quas modi, eveniet fugiat. Alias voluptatem cum consectetur nobis quod, excepturi recusandae, itaque facere minima officiis autem illum, perferendis provident! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto maxime quas modi, eveniet fugiat. Alias voluptatem cum consectetur nobis quod, excepturi recusandae, itaque facere minima officiis autem illum, perferendis provident!', '[{\"foto\":\"vistas/img/multimedia/tennis-verde/img-01.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-02.jpg\"}, 	{\"foto\":\"vistas/img/multimedia/tennis-verde/img-03.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-04.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-05.jpg\"}]', '{\"Talla\": [36,38,40],\"Color\": [\"rojo\",\"negro\",\"blanco\"],\"Marca\":\"\"}', 2, 10, 'vistas/img/productos/ropa/ropa06.jpg', 6, 1, 56, 12, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, 10, '2019-08-06 14:23:58'),
+(3, 1, 1, 'fisico', 'jean-blushe', 1, 'jean blushe', 'jean blushe con ultimo mooda blebleble...', 'jean blushe con ultimo mooda blebleble', '[{\"foto\":\"vistas/img/multimedia/jean-blushe/images (2).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images (1).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images.jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/DVDA00428CE26.jpg\"}]', '{\"Talla\":[\"28\",\"30\",\"32\",\"34\"],\"Color\":[\"negro\",\"azul\",\"vintage\"],\"Marca\":[]}', 35, 5, 'vistas/img/productos/jean-blushe.jpg', 14, 1, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1.3, 2, '2019-08-06 14:23:51');
 
 -- --------------------------------------------------------
 
@@ -469,7 +471,7 @@ CREATE TABLE `visitaspaises` (
 --
 
 INSERT INTO `visitaspaises` (`id`, `pais`, `codigo`, `cantidad`, `fecha`) VALUES
-(1, 'United States', 'US', 4, '2019-08-05 13:08:06'),
+(1, 'United States', 'US', 5, '2019-08-06 13:14:36'),
 (2, 'Japan', 'JP', 65, '2018-03-27 13:26:30'),
 (3, 'Spain', 'ES', 10, '2017-12-05 21:02:53'),
 (4, 'Colombia', 'CO', 5, '2017-12-05 21:02:55'),
@@ -590,7 +592,8 @@ INSERT INTO `visitaspersonas` (`id`, `ip`, `pais`, `visitas`, `fecha`) VALUES
 (106, '192.168.0.104', 'Unknown', 1, '2019-08-03 15:53:45'),
 (107, '192.168.101.104', 'Unknown', 1, '2019-08-03 15:58:00'),
 (108, '162.168.5.104', 'United States', 1, '2019-08-03 15:59:01'),
-(109, '162.168.5.104', 'United States', 1, '2019-08-05 13:08:05');
+(109, '162.168.5.104', 'United States', 1, '2019-08-05 13:08:05'),
+(110, '162.168.5.104', 'United States', 1, '2019-08-06 13:14:35');
 
 --
 -- Índices para tablas volcadas
@@ -705,12 +708,12 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT de la tabla `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `cabeceras`
 --
 ALTER TABLE `cabeceras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `categorias`
 --
@@ -720,7 +723,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT de la tabla `comercio`
 --
@@ -730,12 +733,12 @@ ALTER TABLE `comercio`
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT de la tabla `deseos`
 --
 ALTER TABLE `deseos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
@@ -775,7 +778,7 @@ ALTER TABLE `visitaspaises`
 -- AUTO_INCREMENT de la tabla `visitaspersonas`
 --
 ALTER TABLE `visitaspersonas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
