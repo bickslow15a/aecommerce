@@ -40,6 +40,7 @@ if(localStorage.getItem("listaProductos") != null){
 
 		var datosProducto = new FormData();
 		var precio = 0;
+		
 
 		datosProducto.append("id", item.idProducto);
 
@@ -53,6 +54,21 @@ if(localStorage.getItem("listaProductos") != null){
 			processData:false,
 			dataType: "json",
 			success: function(respuesta){
+    //  chapiama declaramos la variables stock dentro del ajax
+		    var stock=respuesta["stock"];
+
+				// 	if(stock ==0){
+				// 		swal({
+				// 			title: "no Hay Stock Disponilbe",
+				// 			type: "error",
+				// 		// confirmButtonColor: "#DD6B55",
+				// 			confirmButtonText: "¡Cerrar!",
+				// 		//closeOnConfirm: false
+				// 		})
+				// 		return;
+				// }
+
+// console.log(stock);
 
 				if(respuesta["precioOferta"] == 0){
 
@@ -117,7 +133,7 @@ if(localStorage.getItem("listaProductos") != null){
 
 								'<center>'+
 
-									'<input type="number" class="form-control cantidadItem" min="1" value="'+item.cantidad+'" tipo="'+item.tipo+'" precio="'+precio+'" idProducto="'+item.idProducto+'" item="'+index+'">'+
+									'<input type="number" class="form-control cantidadItem" min="1" value="'+item.cantidad+'" tipo="'+item.tipo+'" precio="'+precio+'" idProducto="'+item.idProducto+'" item="'+index+'"  stock="'+stock+'" nuevoStock="'+Number(stock-1)+'">'+
 
 								'</center>'+
 
@@ -412,6 +428,30 @@ $(document).on("change", ".cantidadItem", function(){
 	var precio = $(this).attr("precio");
 	var idProducto = $(this).attr("idProducto");
 	var item = $(this).attr("item");
+// chapiama agregamos el nuvo stock
+	var nuevoStock = Number($(this).attr("stock")) - $(this).val();
+	$(this).attr("nuevoStock", nuevoStock);
+
+	if(Number($(this).val()) > Number($(this).attr("stock"))){
+		/*=============================================
+		SI LA CANTIDAD ES SUPERIOR AL STOCK REGRESAR VALORES INICIALES
+		=============================================*/
+		$(this).val(0);
+		$(this).attr("nuevoStock", $(this).attr("stock"));
+	
+		
+		sumaSubtotales()
+
+		swal({
+	      title: "La cantidad supera el Stock",
+	      text: "¡Sólo hay "+$(this).attr("stock")+" unidades!",
+	      type: "error",
+	      confirmButtonText: "¡Cerrar!"
+	    });
+
+	    return;
+
+	}
 
 	$(".subTotal"+item).html('<strong>PEN S/.<span>'+(cantidad*precio)+'</span></strong>');
 

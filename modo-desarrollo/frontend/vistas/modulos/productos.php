@@ -53,7 +53,7 @@ if($banner != null){
 
 								if($ofertas["precioOferta"] != 0){
 
-									echo '<h2 style="color:#fff"><strong>Todos los productos a $ '.$ofertas["precioOferta"].'</strong></h2>';
+									echo '<h2 style="color:#fff"><strong>Todos los productos a S/.'.$ofertas["precioOferta"].'</strong></h2>';
 
 								}
 

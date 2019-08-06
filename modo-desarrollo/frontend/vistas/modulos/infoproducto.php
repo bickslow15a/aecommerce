@@ -322,7 +322,7 @@ INFOPRODUCTOS
 
 								<span>
 									
-									$'.$infoproducto["precioOferta"].'
+									S/.'.$infoproducto["precioOferta"].'
 
 								</span>
 
@@ -332,6 +332,11 @@ INFOPRODUCTOS
 
 					}
 
+					/*=============================================
+					STOCK
+					=============================================*/		
+
+					echo '<h4 class="text-muted"> STOCK:'.$infoproducto["stock"].'</h4>';
 					/*=============================================
 					DESCRIPCIÓN
 					=============================================*/		
