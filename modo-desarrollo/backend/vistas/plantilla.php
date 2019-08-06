@@ -210,7 +210,7 @@ session_start();
 <!--=====================================
 JS PERSONALIZADO
 ======================================-->
-
+<script src="vistas/js/clientes.js"></script>
 <script src="vistas/js/plantilla.js"></script>
 <script src="vistas/js/gestorComercio.js"></script>
 <script src="vistas/js/gestorSlide.js"></script>

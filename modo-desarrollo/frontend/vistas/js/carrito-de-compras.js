@@ -440,6 +440,7 @@ $(document).on("change", ".cantidadItem", function(){
 		$(".subTotal"+item).html('<strong>PEN S/.<span>'+(0*precio)+'</span></strong>');
 		$(this).attr("nuevoStock", $(this).attr("stock"));
 		$(".sumaSubTotal").html('<strong>PEN S/.<span>'+(0).toFixed(2)+'</span></strong>');
+
 		swal({
 	      title: "La cantidad supera el Stock",
 	      text: "¡Sólo hay "+$(this).attr("stock")+" unidades!",
