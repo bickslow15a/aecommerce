@@ -513,7 +513,7 @@ MODAL AGREGAR PRODUCTO
               </div>
 
 
-              <!-- PALOMINO : SE AGREGO UNA INPUT POR DONDE AGREGAR UN TAMAÑO DE STOCK INICIAL -->
+              <!-- PALOMINO : SE AGREGO UN INPUT POR DONDE AGREGAR UN TAMAÑO DE STOCK INICIAL -->
 
               <!-- STOCK -->
 
@@ -531,7 +531,7 @@ MODAL AGREGAR PRODUCTO
 
               </div>
 
-              <!-- PALOMINO : SE AGREGO UNA INPUT POR DONDE AGREGAR UN TAMAÑO DE STOCK INICIAL / FIN -->
+              <!-- PALOMINO : SE AGREGO UN INPUT POR DONDE AGREGAR UN TAMAÑO DE STOCK INICIAL / FIN -->
 
 
             </div>

@@ -678,7 +678,6 @@ function agregarMiProducto(imagen){
 		datosProducto.append("stock", stock);
 
 		datosProducto.append("multimedia", imagen);
-		
 		datosProducto.append("fotoPortada", imagenPortada);
 		datosProducto.append("fotoPrincipal", imagenFotoPrincipal);
 		datosProducto.append("selActivarOferta", selActivarOferta);
@@ -712,6 +711,14 @@ function agregarMiProducto(imagen){
 
 							}
 						})
+					
+					}else{
+						  swal({
+						    type: 'error',
+  							title: 'El producto no se ha guardado',
+  							showConfirmButton: true,
+						    confirmButtonText: "Cerrar"
+						  })
 					}
 
 				}
