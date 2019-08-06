@@ -105,7 +105,7 @@ if(localStorage.getItem("listaProductos") != null){
 
 							'<br>'+
 
-							'<p class="precioCarritoCompra text-center">USD $<span>'+precio+'</span></p>'+
+							'<p class="precioCarritoCompra text-center">PEN S/.<span>'+precio+'</span></p>'+
 
 						'</div>'+
 
@@ -131,7 +131,7 @@ if(localStorage.getItem("listaProductos") != null){
 
 							'<p class="subTotal'+index+' subtotales">'+
 
-								'<strong>USD $<span>'+(Number(item.cantidad)*Number(precio))+'</span></strong>'+
+								'<strong>PEN S/.<span>'+(Number(item.cantidad)*Number(precio))+'</span></strong>'+
 
 							'</p>'+
 
@@ -413,7 +413,7 @@ $(document).on("change", ".cantidadItem", function(){
 	var idProducto = $(this).attr("idProducto");
 	var item = $(this).attr("item");
 
-	$(".subTotal"+item).html('<strong>USD $<span>'+(cantidad*precio)+'</span></strong>');
+	$(".subTotal"+item).html('<strong>PEN S/.<span>'+(cantidad*precio)+'</span></strong>');
 
 	/*=============================================
 	ACTUALIZAR LA CANTIDAD EN EL LOCALSTORAGE
@@ -481,7 +481,7 @@ function sumaSubtotales(){
 
 	var sumaTotal = arraySumaSubtotales.reduce(sumaArraySubtotales);
 
-	$(".sumaSubTotal").html('<strong>USD $<span>'+(sumaTotal).toFixed(2)+'</span></strong>');
+	$(".sumaSubTotal").html('<strong>PEN S/.<span>'+(sumaTotal).toFixed(2)+'</span></strong>');
 
 	$(".sumaCesta").html((sumaTotal).toFixed(2));
 
@@ -606,7 +606,7 @@ $("#btnCheckout").click(function(){
 		$(".listaProductos table.tablaProductos tbody").append('<tr>'+
 															   '<td class="valorTitulo">'+tituloArray+'</td>'+
 															   '<td class="valorCantidad">'+cantidadArray+'</td>'+
-															   '<td>$<span class="valorItem" valor="'+subtotalArray+'">'+subtotalArray+'</span></td>'+
+															   '<td>S/.<span class="valorItem" valor="'+subtotalArray+'">'+subtotalArray+'</span></td>'+
 															   '<tr>');
 
 		/*=============================================
@@ -784,6 +784,7 @@ function divisas(metodoPago){
 	if(metodoPago == "paypal"){
 
 		$("#cambiarDivisa").append(
+								   '<option value="">-Selecciones-</option>' +
 			                       '<option value="USD">USD</option>'+
 			                       '<option value="EUR">EUR</option>'+
 			                       '<option value="GBP">GBP</option>'+
@@ -795,6 +796,7 @@ function divisas(metodoPago){
 	}else{
 
 		$("#cambiarDivisa").append(
+								   '<option value="">-Selecciones-</option>' +
 			                       '<option value="USD">USD</option>'+
 			                       '<option value="PEN">PEN</option>'+
 			                       '<option value="COP">COP</option>'+
@@ -814,7 +816,7 @@ function divisas(metodoPago){
 CAMBIO DE DIVISA
 =============================================*/
 
-var divisaBase = "USD";
+var divisaBase = "PEN";
 
 $("#cambiarDivisa").change(function(){
 
@@ -840,7 +842,7 @@ $("#cambiarDivisa").change(function(){
 	    dataType:"jsonp",
 	    success:function(respuesta){
 
-	    	var conversion = (respuesta["USD_"+divisa]["val"]).toFixed(2);
+	    	var conversion = (respuesta["PEN_"+divisa]["val"]).toFixed(2);
 
 	    	$(".cambioDivisa").html(divisa);
 

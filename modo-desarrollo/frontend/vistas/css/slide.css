@@ -8,7 +8,9 @@ SLIDE
 	width:100%;
 	overflow: hidden;
 	padding:0;
+	 
 }
+
 
 #slide ul{
 	position:relative;
@@ -114,26 +116,31 @@ FLECHAS
 	color:white;
 	cursor:pointer;
 	z-index:2;
+	transition: all .5s ease;
+}
+/* efecto de trasccion chapiama */
+#slide .flechas:hover{
+    transition: all .5s ease;
 }
 
 #slide #retroceder{
-	background:#666;
+	background:#000;
 	left:0;
 	opacity: 0;
 }
 
 #slide #avanzar{
-	background:#666;
+	background:#000;
 	right:0;
 	opacity: 0;
 }
 
 #slide #retroceder:hover, #slide #avanzar:hover{
-	background:#777;
+	background:rgb(32, 31, 31);
 }
 
 #slide #retroceder:active, #slide #avanzar:active{
-	background:#444;
+	background:rgb(32, 31, 31);
 }
 
 /*=============================================

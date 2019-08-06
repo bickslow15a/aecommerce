@@ -180,8 +180,9 @@ class TablaProductos{
 
   				$precio = "$ ".number_format($productos[$i]["precio"],2);
 
-  			}
-
+			  }
+			  
+		
   			/*=============================================
   			TRAER ENTREGA
   			=============================================*/
@@ -193,6 +194,23 @@ class TablaProductos{
   			}else{
 
   				$entrega = $productos[$i]["entrega"]. " días hábiles";
+
+			  }
+			  
+			  	  /*=============================================
+  			TRAER STOCK
+  			=============================================*/
+            if($productos[$i]["stock"] <= 10){
+
+  				$stock = "<button class='btn btn-danger'>".$productos[$i]["stock"]."</button>";
+
+  			}else if($productos[$i]["stock"] >= 11 && $productos[$i]["stock"] <= 15){
+
+  				$stock = "<button class='btn btn-warning'>".$productos[$i]["stock"]."</button>";
+
+  			}else{
+
+  				$stock = "<button class='btn btn-success'>".$productos[$i]["stock"]."</button>";
 
   			}
 
@@ -261,9 +279,10 @@ class TablaProductos{
 				  	"'.$imagenPrincipal.'",
 			 	  	"'.$vistaMultimedia.'",
 				  	"'.$vistaDetalles.'",
-		  			"'.$precio.'",
+					"'.$precio.'",
 				  	"'.$productos[$i]["peso"].' kg",
-				  	"'.$entrega.'",
+					"'.$entrega.'",
+					"'.$stock.'",
 				  	"'.$tipoOferta.'",
 				  	"'.$valorOferta.'",
 				  	"'.$imgOferta.'",

@@ -28,24 +28,24 @@ if($banner != null){
 PRODUCTOS DESTACADOS
 =============================================*/
 
-$titulosModulos = array("ARTÍCULOS GRATUITOS", "LO MÁS VENDIDO", "LO MÁS VISTO");
-$rutaModulos = array("articulos-gratis","lo-mas-vendido","lo-mas-visto");
+$titulosModulos = array("LO MÁS VENDIDO", "LO MÁS VISTO");
+$rutaModulos = array("lo-mas-vendido","lo-mas-visto");
 
 $base = 0;
 $tope = 4;
 
-if($titulosModulos[0] == "ARTÍCULOS GRATUITOS"){
+// if($titulosModulos[0] == ""){
 
-$ordenar = "id";
-$item = "precio";
-$valor = 0;
-$modo = "DESC";
+// $ordenar = "id";
+// $item = "precio";
+// $valor = 0;
+// $modo = "DESC";
 
-$gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
+// $gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 
-}
+// }
 
-if($titulosModulos[1] == "LO MÁS VENDIDO"){
+if($titulosModulos[0] == "LO MÁS VENDIDO"){
 
 $ordenar = "ventas";
 $item = "estado";
@@ -56,7 +56,7 @@ $ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $ba
 
 }
 
-if($titulosModulos[2] == "LO MÁS VISTO"){
+if($titulosModulos[1] == "LO MÁS VISTO"){
 
 $ordenar = "vistas";
 $item = "estado";
@@ -67,7 +67,7 @@ $vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $ba
 
 }
 
-$modulos = array($gratis, $ventas, $vistas);
+$modulos = array($ventas, $vistas);
 
 for($i = 0; $i < count($titulosModulos); $i ++){
 
@@ -200,7 +200,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 							if($value["precio"] == 0){
 
-								echo '<h2><small>GRATIS</small></h2>';
+								// echo '<h2><small>GRATIS</small></h2>';
 
 							}else{
 
@@ -210,7 +210,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 											<small>
 						
-												<strong class="oferta">USD $'.$value["precio"].'</strong>
+												<strong class="oferta">PEN S/.'.$value["precio"].'</strong>
 
 											</small>
 
@@ -220,7 +220,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 								}else{
 
-									echo '<h2><small>USD $'.$value["precio"].'</small></h2>';
+									 echo '<h2><small>PEN S/.'.$value["precio"].'</small></h2>';
 
 								}
 								
@@ -248,7 +248,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 											</button>';
 
-										}else{
+								} else{
 
 											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
 
@@ -339,7 +339,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 							if($value["precio"] == 0){
 
-								echo '<h2><small>GRATIS</small></h2>';
+								// echo '<h2><small>GRATIS</small></h2>';
 
 							}else{
 
@@ -349,7 +349,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 											<small>
 						
-												<strong class="oferta">USD $'.$value["precio"].'</strong>
+												<strong class="oferta">PEN S/.'.$value["precio"].'</strong>
 
 											</small>
 
@@ -359,7 +359,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 								}else{
 
-									echo '<h2><small>USD $'.$value["precio"].'</small></h2>';
+									 echo '<h2><small>PEN S/.'.$value["precio"].'</small></h2>';
 
 								}
 								
@@ -383,7 +383,9 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 											</button>';
 
-										}else{
+										
+										}
+										else{
 
 											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
 

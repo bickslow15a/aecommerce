@@ -9,7 +9,7 @@ CREADOR DE IP
 
 //$ip = $_SERVER['REMOTE_ADDR'];
 
-$ip = "192.168.0.104";
+$ip = "162.168.5.104";
 
 //http://www.geoplugin.net/
 
@@ -30,63 +30,55 @@ $totalVisitas = ControladorVisitas::ctrMostrarTotalVisitas();
 BREADCRUMB VISITAS
 ======================================-->
 <div class="container-fluid well well-sm">
-
 	<div class="container">
-
 		<div class="row">
-
 			<ul class="breadcrumb lead">
-
-			<h2 class="pull-right"><small>Tu eres nuestro visitante # <?php echo $totalVisitas["total"];?></small></h2>
-
+			<h2 class="text-center"><small>Tu eres nuestro visitante # <?php echo $totalVisitas["total"];?></small></h2>
 			</ul>
-
 		</div>
-
 	</div>
-
 </div>
 
 <!--=====================================
 MÓDULO VISITAS
 ======================================-->
 
-<div class="container-fluid">
+<!-- <div class="container-fluid">
 
 	<div class="container">
 
-		<div class="row">
+		<div class="row"> -->
 
-		<?php
+	//<?php
 
-		$paises = ControladorVisitas::ctrMostrarPaises();
+	//	$paises = ControladorVisitas::ctrMostrarPaises();
 
-		$coloresPaises = array("#09F","#900","#059","#260","#F09","#02A");
+		//$coloresPaises = array("#09F","#900","#059","#260","#F09","#02A");
 
-		$indice = -1;
+		//$indice = -1;
 
-		foreach($paises as $key => $value){
+		// foreach($paises as $key => $value){
 
-			$promedio = $value["cantidad"] * 100 / $totalVisitas["total"];
+		// 	$promedio = $value["cantidad"] * 100 / $totalVisitas["total"];
 
-			$indice++;
+		// 	$indice++;
 
-			echo '<div class="col-md-2 col-sm-4 col-xs-12 text-center">
+		// 	echo '<div class="col-md-2 col-sm-4 col-xs-12 text-center">
 
-					<h2 class="text-muted">'.$value["pais"].'</h2>
+		// 			<h2 class="text-muted">'.$value["pais"].'</h2>
 
-					<input type="text" class="knob" value="'.round($promedio).'" data-width="90" data-height="90" data-fgcolor="'.$coloresPaises[$indice].'" data-readonly="true">
+		// 			<input type="text" class="knob" value="'.round($promedio).'" data-width="90" data-height="90" data-fgcolor="'.$coloresPaises[$indice].'" data-readonly="true">
 
-					<p class="text-muted text-center" style="font-size:12px"> '.round($promedio).'% de las visitas</p>
+		// 			<p class="text-muted text-center" style="font-size:12px"> '.round($promedio).'% de las visitas</p>
 
-				</div>';
-		}
+		// 		</div>';
+		// }
 
 
-		?>
+	//?>
 
-		</div>
+		<!-- </div>
 
 	</div>
 
-</div>
+</div> -->
