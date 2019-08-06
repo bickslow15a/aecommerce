@@ -440,7 +440,7 @@ $(document).on("change", ".cantidadItem", function(){
 		$(this).attr("nuevoStock", $(this).attr("stock"));
 	
 		
-		sumaSubtotales()
+		sumaSubtotales();
 
 		swal({
 	      title: "La cantidad supera el Stock",
