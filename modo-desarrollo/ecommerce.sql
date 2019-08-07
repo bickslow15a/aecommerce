@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-08-2019 a las 18:12:10
+-- Tiempo de generación: 07-08-2019 a las 22:48:08
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -119,6 +119,33 @@ CREATE TABLE `categorias` (
 
 INSERT INTO `categorias` (`id`, `categoria`, `ruta`, `estado`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `fecha`) VALUES
 (1, 'ROPA', 'ropa', 1, 0, 0, 0, '', '0000-00-00 00:00:00', '2018-03-13 05:06:34');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id` int(11) NOT NULL,
+  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
+  `documento` int(11) NOT NULL,
+  `email` text COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` text COLLATE utf8_spanish_ci NOT NULL,
+  `direccion` text COLLATE utf8_spanish_ci NOT NULL,
+  `compras` int(11) NOT NULL,
+  `ultima_compra` datetime NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direccion`, `compras`, `ultima_compra`, `fecha`) VALUES
+(1, 'JOE', 70552204, 'chapiamadurand15@gmail.com', '999999999', 'jr.carlos dellpeiane 4009 san martin de porres', 0, '0000-00-00 00:00:00', '2019-08-07 15:15:35'),
+(2, 'greecy', 70552203, 'dgreeypasteleria@gmail.com', '998521715', 'jr.carlos dellpeiane 4009 san martin de porres', 0, '0000-00-00 00:00:00', '2019-08-07 15:16:10'),
+(3, 'pedro', 7520324, 'sss@msil.com', '789456123', 'asdf', 0, '0000-00-00 00:00:00', '2019-08-07 15:57:25');
 
 -- --------------------------------------------------------
 
@@ -268,7 +295,7 @@ CREATE TABLE `notificaciones` (
 --
 
 INSERT INTO `notificaciones` (`id`, `nuevosUsuarios`, `nuevasVentas`, `nuevasVisitas`) VALUES
-(1, 0, 0, 1);
+(1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -340,9 +367,9 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`, `estado`, `titulo`, `titular`, `descripcion`, `multimedia`, `detalles`, `precio`, `stock`, `portada`, `vistas`, `ventas`, `vistasGratis`, `ventasGratis`, `ofertadoPorCategoria`, `ofertadoPorSubCategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `peso`, `entrega`, `fecha`) VALUES
-(1, 1, 1, 'fisico', 'vestido-clasico-11', 1, 'Vestido Clásico', 'asdsadas...', 'asdsadas', '[{\"foto\":\"vistas/img/multimedia/tennis-verde/img-01.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-02.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-03.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-04.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-05.jpg\"}]', '{\"Talla\":[\"36\",\"38\",\"40\"],\"Color\":[\"rojo\",\"negro\",\"blanco\"],\"Marca\":[]}', 14, 11, 'vistas/img/productos/ropa/ropa02.jpg', 1, 0, 55, 12, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, 10, '2019-08-05 17:17:12'),
-(2, 1, 3, 'fisico', 'top-dama-11', 1, 'Top Dama', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus, consectetur beatae fugit odio iure repudiandae quia distinctio, id ducimus molestiae. Obcaecati, unde. Illo molestiae dolorum, saepe nisi enim iusto.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto maxime quas modi, eveniet fugiat. Alias voluptatem cum consectetur nobis quod, excepturi recusandae, itaque facere minima officiis autem illum, perferendis provident! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto maxime quas modi, eveniet fugiat. Alias voluptatem cum consectetur nobis quod, excepturi recusandae, itaque facere minima officiis autem illum, perferendis provident!', '[{\"foto\":\"vistas/img/multimedia/tennis-verde/img-01.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-02.jpg\"}, 	{\"foto\":\"vistas/img/multimedia/tennis-verde/img-03.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-04.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-05.jpg\"}]', '{\"Talla\": [36,38,40],\"Color\": [\"rojo\",\"negro\",\"blanco\"],\"Marca\":\"\"}', 2, 10, 'vistas/img/productos/ropa/ropa06.jpg', 6, 1, 56, 12, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, 10, '2019-08-06 14:23:58'),
-(3, 1, 1, 'fisico', 'jean-blushe', 1, 'jean blushe', 'jean blushe con ultimo mooda blebleble...', 'jean blushe con ultimo mooda blebleble', '[{\"foto\":\"vistas/img/multimedia/jean-blushe/images (2).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images (1).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images.jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/DVDA00428CE26.jpg\"}]', '{\"Talla\":[\"28\",\"30\",\"32\",\"34\"],\"Color\":[\"negro\",\"azul\",\"vintage\"],\"Marca\":[]}', 35, 5, 'vistas/img/productos/jean-blushe.jpg', 14, 1, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1.3, 2, '2019-08-06 14:23:51');
+(1, 1, 1, 'fisico', 'vestido-clasico-11', 1, 'Vestido Clásico', 'asdsadas...', 'asdsadas', '[{\"foto\":\"vistas/img/multimedia/tennis-verde/img-01.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-02.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-03.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-04.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-05.jpg\"}]', '{\"Talla\":[\"36\",\"38\",\"40\"],\"Color\":[\"rojo\",\"negro\",\"blanco\"],\"Marca\":[]}', 14, 0, 'vistas/img/productos/ropa/ropa02.jpg', 7, 0, 55, 12, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, 10, '2019-08-07 20:23:01'),
+(2, 1, 3, 'fisico', 'top-dama-11', 1, 'Top Dama', 'asd...', 'asd', '[{\"foto\":\"vistas/img/multimedia/tennis-verde/img-01.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-02.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-03.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-04.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-05.jpg\"}]', '{\"Talla\":[\"36\",\"38\",\"40\"],\"Color\":[\"rojo\",\"negro\",\"blanco\"],\"Marca\":[]}', 2, 25, 'vistas/img/productos/ropa/ropa06.jpg', 7, 1, 56, 12, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, 2, '2019-08-07 20:30:16'),
+(3, 1, 1, 'fisico', 'jean-blushe', 1, 'jean blushe', 'jean blushe con ultimo mooda blebleble...', 'jean blushe con ultimo mooda blebleble', '[{\"foto\":\"vistas/img/multimedia/jean-blushe/images (2).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images (1).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images.jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/DVDA00428CE26.jpg\"}]', '{\"Talla\":[\"28\",\"30\",\"32\",\"34\"],\"Color\":[\"negro\",\"azul\",\"vintage\"],\"Marca\":[]}', 35, 5, 'vistas/img/productos/jean-blushe.jpg', 23, 1, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1.3, 2, '2019-08-07 20:20:36');
 
 -- --------------------------------------------------------
 
@@ -440,17 +467,17 @@ INSERT INTO `usuarios` (`id`, `nombre`, `password`, `email`, `modo`, `foto`, `ve
 --
 
 CREATE TABLE `ventas` (
-  `id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL,
   `codigo` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
   `id_administrador` int(11) NOT NULL,
-  `id_productos` int(11) NOT NULL,
+  `productos` text COLLATE utf8_spanish_ci NOT NULL,
   `impuesto` float NOT NULL,
   `neto` float NOT NULL,
   `total` float NOT NULL,
-  `meto_pago` text NOT NULL,
+  `metodo_pago` text COLLATE utf8_spanish_ci NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -471,7 +498,7 @@ CREATE TABLE `visitaspaises` (
 --
 
 INSERT INTO `visitaspaises` (`id`, `pais`, `codigo`, `cantidad`, `fecha`) VALUES
-(1, 'United States', 'US', 5, '2019-08-06 13:14:36'),
+(1, 'United States', 'US', 6, '2019-08-07 14:03:29'),
 (2, 'Japan', 'JP', 65, '2018-03-27 13:26:30'),
 (3, 'Spain', 'ES', 10, '2017-12-05 21:02:53'),
 (4, 'Colombia', 'CO', 5, '2017-12-05 21:02:55'),
@@ -593,7 +620,8 @@ INSERT INTO `visitaspersonas` (`id`, `ip`, `pais`, `visitas`, `fecha`) VALUES
 (107, '192.168.101.104', 'Unknown', 1, '2019-08-03 15:58:00'),
 (108, '162.168.5.104', 'United States', 1, '2019-08-03 15:59:01'),
 (109, '162.168.5.104', 'United States', 1, '2019-08-05 13:08:05'),
-(110, '162.168.5.104', 'United States', 1, '2019-08-06 13:14:35');
+(110, '162.168.5.104', 'United States', 1, '2019-08-06 13:14:35'),
+(111, '162.168.5.104', 'United States', 1, '2019-08-07 14:03:28');
 
 --
 -- Índices para tablas volcadas
@@ -621,6 +649,12 @@ ALTER TABLE `cabeceras`
 -- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -684,6 +718,12 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `visitaspaises`
 --
 ALTER TABLE `visitaspaises`
@@ -719,6 +759,11 @@ ALTER TABLE `cabeceras`
 --
 ALTER TABLE `categorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
@@ -770,6 +815,11 @@ ALTER TABLE `subcategorias`
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `visitaspaises`
 --
 ALTER TABLE `visitaspaises`
@@ -778,7 +828,7 @@ ALTER TABLE `visitaspaises`
 -- AUTO_INCREMENT de la tabla `visitaspersonas`
 --
 ALTER TABLE `visitaspersonas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
