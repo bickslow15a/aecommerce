@@ -25,7 +25,7 @@ CAJAS SUPERIORES
     <!-- inner -->
     <div class="inner">
       
-      <h3>$<?php echo number_format($ventas["total"]); ?></h3>
+      <h3>S/.<?php echo number_format($ventas["total"]); ?></h3>
 
       <p>Ventas</p>
     

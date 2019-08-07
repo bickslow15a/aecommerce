@@ -27,6 +27,9 @@ session_start();
   <!-- Ionicons -->
   <link rel="stylesheet" href="vistas/bower_components/Ionicons/css/ionicons.min.css">
 
+  <!-- daterangepicker -->
+  <link rel="stylesheet" href="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+
   <!-- Theme style -->
   <link rel="stylesheet" href="vistas/dist/css/AdminLTE.min.css">
   
@@ -100,6 +103,13 @@ session_start();
   <!-- jQuery Knob Chart -->
   <script src="vistas/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
 
+<!-- jQuery Number -->
+  <script src="vistas/bower_components/jqueryNumber/jquerynumber.min.js"></script>
+
+<!-- jQuery daterangerpicker -->
+    <script src="vistas/bower_components/moment/min/moment.min.js"></script>
+  <script src="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
   <!-- jvectormap -->
   <script src="vistas/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 
@@ -110,12 +120,13 @@ session_start();
 
   <!-- SweetAlert 2 https://sweetalert2.github.io/-->
   <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
-
+ 
   <!-- bootstrap color picker https://farbelous.github.io/bootstrap-colorpicker/v2/-->
   <script src="vistas/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 
   <!-- Bootstrap slider http://seiyria.com/bootstrap-slider/-->
   <script src="vistas/plugins/bootstrap-slider/bootstrap-slider.js"></script>
+
 
   <!-- DataTables https://datatables.net/-->
   <script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
@@ -219,6 +230,7 @@ JS PERSONALIZADO
 <script src="vistas/js/gestorProductos.js"></script>
 <script src="vistas/js/gestorBanner.js"></script>
 <script src="vistas/js/gestorVentas.js"></script>
+<script src="vistas/js/ventas.js"></script>
 <script src="vistas/js/gestorVisitas.js"></script>
 <script src="vistas/js/gestorUsuarios.js"></script>
 <script src="vistas/js/gestorAdministradores.js"></script>

@@ -11,7 +11,7 @@ CAJAS SUPERIORES
     <!-- inner -->
     <div class="inner">
       
-      <h3>$150.000</h3>
+      <h3>S/.150.000</h3>
 
       <p>Ventas</p>
     

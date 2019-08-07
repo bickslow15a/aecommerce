@@ -1,3 +1,4 @@
+
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -34,11 +35,21 @@
 
         </a>
 
+         <button type="button" class="btn btn-default pull-right" id="daterange-btn">
+           
+            <span>
+              <i class="fa fa-calendar"></i> Rango de fecha
+            </span>
+
+            <i class="fa fa-caret-down"></i>
+
+         </button>
+
       </div>
 
       <div class="box-body">
         
-       <table class="table table-bordered table-striped dt-responsive tablas">
+       <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
          
         <thead>
          
@@ -59,42 +70,91 @@
         </thead>
 
         <tbody>
-          
-          <tr>
 
-            <td>1</td>
+        <?php
 
-            <td>1000123</td>
+          if(isset($_GET["fechaInicial"])){
 
-            <td>Juan Villegas</td>
+            $fechaInicial = $_GET["fechaInicial"];
+            $fechaFinal = $_GET["fechaFinal"];
 
-            <td>Julio Gómez</td>
+          }else{
 
-            <td>TC-12412425346</td>
+            $fechaInicial = null;
+            $fechaFinal = null;
 
-            <td>$ 1,000.00</td>
+          }
 
-            <td>$ 1,190.00</td>
+          $respuesta = ControladorVenta::ctrRangoFechasVentas($fechaInicial, $fechaFinal);
 
-            <td>2017-12-11 12:05:32</td>
+          foreach ($respuesta as $key => $value) {
+           
+           echo '<tr>
 
-            <td>
+                  <td>'.($key+1).'</td>
 
-              <div class="btn-group">
-                  
-                <button class="btn btn-info"><i class="fa fa-print"></i></button>
+                  <td>'.$value["codigo"].'</td>';
 
-                <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                  $itemCliente = "id";
+                  $valorCliente = $value["id_cliente"];
 
-              </div>  
+                  $respuestaCliente = ControladorClientes::ctrMostrarClientes($itemCliente, $valorCliente);
 
-            </td>
+                  echo '<td>'.$respuestaCliente["nombre"].'</td>';
 
-          </tr>
-          
+                  $itemUsuario = "id";
+                  $valorUsuario = $value["id_vendedor"];
+
+                  $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
+
+                  echo '<td>'.$respuestaUsuario["nombre"].'</td>
+
+                  <td>'.$value["metodo_pago"].'</td>
+
+                  <td>$ '.number_format($value["neto"],2).'</td>
+
+                  <td>$ '.number_format($value["total"],2).'</td>
+
+                  <td>'.$value["fecha"].'</td>
+
+                  <td>
+
+                    <div class="btn-group">
+                        
+                      <button class="btn btn-info btnImprimirFactura" codigoVenta="'.$value["codigo"].'">
+
+                        <i class="fa fa-print"></i>
+
+                      </button>';
+
+                      if($_SESSION["perfil"] == "Administrador"){
+
+                      echo '<button class="btn btn-warning btnEditarVenta" idVenta="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
+
+                      <button class="btn btn-danger btnEliminarVenta" idVenta="'.$value["id"].'"><i class="fa fa-times"></i></button>';
+
+                    }
+
+                    echo '</div>  
+
+                  </td>
+
+                </tr>';
+            }
+
+        ?>
+               
         </tbody>
 
        </table>
+
+       <?php
+
+      $eliminarVenta = new ControladorVenta();
+      $eliminarVenta -> ctrEliminarVenta();
+
+      ?>
+       
 
       </div>
 
@@ -103,4 +163,7 @@
   </section>
 
 </div>
+
+
+
 
