@@ -77,7 +77,7 @@ $(".tablaVentasNormal tbody").on("click", "button.agregarProducto", function(){
       	    var descripcion = respuesta["descripcion"];
           	var stock = respuesta["stock"];
           	var precio = respuesta["precio"];
-
+          	console.log(stock);
           	/*=============================================
           	EVITAR AGREGAR PRODUTO CUANDO EL STOCK ESTÁ EN CERO
           	=============================================*/
