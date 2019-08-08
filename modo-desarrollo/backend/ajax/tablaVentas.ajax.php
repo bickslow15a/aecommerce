@@ -18,6 +18,7 @@ class TablaVentas{
   public function mostrarTabla(){	
 
   	$ventas = ControladorVentas::ctrMostrarVentas();
+ echo $ventas;
 
   	if(count($ventas) == 0){
 

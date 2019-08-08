@@ -12,6 +12,7 @@ CARGAR LA TABLA DINÁMICA DE VENTAS
 // 	}
 
 // })// 
+// ------------------------------------------------------------ sistema inventario - PALOMINO ----------------------------------------
 
 $('.tablaVentasNormal').DataTable( {
     "ajax": "ajax/datatable-ventas.ajax.php",
@@ -683,6 +684,10 @@ function listarMetodos(){
 	}
 
 }
+
+
+// ------------------------------------------------------------Fin sistema inventario - PALOMINO ----------------------------------------
+
 
 /*=============================================
 BOTON EDITAR VENTA
