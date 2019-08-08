@@ -153,13 +153,7 @@ SECCIÓN PERFIL
 																<i class="fa fa-check"></i> Despachado
 															</div>
 
-															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
-																<i class="fa fa-clock-o"></i> Enviando
-															</div>
-
-															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
-																<i class="fa fa-clock-o"></i> Entregado
-															</div>
+															
 
 														</div>';
 
@@ -177,9 +171,7 @@ SECCIÓN PERFIL
 																<i class="fa fa-check"></i> Enviando
 															</div>
 
-															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
-																<i class="fa fa-clock-o"></i> Entregado
-															</div>
+															
 
 														</div>';
 
@@ -422,11 +414,20 @@ SECCIÓN PERFIL
 
 												<span style="color:rgba(0,0,0,0)">-</span>';
 
-												if($value2["nuevo"] != 0){
+												$fecha = date('Y-m-d');
+												$fechaActual = strtotime('-30 day', strtotime($fecha));
+												$fechaNueva = date('Y-m-d', $fechaActual);
+
+												if($fechaNueva < $value2["fecha"]){
 
 													echo '<span class="label label-warning fontSize">Nuevo</span> ';
 
 												}
+												// if($value2["nuevo"] != 0){
+
+												// 	echo '<span class="label label-warning fontSize">Nuevo</span> ';
+
+												// }
 
 												if($value2["oferta"] != 0){
 
@@ -454,17 +455,17 @@ SECCIÓN PERFIL
 
 													<small>
 								
-														<strong class="oferta" style="font-size:12px">USD $'.$value2["precio"].'</strong>
+														<strong class="oferta" style="font-size:12px">PEN S/.'.$value2["precio"].'</strong>
 
 													</small>
 
-													<small>$'.$value2["precioOferta"].'</small>
+													<small>S/.'.$value2["precioOferta"].'</small>
 												
 												</h2>';
 
 										}else{
 
-											echo '<h2 style="margin-top:-10px"><small>USD $'.$value2["precio"].'</small></h2>';
+											echo '<h2 style="margin-top:-10px"><small>PEN S/.'.$value2["precio"].'</small></h2>';
 
 										}
 										

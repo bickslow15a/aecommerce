@@ -49,7 +49,7 @@ MÓDULO VISITAS
 
 		<div class="row"> -->
 
-	//<?php
+	<?php
 
 	//	$paises = ControladorVisitas::ctrMostrarPaises();
 

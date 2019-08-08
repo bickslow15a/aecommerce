@@ -826,25 +826,25 @@ function divisas(metodoPago){
 
 		$("#cambiarDivisa").append(
 								   '<option value="">-Selecciones-</option>' +
-			                       '<option value="USD">USD</option>'+
-			                       '<option value="EUR">EUR</option>'+
-			                       '<option value="GBP">GBP</option>'+
-			                       '<option value="MXN">MXN</option>'+
-			                       '<option value="JPY">JPY</option>'+
-			                       '<option value="CAD">CAD</option>'+
-			                       '<option value="BRL">BRL</option>')
+			                        '<option value="USD">USD</option>')
+			                    //    '<option value="EUR">EUR</option>'+
+			                    //    '<option value="GBP">GBP</option>'+
+			                    //    '<option value="MXN">MXN</option>'+
+			                    //    '<option value="JPY">JPY</option>'+
+			                    //    '<option value="CAD">CAD</option>'+
+			                    //    '<option value="BRL">BRL</option>'
 
 	}else{
 
 		$("#cambiarDivisa").append(
 								   '<option value="">-Selecciones-</option>' +
 			                       '<option value="USD">USD</option>'+
-			                       '<option value="PEN">PEN</option>'+
-			                       '<option value="COP">COP</option>'+
-			                       '<option value="MXN">MXN</option>'+
-			                       '<option value="CLP">CLP</option>'+
-			                       '<option value="ARS">ARS</option>'+
-			                       '<option value="BRL">BRL</option>')
+									'<option value="PEN">PEN</option>')
+			                    //    '<option value="COP">COP</option>'+
+			                    //    '<option value="MXN">MXN</option>'+
+			                    //    '<option value="CLP">CLP</option>'+
+			                    //    '<option value="ARS">ARS</option>'+
+			                    //    '<option value="BRL">BRL</option>'
 
 	}
 
@@ -883,11 +883,13 @@ $("#cambiarDivisa").change(function(){
 	    dataType:"jsonp",
 	    success:function(respuesta){
 
-	    	var conversion = (respuesta["PEN_"+divisa]["val"]).toFixed(2);
-
+			var conversion = (respuesta["PEN_"+divisa]["val"]).toFixed(2);
+			
+		console.log(respuesta);
+		
 	    	$(".cambioDivisa").html(divisa);
 
-	    	if(divisa == "USD"){
+	    	if(divisa == "PEN"){
 
 	    		$(".valorSubtotal").html($(".valorSubtotal").attr("valor"))
 		    	$(".valorTotalEnvio").html($(".valorTotalEnvio").attr("valor"))
@@ -1108,7 +1110,7 @@ function pagarConPayu(){
 	          var signature = hex_md5(apiKey+"~"+merchantId+"~"+referenceCode+"~"+total+"~"+divisa);
 
 
-	          if(divisa == "COP"){
+	          if(divisa == "PEN"){
 
 	          	var taxReturnBase = (total - impuesto).toFixed(2)
 
@@ -1160,7 +1162,6 @@ function pagarConPayu(){
 				GENERADOR DE TARJETAS DE CRÉDITO
 				http://www.elfqrin.com/discard_credit_card_generator.php
 				=============================================*/
-
 	      }
 
 	  })

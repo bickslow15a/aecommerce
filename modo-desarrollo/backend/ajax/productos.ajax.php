@@ -150,8 +150,6 @@ class AjaxProductos{
 		echo json_encode($respuesta);
 
 	}
-
-
 	/*=============================================
 	EDITAR PRODUCTOS
 	=============================================*/	

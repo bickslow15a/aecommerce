@@ -83,7 +83,7 @@ FOOTER
 
 					<br><br>
 
-					<i class="fa fa-map-marker" aria-hidden="true"></i> jLos heraldos y magnolias mz.A Lt. 23 SJL.
+					<i class="fa fa-map-marker" aria-hidden="true"></i> Los heraldos y magnolias mz.A Lt. 23 SJL.
 
 					<br><br>
 					Lima | Perú
