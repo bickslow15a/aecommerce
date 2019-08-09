@@ -65,7 +65,7 @@ $(".tablaVentasNormal tbody").on("click", "button.agregarProducto", function(){
 
      $.ajax({
 
-		url:"ajax/productos.ajax.php",
+		url:"ajax/productosfetch.ajax.php",
       	method: "POST",
       	data: datos,
       	cache: false,

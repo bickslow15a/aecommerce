@@ -140,6 +140,7 @@ class AjaxProductos{
 
 	public $idProducto;
 
+
 	public function ajaxTraerProducto(){
 
 		$item = "id";
@@ -150,8 +151,6 @@ class AjaxProductos{
 		echo json_encode($respuesta);
 
 	}
-
-
 	/*=============================================
 	EDITAR PRODUCTOS
 	=============================================*/	
@@ -300,6 +299,8 @@ if(isset($_POST["idProducto"])){
 	$traerProducto -> ajaxTraerProducto();
 
 }
+
+
 
 /*=============================================
 EDITAR PRODUCTO

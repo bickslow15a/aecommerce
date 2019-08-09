@@ -44,6 +44,19 @@ class ControladorProductos{
 	
 	}
 
+	/*=============================================
+	MOSTRAR PRODUCTOS fetch
+	=============================================*/
+
+	static public function ctrMostrarProductosfetch($item, $valor){
+
+		$tabla = "productos";
+
+		$respuesta = ModeloProductos::mdlMostrarProductosfetch($tabla, $item, $valor);
+
+		return $respuesta;
+	
+	}
 
 	/*=============================================
 	SUBIR MULTIMEDIA

@@ -9,6 +9,8 @@ require_once "../modelos/productos.modelo.php";
 require_once "../controladores/usuarios.controlador.php";
 require_once "../modelos/usuarios.modelo.php";
 
+require_once "../modelos/rutas.php";
+
 class TablaVentas{
 
   /*=============================================
@@ -17,8 +19,10 @@ class TablaVentas{
 
   public function mostrarTabla(){	
 
-  	$ventas = ControladorVentas::ctrMostrarVentas();
- echo $ventas;
+	$ventas = ControladorVentas::ctrMostrarVentas();
+
+	$url = Ruta::ctrRuta();
+
 
   	if(count($ventas) == 0){
 
@@ -69,7 +73,7 @@ class TablaVentas{
 
 		if($traerCliente["foto"] != ""){
 
-			$imgCliente = "<img class='img-circle' src='".$traerCliente["foto"]."' width='70px'>";
+			$imgCliente = "<img class='img-circle' src='".$url.$traerCliente["foto"]."' width='70px'>";
 
 		}else{
 

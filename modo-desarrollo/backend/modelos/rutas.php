@@ -8,7 +8,7 @@ class Ruta{
 
 static	public function ctrRuta(){
 
-		return "http://localhost/frontend/";
+		return "http://localhost/aecommerce/modo-desarrollo/frontend/";
 
 	}
 
@@ -18,7 +18,7 @@ static	public function ctrRuta(){
 
 	static public function ctrRutaServidor(){
 
-		return "http://localhost/backend/";
+		return "http://localhost/aecommerce/modo-desarrollo/backend/";
 
 	}
 

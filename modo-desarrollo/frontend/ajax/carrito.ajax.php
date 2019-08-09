@@ -97,11 +97,11 @@ if(isset($_POST["divisa"])){
 
 		$verificarProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
 
-		$divisa = file_get_contents("https://free.currencyconverterapi.com/api/v3/convert?q=USD_".$_POST["divisa"]."&compact=y&apiKey=774d0e76dec3d1fd854e");
+		$divisa = file_get_contents("https://free.currencyconverterapi.com/api/v3/convert?q=PEN_".$_POST["divisa"]."&compact=y&apiKey=774d0e76dec3d1fd854e");
 
 		$jsonDivisa = json_decode($divisa, true);
 
-		$conversion = number_format($jsonDivisa["USD_".$_POST["divisa"]]["val"],2);
+		$conversion = number_format($jsonDivisa["PEN_".$_POST["divisa"]]["val"],2);
 
 		if($verificarProductos["precioOferta"] == 0){
 
