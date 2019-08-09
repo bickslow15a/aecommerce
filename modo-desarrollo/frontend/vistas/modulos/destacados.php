@@ -214,7 +214,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 											</small>
 
-											<small>$'.$value["precioOferta"].'</small>
+											<small>S/.'.$value["precioOferta"].'</small>
 										
 										</h2>';
 

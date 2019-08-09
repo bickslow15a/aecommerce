@@ -12,6 +12,8 @@ require_once "../../../modelos/usuarios.modelo.php";
 require_once "../../../controladores/productos.controlador.php";
 require_once "../../../modelos/productos.modelo.php";
 
+require_once "../../../modelos/rutas.php";
+
 class imprimirFactura{
 
 public $codigo;
@@ -22,7 +24,7 @@ public function traerImpresionFactura(){
 
 $itemVenta = "codigo";
 $valorVenta = $this->codigo;
-
+$url=ctrRutaServidor();
 $respuestaVenta = ControladorVentas::ctrMostrarVentas($itemVenta, $valorVenta);
 
 $fecha = substr($respuestaVenta["fecha"],0,-8);
@@ -41,7 +43,7 @@ $respuestaCliente = ControladorClientes::ctrMostrarClientes($itemCliente, $valor
 //TRAEMOS LA INFORMACIÓN DEL VENDEDOR
 
 $itemVendedor = "id";
-$valorVendedor = $respuestaVenta["id_vendedor"];
+$valorVendedor = $respuestaVenta["id_administrador"];
 
 $respuestaVendedor = ControladorUsuarios::ctrMostrarUsuarios($itemVendedor, $valorVendedor);
 
@@ -63,7 +65,7 @@ $bloque1 = <<<EOF
 		
 		<tr>
 			
-			<td style="width:150px"><img src="images/logo-negro-bloque.png"></td>
+			<td style="width:150px"><img src="'.$url.'vistas/img/plantilla/logo.png"></td>
 
 			<td style="background-color:white; width:140px">
 				
@@ -87,7 +89,7 @@ $bloque1 = <<<EOF
 					Teléfono: 300 786 52 49
 					
 					<br>
-					ventas@inventorysystem.com
+					soporte@tantum.com.pe
 
 				</div>
 				

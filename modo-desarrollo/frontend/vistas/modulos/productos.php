@@ -124,7 +124,7 @@ if($banner != null){
 
 								if($ofertas[0]["precioOferta"] != 0){
 
-									echo '<h2 style="color:#fff"><strong>Todos los productos a $ '.$ofertas[0]["precioOferta"].'</strong></h2>';
+									echo '<h2 style="color:#fff"><strong>Todos los productos a S/. '.$ofertas[0]["precioOferta"].'</strong></h2>';
 
 								}
 
@@ -450,7 +450,7 @@ LISTAR PRODUCTOS
 
 											</small>
 
-											<small>$'.$value["precioOferta"].'</small>
+											<small>S/.'.$value["precioOferta"].'</small>
 
 										</h2>';
 
@@ -589,7 +589,7 @@ LISTAR PRODUCTOS
 
 											</small>
 
-											<small>$'.$value["precioOferta"].'</small>
+											<small>S/.'.$value["precioOferta"].'</small>
 
 										</h2>';
 

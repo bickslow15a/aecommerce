@@ -34,7 +34,7 @@ PRODUCTOS RECIENTES
 
 	    <?php
 
-	    	for($i = 0; $i < 5; $i++){
+	    	for($i = 0; $i < 3; $i++){
 
 	    		echo '<li class="item">
 				        <div class="product-img">
@@ -45,11 +45,11 @@ PRODUCTOS RECIENTES
 
 				       	if($productos[$i]["precio"] == 0){
 				          	
-				            echo '<span class="label label-warning pull-right">GRATIS</span></a>';
+				            // echo '<span class="label label-warning pull-right">GRATIS</span></a>';
 
 				         }else{
 
-				         	echo '<span class="label label-warning pull-right">$'.$productos[$i]["precio"].'</span></a>';
+				         	echo '<span class="label label-warning pull-right">S/.'.$productos[$i]["precio"].'</span></a>';
 
 				        }
 				              
