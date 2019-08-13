@@ -107,7 +107,7 @@ class ControladorVenta{
 
 			$tabla = "ventas";
 
-			$datos = array("id_administrador"=>$_POST["id_administrador"],
+			$datos = array("id_administrador"=>$_POST["idAdmin"],
 						   "id_cliente"=>$_POST["seleccionarCliente"],
 						   "codigo"=>$_POST["nuevaVenta"],
 						   "productos"=>$_POST["listaProductos"],
@@ -161,7 +161,7 @@ class ControladorVenta{
 			$item = "codigo";
 			$valor = $_POST["editarVenta"];
 
-			$traerVenta = ModeloVentas::mdlMostrarVentas($tabla, $item, $valor);
+			$traerVenta = ModeloVenta::mdlMostrarVenta($tabla, $item, $valor);
 
 			/*=============================================
 			REVISAR SI VIENE PRODUCTOS EDITADOS
@@ -239,7 +239,7 @@ class ControladorVenta{
 					$valor_2 = $value["id"];
 					$orden = "id";
 
-					$traerProducto_2 = ModeloProductos::mdlMostrarProductos($tablaProductos_2, $item_2, $valor_2, $orden);
+					$traerProducto_2 = ModeloProductos::mdlMostrarProductosfetch($tablaProductos_2, $item_2, $valor_2, $orden);
 
 					$item1a_2 = "ventas";
 					$valor1a_2 = $value["cantidad"] + $traerProducto_2["ventas"];
@@ -281,7 +281,7 @@ class ControladorVenta{
 			GUARDAR CAMBIOS DE LA COMPRA
 			=============================================*/	
 
-			$datos = array("id_administrador"=>$_POST["id_administrador"],
+			$datos = array("id_administrador"=>$_POST["idAdmin"],
 						   "id_cliente"=>$_POST["seleccionarCliente"],
 						   "codigo"=>$_POST["editarVenta"],
 						   "productos"=>$listaProductos,
@@ -291,7 +291,7 @@ class ControladorVenta{
 						   "metodo_pago"=>$_POST["listaMetodoPago"]);
 
 
-			$respuesta = ModeloVentas::mdlEditarVenta($tabla, $datos);
+			$respuesta = ModeloVenta::mdlEditarVenta($tabla, $datos);
 
 			if($respuesta == "ok"){
 
@@ -334,7 +334,7 @@ class ControladorVenta{
 			$item = "id";
 			$valor = $_GET["idVenta"];
 
-			$traerVenta = ModeloVentas::mdlMostrarVentas($tabla, $item, $valor);
+			$traerVenta = ModeloVenta::mdlMostrarVenta($tabla, $item, $valor);
 
 			/*=============================================
 			ACTUALIZAR FECHA ÚLTIMA COMPRA
@@ -345,7 +345,7 @@ class ControladorVenta{
 			$itemVentas = null;
 			$valorVentas = null;
 
-			$traerVentas = ModeloVentas::mdlMostrarVentas($tabla, $itemVentas, $valorVentas);
+			$traerVentas = ModeloVenta::mdlMostrarVenta($tabla, $itemVentas, $valorVentas);
 
 			$guardarFechas = array();
 
@@ -438,7 +438,7 @@ class ControladorVenta{
 			ELIMINAR VENTA
 			=============================================*/
 
-			$respuesta = ModeloVentas::mdlEliminarVenta($tabla, $_GET["idVenta"]);
+			$respuesta = ModeloVenta::mdlEliminarVenta($tabla, $_GET["idVenta"]);
 
 			if($respuesta == "ok"){
 
@@ -490,14 +490,14 @@ class ControladorVenta{
 
 			if(isset($_GET["fechaInicial"]) && isset($_GET["fechaFinal"])){
 
-				$ventas = ModeloVentas::mdlRangoFechasVentas($tabla, $_GET["fechaInicial"], $_GET["fechaFinal"]);
+				$ventas = ModeloVenta::mdlRangoFechasVentas($tabla, $_GET["fechaInicial"], $_GET["fechaFinal"]);
 
 			}else{
 
 				$item = null;
 				$valor = null;
 
-				$ventas = ModeloVentas::mdlMostrarVentas($tabla, $item, $valor);
+				$ventas = ModeloVenta::mdlMostrarVenta($tabla, $item, $valor);
 
 			}
 
@@ -536,7 +536,7 @@ class ControladorVenta{
 			foreach ($ventas as $row => $item){
 
 				$cliente = ControladorClientes::ctrMostrarClientes("id", $item["id_cliente"]);
-				$vendedor = ControladorUsuarios::ctrMostrarUsuarios("id", $item["id_vendedor"]);
+				$vendedor = ControladorAdministradores::ctrMostrarAdministradores("id", $item["id_administrador"]);
 
 			 echo utf8_decode("<tr>
 			 			<td style='border:1px solid #eee;'>".$item["codigo"]."</td> 
@@ -586,7 +586,7 @@ class ControladorVenta{
 
 		$tabla = "ventas";
 
-		$respuesta = ModeloVentas::mdlSumaTotalVentas($tabla);
+		$respuesta = ModeloVenta::mdlSumaTotalVentas($tabla);
 
 		return $respuesta;
 

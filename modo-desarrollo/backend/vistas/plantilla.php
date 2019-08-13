@@ -182,6 +182,8 @@ session_start();
            $_GET["ruta"]== "ventas-online" ||
            $_GET["ruta"]== "crear-venta" ||
            $_GET["ruta"]== "visitas" ||
+           $_GET["ruta"]== "editar-venta" ||
+           $_GET["ruta"]== "descargar-reporte" ||
            $_GET["ruta"]== "usuarios" ||
            $_GET["ruta"]== "clientes" ||
            $_GET["ruta"]== "mensajes" ||
@@ -231,6 +233,7 @@ JS PERSONALIZADO
 <script src="vistas/js/gestorBanner.js"></script>
 <script src="vistas/js/gestorVentas.js"></script>
 <script src="vistas/js/ventas.js"></script>
+<script src="vistas/js/reportes.js"></script>
 <script src="vistas/js/gestorVisitas.js"></script>
 <script src="vistas/js/gestorUsuarios.js"></script>
 <script src="vistas/js/gestorAdministradores.js"></script>

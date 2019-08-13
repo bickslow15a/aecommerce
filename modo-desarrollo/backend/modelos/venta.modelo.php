@@ -18,7 +18,7 @@ class ModeloVenta{
 
 			$stmt -> execute();
 
-			return $stmt -> fetchAll();
+			return $stmt -> fetch();
 
 		}else{
 

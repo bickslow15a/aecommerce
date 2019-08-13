@@ -105,7 +105,7 @@
                   $itemUsuario = "id";
                   $valorUsuario = $value["id_administrador"];
 
-                  $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
+                  $respuestaUsuario = ControladorAdministradores::ctrMostrarAdministradores($itemUsuario, $valorUsuario);
 
                   echo '<td>'.$respuestaUsuario["nombre"].'</td>
 
@@ -127,7 +127,7 @@
 
                       </button>';
 
-                      if($_SESSION["perfil"] == "Administrador"){
+                      if($_SESSION["perfil"] == "administrador"){
 
                       echo '<button class="btn btn-warning btnEditarVenta" idVenta="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
 

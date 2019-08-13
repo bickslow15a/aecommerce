@@ -381,7 +381,7 @@ $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function()
 
 	  $.ajax({
 
-     	url:"ajax/productos.ajax.php",
+     	url:"ajax/productosfetch.ajax.php",
       	method: "POST",
       	data: datos,
       	cache: false,
@@ -390,7 +390,7 @@ $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function()
       	dataType:"json",
       	success:function(respuesta){
       	    
-      	     $(nuevaDescripcionProducto).attr("idProducto", respuesta["id"]);
+      	    $(nuevaDescripcionProducto).attr("idProducto", respuesta["id"]);
       	    $(nuevaCantidadProducto).attr("stock", respuesta["stock"]);
       	    $(nuevaCantidadProducto).attr("nuevoStock", Number(respuesta["stock"])-1);
       	    $(nuevoPrecioProducto).val(respuesta["precio"]);

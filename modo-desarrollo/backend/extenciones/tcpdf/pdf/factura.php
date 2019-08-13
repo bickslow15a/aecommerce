@@ -1,13 +1,13 @@
 <?php
 
-require_once "../../../controladores/ventas.controlador.php";
-require_once "../../../modelos/ventas.modelo.php";
+require_once "../../../controladores/venta.controlador.php";
+require_once "../../../modelos/venta.modelo.php";
 
 require_once "../../../controladores/clientes.controlador.php";
 require_once "../../../modelos/clientes.modelo.php";
 
-require_once "../../../controladores/usuarios.controlador.php";
-require_once "../../../modelos/usuarios.modelo.php";
+require_once "../../../controladores/administradores.controlador.php";
+require_once "../../../modelos/administradores.modelo.php";
 
 require_once "../../../controladores/productos.controlador.php";
 require_once "../../../modelos/productos.modelo.php";
@@ -25,7 +25,7 @@ public function traerImpresionFactura(){
 $itemVenta = "codigo";
 $valorVenta = $this->codigo;
 $url=ctrRutaServidor();
-$respuestaVenta = ControladorVentas::ctrMostrarVentas($itemVenta, $valorVenta);
+$respuestaVenta = ControladorVenta::ctrMostrarVenta($itemVenta, $valorVenta);
 
 $fecha = substr($respuestaVenta["fecha"],0,-8);
 $productos = json_decode($respuestaVenta["productos"], true);
@@ -45,7 +45,7 @@ $respuestaCliente = ControladorClientes::ctrMostrarClientes($itemCliente, $valor
 $itemVendedor = "id";
 $valorVendedor = $respuestaVenta["id_administrador"];
 
-$respuestaVendedor = ControladorUsuarios::ctrMostrarUsuarios($itemVendedor, $valorVendedor);
+$respuestaVendedor = ControladorAdministradores::ctrMostrarAdministradores($itemVendedor, $valorVendedor);
 
 //REQUERIMOS LA CLASE TCPDF
 
