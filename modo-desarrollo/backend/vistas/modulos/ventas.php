@@ -103,7 +103,7 @@
                   echo '<td>'.$respuestaCliente["nombre"].'</td>';
 
                   $itemUsuario = "id";
-                  $valorUsuario = $value["id_vendedor"];
+                  $valorUsuario = $value["id_administrador"];
 
                   $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
 

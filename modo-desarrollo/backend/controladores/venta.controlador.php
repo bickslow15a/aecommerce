@@ -65,7 +65,7 @@ class ControladorVenta{
 			    $valor = $value["id"];
 			    $orden = "id";
 
-			    $traerProducto = ModeloProductos::mdlMostrarProductos($tablaProductos, $item, $valor, $orden);
+			    $traerProducto = ModeloProductos::mdlMostrarProducto($tablaProductos, $item, $valor, $orden);
 
 				$item1a = "ventas";
 				$valor1a = $value["cantidad"] + $traerProducto["ventas"];
@@ -116,7 +116,7 @@ class ControladorVenta{
 						   "total"=>$_POST["totalVenta"],
 						   "metodo_pago"=>$_POST["listaMetodoPago"]);
 
-			$respuesta = ModeloVentas::mdlIngresarVenta($tabla, $datos);
+			$respuesta = ModeloVenta::mdlIngresarVenta($tabla, $datos);
 
 			if($respuesta == "ok"){
 
