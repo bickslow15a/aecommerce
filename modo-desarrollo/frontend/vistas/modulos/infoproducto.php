@@ -1163,8 +1163,6 @@ ARTÏCULOS RELACIONADOS
 
 						</figure>
 
-						'.$value["id"].'
-
 						<h4>
 				
 							<small>

@@ -133,7 +133,24 @@ FOOTER
 
 </footer>
 
-
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#FF35D7"/>
+    </svg>
+  </div>
+  
+<script>
+ var loader = function() {
+    setTimeout(function() {
+      if($('#ftco-loader').length > 0) {
+        $('#ftco-loader').removeClass('show');
+      }
+    }, 1);
+  };
+  loader();
+</script>
 <!--=====================================
 FINAL
 ======================================-->
@@ -146,7 +163,7 @@ FINAL
 
 			<div class="col-sm-6 col-xs-12 text-left text-muted">
 
-				<h5>&copy; 2019 Todos los derechos reservados. Sitio elaborado Tantum</h5>
+				<h5>&copy; 2019 Todos los derechos reservados. Sitio elaborado por obed</h5>
 
 			</div>
 

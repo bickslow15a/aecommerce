@@ -1001,7 +1001,7 @@ class ControladorUsuarios{
 				ENVÍO CORREO ELECTRÓNICO
 				=============================================*/
 
-					date_default_timezone_set("America/Bogota");
+					date_default_timezone_set("America/Lima");
 
 					$url = Ruta::ctrRuta();
 
@@ -1011,9 +1011,9 @@ class ControladorUsuarios{
 
 					$mail->isMail();
 
-					$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+					$mail->setFrom('dgreeypasteleria@gmail.com', 'Tutoriales a tu Alcance');
 
-					$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+					$mail->addReplyTo('dgreeypasteleria@gmail.com', 'Tutoriales a tu Alcance');
 
 					$mail->Subject = "Ha recibido una consulta";
 

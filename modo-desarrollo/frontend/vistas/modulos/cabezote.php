@@ -276,7 +276,7 @@ HEADER
 
 				<div class="input-group col-sm-8 col-xs-12" id="buscador">
 
-					<input type="search" name="buscar" class="form-control input-lg" placeholder="Buscar...">
+					<input type="search" name="buscar" class="form-control input-lg" placeholder="Buscar Producto...">
 
 					<span class="input-group-btn">
 

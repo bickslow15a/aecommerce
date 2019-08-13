@@ -52,9 +52,14 @@ class TablaProductosVentas{
 
   				$stock = "<button class='btn btn-success'>".$productos[$i]["stock"]."</button>";
 
-  			}
-
-		  	/*=============================================
+			  }
+			/*=============================================
+ 	 		TRAEMOS LAS TALLAS Y COLORES DEL PRODUCTO
+			  =============================================*/ 
+			
+				
+			  
+	 	  	/*=============================================
  	 		TRAEMOS LAS ACCIONES
   			=============================================*/ 
 
@@ -64,7 +69,7 @@ class TablaProductosVentas{
 			      "'.($i+1).'",
 			      "'.$imagen.'",
 			      "'.$productos[$i]["id"].'",
-			      "'.$productos[$i]["descripcion"].'",
+				  "'.$productos[$i]["titulo"].'",
 			      "'.$stock.'",
 			      "'.$botones.'"
 			    ],';
@@ -90,4 +95,3 @@ ACTIVAR TABLA DE PRODUCTOS
 =============================================*/ 
 $activarProductosVentas = new TablaProductosVentas();
 $activarProductosVentas -> mostrarTablaProductosVentas();
-

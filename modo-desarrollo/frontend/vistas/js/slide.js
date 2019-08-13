@@ -1,6 +1,17 @@
 /*=============================================
 VARIABLES
 =============================================*/
+// $(function () {
+
+// $('.carus').slick({
+// 	dots: true,
+// 	infinite: true,
+// 	speed: 1000,
+// 	autoplay: true,
+// 	autoplaySpeed: 9000
+// });
+
+// });//fin principal
 
 var item = 0;
 var itemPaginacion = $("#paginacion li");
@@ -166,7 +177,7 @@ setInterval(function(){
 
 	}
 
-},3000)
+},5000)
 
 /*=============================================
 APARECER FLECHAS

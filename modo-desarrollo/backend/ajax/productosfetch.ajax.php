@@ -33,8 +33,6 @@ class AjaxProductosfetch{
 
 	}
 
-
-
 }
 
 	if(isset($_POST["idProducto"])){

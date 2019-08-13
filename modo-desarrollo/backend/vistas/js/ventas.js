@@ -11,7 +11,8 @@ CARGAR LA TABLA DINÁMICA DE VENTAS
 
 // 	}
 
-// })// 
+// })
+
 // ------------------------------------------------------------ sistema inventario - PALOMINO ----------------------------------------
 
 $('.tablaVentasNormal').DataTable( {
@@ -73,12 +74,12 @@ $(".tablaVentasNormal tbody").on("click", "button.agregarProducto", function(){
       	processData: false,
       	dataType:"json",
       	success:function(respuesta){
-		console.log("respuesta", respuesta);
-
-      	    var descripcion = respuesta["descripcion"];
+		// console.log("respuesta", respuesta);
+            // var talla = respuesta["Talla"];
+      	    var titulo = respuesta["titulo"];
           	var stock = respuesta["stock"];
           	var precio = respuesta["precio"];
-          	console.log(stock);
+          	
           	/*=============================================
           	EVITAR AGREGAR PRODUTO CUANDO EL STOCK ESTÁ EN CERO
           	=============================================*/
@@ -110,7 +111,7 @@ $(".tablaVentasNormal tbody").on("click", "button.agregarProducto", function(){
 	              
 	              '<span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto="'+idProducto+'"><i class="fa fa-times"></i></button></span>'+
 
-	              '<input type="text" class="form-control nuevaDescripcionProducto" idProducto="'+idProducto+'" name="agregarProducto" value="'+descripcion+'" readonly required>'+
+	              '<input type="text" class="form-control nuevaDescripcionProducto" idProducto="'+idProducto+'" name="agregarProducto" value="'+titulo+'" readonly required>'+
 
 	            '</div>'+
 
@@ -265,7 +266,7 @@ $(".btnAgregarProducto").click(function(){
 
 	$.ajax({
 
-		url:"ajax/productos.ajax.php",
+		url:"ajax/productosfetch.ajax.php",
       	method: "POST",
       	data: datos,
       	cache: false,
@@ -273,7 +274,7 @@ $(".btnAgregarProducto").click(function(){
       	processData: false,
       	dataType:"json",
       	success:function(respuesta){
-      	    
+      	    console.log(respuesta);
       	    	$(".nuevoProducto").append(
 
           	'<div class="row" style="padding:5px 15px">'+
@@ -331,7 +332,7 @@ $(".btnAgregarProducto").click(function(){
 
 		         	$("#producto"+numProducto).append(
 
-						'<option idProducto="'+item.id+'" value="'+item.descripcion+'">'+item.descripcion+'</option>'
+						'<option idProducto="'+item.id+'" value="'+item.titulo+'">'+item.titulo+'</option>'
 		         	)
 
 		         
@@ -644,16 +645,17 @@ function listarProductos(){
 
 	var listaProductos = [];
 
-	var descripcion = $(".nuevaDescripcionProducto");
+	var titulo = $(".nuevaDescripcionProducto");
 
 	var cantidad = $(".nuevaCantidadProducto");
 
 	var precio = $(".nuevoPrecioProducto");
 
-	for(var i = 0; i < descripcion.length; i++){
+	for(var i = 0; i < titulo.length; i++){
 
-		listaProductos.push({ "id" : $(descripcion[i]).attr("idProducto"), 
-							  "descripcion" : $(descripcion[i]).val(),
+		listaProductos.push({
+			"id": $(titulo[i]).attr("idProducto"), 
+			"titulo": $(titulo[i]).val(),
 							  "cantidad" : $(cantidad[i]).val(),
 							  "stock" : $(cantidad[i]).attr("nuevoStock"),
 							  "precio" : $(precio[i]).attr("precioReal"),

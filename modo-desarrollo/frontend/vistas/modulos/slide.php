@@ -9,7 +9,6 @@ SLIDESHOW
 		<!--=====================================
 		DIAPOSITIVAS
 		======================================-->
-
 		<ul>
 
 			<?php
@@ -30,7 +29,7 @@ SLIDESHOW
 				
 							<img src="'.$servidor.$value["imgFondo"].'">
 
-							<div class="slideOpciones '.$value["tipoSlide"].'">';
+							<div class="slideOpciones  '.$value["tipoSlide"].'">';
 
 								if($value["imgProducto"] != ""){
 

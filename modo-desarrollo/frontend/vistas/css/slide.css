@@ -110,10 +110,10 @@ SLIDE
 FLECHAS
 =============================================*/
 
-#slide .flechas{
+ #slide .flechas{
 	position:absolute;
 	font-size:2em;
-	color:white;
+	color:#000;
 	cursor:pointer;
 	z-index:2;
 	transition: all .5s ease;
@@ -124,30 +124,30 @@ FLECHAS
 }
 
 #slide #retroceder{
-	background:#000;
+	/* background:#000; */
 	left:0;
 	opacity: 0;
 }
 
 #slide #avanzar{
-	background:#000;
+	/* background:#000; */
 	right:0;
 	opacity: 0;
 }
 
 #slide #retroceder:hover, #slide #avanzar:hover{
-	background:rgb(32, 31, 31);
+	/* background:rgb(32, 31, 31); */
 }
 
 #slide #retroceder:active, #slide #avanzar:active{
-	background:rgb(32, 31, 31);
-}
+	/* background:rgb(32, 31, 31); */
+} 
 
 /*=============================================
 PAGINACIÓN
 =============================================*/
 
-#slide #paginacion{
+ #slide #paginacion{
 	position: absolute;
 	width:100%;
 	margin:auto;
@@ -178,14 +178,14 @@ PAGINACIÓN
 	border:0px;
 	font-size:25px;
 	padding:2px;
-}
+} 
 
 
 /*=============================================
 ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
 =============================================*/
 
-@media (min-width:1200px){
+ @media (min-width:1200px){
 
 	#slide #retroceder{
 		top:37%;
@@ -216,13 +216,13 @@ ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
 		padding:10px;
 	}	
 
-}
+} 
 
 /*=============================================
 ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
 =============================================*/
 
-@media (max-width:1199px) and (min-width:992px){
+ @media (max-width:1199px) and (min-width:992px){
 
 	#slide #retroceder{
 		top:35%;
@@ -253,7 +253,7 @@ ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
 		padding:10px;
 	}	
 
-}
+} 
 
 /*=============================================
 ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
@@ -290,7 +290,7 @@ ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
 		padding:5px;
 	}	
 
-}
+} 
 
 /*=============================================
 MOVIL (XS revisamos en 320px)
