@@ -1029,7 +1029,7 @@ $(".btnPagar").click(function(){
          success:function(respuesta){
 
                window.location = respuesta;
-
+console.log(respuesta);
          }
 
 	})

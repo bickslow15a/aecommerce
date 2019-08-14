@@ -50,7 +50,7 @@
 
                     <input type="text" class="form-control" id="nuevoVendedor" value="<?php echo $_SESSION["perfil"]; ?>" readonly>
 
-                    <input type="hidden" name="id_administrador" value="<?php echo $_SESSION["id"]; ?>">
+                    <input type="hidden" name="idAdmin" value="<?php echo $_SESSION["id"]; ?>">
 
                   </div>
 
