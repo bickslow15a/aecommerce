@@ -299,6 +299,8 @@
                   <th>Código</th>
                   <th>Titulo</th>
                   <th>Stock</th>
+                  <th>Talla</th>
+                  <th>Color</th>
                   <th>Acciones</th>
                 </tr>
 

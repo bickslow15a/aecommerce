@@ -17,6 +17,8 @@ class TablaProductosVentas{
     	$orden = "id";
 
   		$productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+
+
  		
   		if(count($productos) == 0){
 
@@ -56,8 +58,23 @@ class TablaProductosVentas{
 			/*=============================================
  	 		TRAEMOS LAS TALLAS Y COLORES DEL PRODUCTO
 			  =============================================*/ 
-			
-				
+
+			$listadetalle = json_decode($productos[$i]["detalles"], true);
+
+			$talla = "<select  width='40px' id='talladt'>";
+			for($j = 0; $j < count($listadetalle["Talla"]); $j++){
+		  	$talla .= "<option value='".$listadetalle["Talla"][$j]."'>".$listadetalle["Talla"][$j]."</option>";
+
+		 	}
+		  	$talla .= "</select>";
+
+			$color = "<select  width='40px' id='colordt'>";
+			for($k = 0; $k < count($listadetalle["Color"]); $k++){
+		  	$color .= "<option value='".$listadetalle["Color"][$k]."'>".$listadetalle["Color"][$k]."</option>";
+		 	}
+
+		  	$color .= "</select>";
+
 			  
 	 	  	/*=============================================
  	 		TRAEMOS LAS ACCIONES
@@ -71,6 +88,8 @@ class TablaProductosVentas{
 			      "'.$productos[$i]["id"].'",
 				  "'.$productos[$i]["titulo"].'",
 			      "'.$stock.'",
+			      "'.$talla.'",
+			      "'.$color.'",
 			      "'.$botones.'"
 			    ],';
 
@@ -81,7 +100,16 @@ class TablaProductosVentas{
 		 $datosJson .=   '] 
 
 		 }';
-		
+
+		// $listadetalle = json_decode($productos[0]["detalles"], true);
+		// $cont=0;
+
+		// echo json_encode($listadetalle["Talla"]);
+		// for($j = 0; $j < count($listadetalle["Talla"]); $j++){
+		//   $talla = 	"El valor de". $listadetalle['Talla'][$j] ."es:". $listadetalle['Talla'][$j];
+		//   echo $talla;
+		// }
+
 		echo $datosJson;
 
 

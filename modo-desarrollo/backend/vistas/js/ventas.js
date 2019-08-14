@@ -56,6 +56,8 @@ AGREGANDO PRODUCTOS A LA VENTA DESDE LA TABLA
 $(".tablaVentasNormal tbody").on("click", "button.agregarProducto", function(){
 
 	var idProducto = $(this).attr("idProducto");
+	var talla = $(this).parent().parent().parent()[0]["cells"][5]["childNodes"][0]["value"];
+	var color = $(this).parent().parent().parent()[0]["cells"][6]["childNodes"][0]["value"];
 
 	$(this).removeClass("btn-primary agregarProducto");
 
@@ -112,6 +114,10 @@ $(".tablaVentasNormal tbody").on("click", "button.agregarProducto", function(){
 	              '<span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto="'+idProducto+'"><i class="fa fa-times"></i></button></span>'+
 
 	              '<input type="text" class="form-control nuevaDescripcionProducto" idProducto="'+idProducto+'" name="agregarProducto" value="'+titulo+'" readonly required>'+
+	              
+	              '<input type="hidden" class="form-control nuevaTalla" talladt="'+talla+'" name="agregarTalla" value="'+talla+'" >'+
+
+	              '<input type="hidden" class="form-control nuevaColor" colordt="'+color+'" name="agregarColor" value="'+color+'" >'+
 
 	            '</div>'+
 
@@ -651,6 +657,10 @@ function listarProductos(){
 
 	var precio = $(".nuevoPrecioProducto");
 
+	var talla = $(".nuevaTalla");
+
+	var color = $(".nuevaColor");
+
 	for(var i = 0; i < titulo.length; i++){
 
 		listaProductos.push({
@@ -659,12 +669,14 @@ function listarProductos(){
 							  "cantidad" : $(cantidad[i]).val(),
 							  "stock" : $(cantidad[i]).attr("nuevoStock"),
 							  "precio" : $(precio[i]).attr("precioReal"),
+							  "talla" : $(talla[i]).val(),
+							  "color" : $(color[i]).val(),
 							  "total" : $(precio[i]).val()})
 
 	}
 
 	$("#listaProductos").val(JSON.stringify(listaProductos)); 
-
+	alert(JSON.stringify(listaProductos));
 }
 
 /*=============================================
