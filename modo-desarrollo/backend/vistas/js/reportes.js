@@ -40,7 +40,7 @@ $('#daterange-btn2').daterangepicker(
    
    	localStorage.setItem("capturarRango2", capturarRango);
 
-   	window.location = "index.php?ruta=reportes&fechaInicial="+fechaInicial+"&fechaFinal="+fechaFinal;
+   	window.location = "index.php?ruta=reportes-venta&fechaInicial="+fechaInicial+"&fechaFinal="+fechaFinal;
 
   }
 
@@ -54,7 +54,7 @@ $(".daterangepicker.opensright .range_inputs .cancelBtn").on("click", function()
 
 	localStorage.removeItem("capturarRango2");
 	localStorage.clear();
-	window.location = "reportes";
+	window.location = "reportes-venta";
 })
 
 /*=============================================
@@ -97,7 +97,7 @@ $(".daterangepicker.opensright .ranges li").on("click", function(){
 
     	localStorage.setItem("capturarRango2", "Hoy");
 
-    	window.location = "index.php?ruta=reportes&fechaInicial="+fechaInicial+"&fechaFinal="+fechaFinal;
+    	window.location = "index.php?ruta=reportes-venta&fechaInicial="+fechaInicial+"&fechaFinal="+fechaFinal;
 
 	}
 

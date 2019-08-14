@@ -24,7 +24,7 @@ public function traerImpresionFactura(){
 
 $itemVenta = "codigo";
 $valorVenta = $this->codigo;
-$url=ctrRutaServidor();
+$url=Ruta::ctrRutaServidor();
 $respuestaVenta = ControladorVenta::ctrMostrarVenta($itemVenta, $valorVenta);
 
 $fecha = substr($respuestaVenta["fecha"],0,-8);
@@ -65,7 +65,7 @@ $bloque1 = <<<EOF
 		
 		<tr>
 			
-			<td style="width:150px"><img src="'.$url.'vistas/img/plantilla/logo.png"></td>
+			<td style="width:150px"><img src='".$url."'vistas/img/plantilla/logo.png"></td>
 
 			<td style="background-color:white; width:140px">
 				
@@ -180,13 +180,13 @@ $pdf->writeHTML($bloque3, false, false, false, false, '');
 
 foreach ($productos as $key => $item) {
 
-$itemProducto = "descripcion";
-$valorProducto = $item["descripcion"];
+$itemProducto = "titulo";
+$valorProducto = $item["titulo"];
 $orden = null;
 
 $respuestaProducto = ControladorProductos::ctrMostrarProductos($itemProducto, $valorProducto, $orden);
 
-$valorUnitario = number_format($respuestaProducto["precio_venta"], 2);
+$valorUnitario = number_format($respuestaProducto["precio"], 2);
 
 $precioTotal = number_format($item["total"], 2);
 
@@ -197,18 +197,18 @@ $bloque4 = <<<EOF
 		<tr>
 			
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:260px; text-align:center">
-				$item[descripcion]
+				$item[titulo]
 			</td>
 
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:80px; text-align:center">
 				$item[cantidad]
 			</td>
 
-			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">$ 
+			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">S/.
 				$valorUnitario
 			</td>
 
-			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">$ 
+			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">S/.
 				$precioTotal
 			</td>
 
@@ -249,7 +249,7 @@ $bloque5 = <<<EOF
 			</td>
 
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">
-				$ $neto
+				S/. $neto
 			</td>
 
 		</tr>
@@ -263,7 +263,7 @@ $bloque5 = <<<EOF
 			</td>
 		
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">
-				$ $impuesto
+				S/. $impuesto
 			</td>
 
 		</tr>
@@ -277,7 +277,7 @@ $bloque5 = <<<EOF
 			</td>
 			
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">
-				$ $total
+				S/. $total
 			</td>
 
 		</tr>

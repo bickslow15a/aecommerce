@@ -16,7 +16,7 @@ static	public function ctrRuta(){
 	RUTA LADO DEL SERVIDOR
 	=============================================*/
 
-	static public function ctrRutaServidor(){
+static public function ctrRutaServidor(){
 
 		return "http://localhost/aecommerce/modo-desarrollo/backend/";
 

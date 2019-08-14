@@ -57,6 +57,7 @@ MENU
         <li><a href="ventas"><i class="fa fa-circle-o"></i><span>Administrar Ventas</span></a></li>
         <li><a href="crear-venta"><i class="fa fa-circle-o"></i><span>Crear Ventas</span></a></li>
         <li><a href="ventas-online"><i class="fa fa-circle-o"></i><span>Ventas OnLine</span></a></li>
+        <li><a href="reportes-venta"><i class="fa fa-circle-o"></i><span>Reportes</span></a></li>
         </ul>
   </li>';
 

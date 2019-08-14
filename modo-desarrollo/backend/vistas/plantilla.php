@@ -185,6 +185,7 @@ session_start();
            $_GET["ruta"]== "editar-venta" ||
            $_GET["ruta"]== "descargar-reporte" ||
            $_GET["ruta"]== "usuarios" ||
+           $_GET["ruta"]== "reportes-venta" ||
            $_GET["ruta"]== "clientes" ||
            $_GET["ruta"]== "mensajes" ||
            $_GET["ruta"]== "perfiles" ||
