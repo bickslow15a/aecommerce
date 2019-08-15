@@ -23,22 +23,65 @@ class AjaxProductosfetch{
 
 
 	public function ajaxTraerProductofetch(){
+	if($this->traerProductos == "ok"){
+	  $item = null;
+      $valor = null;
+      $orden = "id";
 
+      $respuesta = ControladorProductos::ctrMostrarProductosfetch($item, $valor,
+	  $orden);
+	  
+	  echo json_encode($respuesta);
+	  
+	}else if($this->nombreProducto != ""){
+	  $item = "titulo";
+      $valor = $this->nombreProducto;
+      $orden = "id";
+
+      $respuesta = ControladorProductos::ctrMostrarProductosfetch($item, $valor,
+        $orden);
+
+      echo json_encode($respuesta);
+	}else{
 		$item = "id";
 		$valor = $this->idProducto;
 
 		$respuesta = ControladorProductos::ctrMostrarProductosfetch($item, $valor);
 
 		echo json_encode($respuesta);
-
+		}
 	}
-
 }
+
+
 
 	if(isset($_POST["idProducto"])){
 
 		$traerProducto = new AjaxProductosfetch();
 		$traerProducto -> idProducto = $_POST["idProducto"];
 		$traerProducto -> ajaxTraerProductofetch();
+
+	}
+	/*=============================================
+	TRAER PRODUCTO
+	=============================================*/ 
+
+	if(isset($_POST["traerProductos"])){
+
+	$traerProductos = new AjaxProductos();
+	$traerProductos -> traerProductos = $_POST["traerProductos"];
+	$traerProductos -> ajaxTraerProductofetch();
+
+	}
+
+	/*=============================================
+	TRAER PRODUCTO
+	=============================================*/ 
+
+	if(isset($_POST["nombreProducto"])){
+
+	$traerProductos = new AjaxProductos();
+	$traerProductos -> nombreProducto = $_POST["nombreProducto"];
+	$traerProductos -> ajaxTraerProductofetch();
 
 	}

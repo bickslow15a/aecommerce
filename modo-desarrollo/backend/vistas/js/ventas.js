@@ -77,11 +77,11 @@ $(".tablaVentasNormal tbody").on("click", "button.agregarProducto", function(){
       	dataType:"json",
       	success:function(respuesta){
 		// console.log("respuesta", respuesta);
-            // var talla = respuesta["Talla"];
+		   
       	    var titulo = respuesta["titulo"];
           	var stock = respuesta["stock"];
           	var precio = respuesta["precio"];
-          	
+		
           	/*=============================================
           	EVITAR AGREGAR PRODUTO CUANDO EL STOCK ESTÁ EN CERO
           	=============================================*/
@@ -264,12 +264,12 @@ AGREGANDO PRODUCTOS DESDE EL BOTÓN PARA DISPOSITIVOS
 var numProducto = 0;
 
 $(".btnAgregarProducto").click(function(){
-
+	
 	numProducto ++;
 
 	var datos = new FormData();
 	datos.append("traerProductos", "ok");
-
+		console.log(datos);
 	$.ajax({
 
 		url:"ajax/productosfetch.ajax.php",
@@ -280,7 +280,7 @@ $(".btnAgregarProducto").click(function(){
       	processData: false,
       	dataType:"json",
       	success:function(respuesta){
-      	    console.log(respuesta);
+      	 
       	    	$(".nuevoProducto").append(
 
           	'<div class="row" style="padding:5px 15px">'+
@@ -676,7 +676,7 @@ function listarProductos(){
 	}
 
 	$("#listaProductos").val(JSON.stringify(listaProductos)); 
-	alert(JSON.stringify(listaProductos));
+	// alert(JSON.stringify(listaProductos));
 }
 
 /*=============================================
@@ -793,7 +793,7 @@ $(".tablas").on("click", ".btnImprimirFactura", function(){
 
 	var codigoVenta = $(this).attr("codigoVenta");
 
-	window.open("extenciones/tcpdf/pdf/factura2.php?codigo="+codigoVenta, "_blank");
+	window.open("extenciones/tcpdf/pdf/factura.php?codigo="+codigoVenta, "_blank");
 
 })
 

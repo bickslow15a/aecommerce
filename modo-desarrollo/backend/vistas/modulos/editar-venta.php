@@ -1,3 +1,6 @@
+<?php
+// error_reporting(0);
+?>
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -148,7 +151,10 @@
                   $orden = "id";
 
                   $respuesta = ControladorProductos::ctrMostrarProductosfetch($item, $valor, $orden);
-
+                  
+                  $talla = $value["talla"];
+                  $color = $value["color"];
+                 
                   $stockAntiguo = $respuesta["stock"] + $value["cantidad"];
                   
                   echo '<div class="row" style="padding:5px 15px">
@@ -341,6 +347,8 @@
                   <th>Código</th>
                   <th>Titulo</th>
                   <th>Stock</th>
+                  <th>Talla</th>
+                  <th>Color</th>
                   <th>Acciones</th>
                 </tr>
 

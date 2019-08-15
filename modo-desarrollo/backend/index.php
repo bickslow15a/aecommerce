@@ -1,5 +1,4 @@
 <?php
-
 require_once "controladores/plantilla.controlador.php";
 require_once "controladores/administradores.controlador.php";
 require_once "controladores/banner.controlador.php";
