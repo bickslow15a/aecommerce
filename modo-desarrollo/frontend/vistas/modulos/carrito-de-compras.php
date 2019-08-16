@@ -195,29 +195,47 @@ VENTANA MODAL PARA CHECKOUT
 				<div class="formaPago row">
 					
 					<h4 class="text-center well text-muted text-uppercase">Elige la forma de pago</h4>
-
-					<figure class="col-xs-6">
+<!-- /*=================================================================
+                      PAYPAL
+ /*============================================================= -->
+					<figure class="col-xs-12">
 						
 						<center>
 							
 							<input id="checkPaypal" type="radio" name="pago" value="paypal" checked>
 
 						</center>	
-						
+						<center>
 						<img src="<?php echo $url; ?>vistas/img/plantilla/paypal.jpg" class="img-thumbnail">		
-
+						</center>
 					</figure>
-
-					<figure class="col-xs-6">
+<!-- /*=================================================================
+                      MERCADO PAGO
+ /*============================================================= -->
+					<figure class="col-xs-12">
 						
 						<center>
 							
 							<input id="checkPayu" type="radio" name="pago" value="payu">
 
 						</center>
+						<center>
+						<img src="<?php echo $url; ?>vistas/img/plantilla/mercadopago.png" class="img-thumbnail">
+						</center>
+					</figure>
+ <!-- /*=================================================================
+                      RECOJO EN TIENDA
+ /*============================================================= -->
+					<figure class="col-xs-12">
+						
+						<center>
+							
+							<input id="checkRecojo" type="radio" name="pago" value="recojo">
 
+						</center>
+						<center>	
 						<img src="<?php echo $url; ?>vistas/img/plantilla/payu.jpg" class="img-thumbnail">
-
+						</center>
 					</figure>
 
 				</div>

@@ -17,7 +17,7 @@ class ControladorVenta{
 	}
 
 	/*=============================================
-	CREAR VENTA
+			CREAR VENTA
 	=============================================*/
 
 	static public function ctrCrearVenta(){

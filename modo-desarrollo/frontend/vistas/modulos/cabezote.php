@@ -424,7 +424,9 @@ VENTANA MODAL PARA EL REGISTRO
 			<form method="post" onsubmit="return registroUsuario()">
 
 			<hr>
-
+		<!-- =======================
+						nombre completo
+						=============== -->
 				<div class="form-group">
 
 					<div class="input-group">
@@ -436,11 +438,31 @@ VENTANA MODAL PARA EL REGISTRO
 						</span>
 
 						<input type="text" class="form-control input-lg text-uppercase" id="regUsuario" name="regUsuario" placeholder="Nombre Completo" required>
-
 					</div>
 
 				</div>
 
+					<!-- =======================
+						DNI
+					=============== -->
+					<div class="form-group">
+
+					<div class="input-group">
+
+						<span class="input-group-addon">
+
+							<i class="glyphicon glyphicon-user"></i>
+
+						</span>
+
+						<input type="text" class="form-control input-lg text-uppercase" id="regDni" name="regDni" maxlength="8" placeholder="Documento de identidad" required>
+
+					</div>
+
+				</div>
+					<!-- =======================
+						EMAIL
+					=============== -->
 				<div class="form-group">
 
 					<div class="input-group">
@@ -456,7 +478,9 @@ VENTANA MODAL PARA EL REGISTRO
 					</div>
 
 				</div>
-
+						<!-- =======================
+						CONTRASEÑA
+						=============== -->
 				<div class="form-group">
 
 					<div class="input-group">

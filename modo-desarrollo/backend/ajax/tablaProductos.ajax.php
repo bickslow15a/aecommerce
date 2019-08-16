@@ -178,7 +178,7 @@ class TablaProductos{
   			
   			}else{
 
-  				$precio = "$ ".number_format($productos[$i]["precio"],2);
+  				$precio = "S/. ".number_format($productos[$i]["precio"],2);
 
 			  }
 			  
@@ -223,7 +223,7 @@ class TablaProductos{
 				if($productos[$i]["precioOferta"] != 0){	
 
 					$tipoOferta = "PRECIO";
-					$valorOferta = "$ ".number_format($productos[$i]["precioOferta"],2);
+					$valorOferta = "S/. ".number_format($productos[$i]["precioOferta"],2);
 
 				}else{
 

@@ -20,6 +20,8 @@ class ControladorUsuarios{
 			   	$encriptarEmail = md5($_POST["regEmail"]);
 
 				$datos = array("nombre"=>$_POST["regUsuario"],
+							   "apellido"=>$_POST["regUsuarioApell"],
+							   "dni"=>$_POST["regDni"],
 							   "password"=> $encriptar,
 							   "email"=> $_POST["regEmail"],
 							   "foto"=>"",

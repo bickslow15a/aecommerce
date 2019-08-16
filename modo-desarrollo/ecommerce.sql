@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-08-2019 a las 22:48:08
+-- Tiempo de generación: 16-08-2019 a las 23:51:20
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -42,8 +42,8 @@ CREATE TABLE `administradores` (
 --
 
 INSERT INTO `administradores` (`id`, `nombre`, `email`, `foto`, `password`, `perfil`, `estado`, `fecha`) VALUES
-(1, 'Tienda Virtual', 'admin@tantum.com.pe', 'vistas/img/perfiles/499.png', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'administrador', 1, '2019-08-05 20:53:01'),
-(2, 'Editor de la Tienda', 'editor@tantum.com.pe', 'vistas/img/perfiles/477.png', '$2a$07$asxx54ahjppf45sd87a5au6fAHIlFrQ7jQ4XHf7fycZYUNBysO4Bq', 'editor', 1, '2019-08-05 20:53:15');
+(1, 'Juan', 'admin@tantum.com.pe', 'vistas/img/perfiles/499.png', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'administrador', 1, '2019-08-13 17:03:32'),
+(2, 'Mariel', 'editor@tantum.com.pe', 'vistas/img/perfiles/477.png', '$2a$07$asxx54ahjppf45sd87a5au6fAHIlFrQ7jQ4XHf7fycZYUNBysO4Bq', 'editor', 1, '2019-08-13 22:50:43');
 
 -- --------------------------------------------------------
 
@@ -92,7 +92,15 @@ INSERT INTO `cabeceras` (`id`, `ruta`, `titulo`, `descripcion`, `palabrasClaves`
 (7, 'tecnologia', 'TECNOLOGIA', 'categoria de los productos ', 'lap laptops ', 'vistas/img/cabeceras/laptops.jpg', '2019-07-12 19:47:51'),
 (8, 'laptops', 'Laptops', 'laptops', 'lap laptops', 'vistas/img/cabeceras/default/default.jpg', '2019-07-12 19:48:12'),
 (10, 'jean-blushe', 'jean blushe', 'jean blushe con ultimo mooda blebleble', 'jean,blushe,azul,jeandama', 'vistas/img/cabeceras/default/default.jpg', '2019-07-18 14:02:25'),
-(13, 'adss', 'adss', 'asd', 'asd', 'vistas/img/cabeceras/default/default.jpg', '2019-08-05 14:10:52');
+(13, 'adss', 'adss', 'asd', 'asd', 'vistas/img/cabeceras/default/default.jpg', '2019-08-05 14:10:52'),
+(14, 'ropa', 'ROPA', 'hola prueba', 'prueba', 'vistas/img/cabeceras/default/default.jpg', '2019-08-09 00:26:58'),
+(15, 'chompas', 'Chompas', 'chompas de mujeres', 'chompas chompas mujeres,chompas mujeres,chompas,invierno,otoño', 'vistas/img/cabeceras/default/default.jpg', '2019-08-12 15:37:16'),
+(16, 'chompas-mujeres', 'Chompas Mujeres', 'chompas de mujeres', 'chompas', 'vistas/img/cabeceras/default/default.jpg', '2019-08-12 15:37:42'),
+(17, 'chompa-rihani', 'chompa rihani', 'Chompa manga larga cuello redondo Mangas murciélago ', 'chompa', 'vistas/img/cabeceras/default/default.jpg', '2019-08-12 15:39:04'),
+(18, 'blusa-sexy', 'blusa sexy', 'MATERIAL:GASA CREPÉ\n', 'BLUSAS,ROPAS,ROPAMUJER,MODAMUJER', 'vistas/img/cabeceras/default/default.jpg', '2019-08-16 17:07:57'),
+(19, 'blusa-sexy', 'blusa sexy', 'asd', 'asd', 'vistas/img/cabeceras/default/default.jpg', '2019-08-16 17:11:57'),
+(20, 'blusa-sexy', 'blusa sexy', 'asd', 'asd', 'vistas/img/cabeceras/default/default.jpg', '2019-08-16 17:13:09'),
+(21, 'blusa-gasparin', 'blusa gasparin', 'marca nueva de ropa para mujeres en blusas', 'blusas', 'vistas/img/cabeceras/default/default.jpg', '2019-08-16 17:23:42');
 
 -- --------------------------------------------------------
 
@@ -118,7 +126,8 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `categoria`, `ruta`, `estado`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `fecha`) VALUES
-(1, 'ROPA', 'ropa', 1, 0, 0, 0, '', '0000-00-00 00:00:00', '2018-03-13 05:06:34');
+(1, 'ROPA', 'ropa', 1, 0, 0, 0, '', '0000-00-00 00:00:00', '2019-08-09 00:46:55'),
+(2, 'CHOMPAS', 'chompas', 1, 0, 0, 0, '', '0000-00-00 00:00:00', '2019-08-12 15:37:16');
 
 -- --------------------------------------------------------
 
@@ -143,9 +152,10 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direccion`, `compras`, `ultima_compra`, `fecha`) VALUES
-(1, 'JOE', 70552204, 'chapiamadurand15@gmail.com', '999999999', 'jr.carlos dellpeiane 4009 san martin de porres', 0, '0000-00-00 00:00:00', '2019-08-07 15:15:35'),
-(2, 'greecy', 70552203, 'dgreeypasteleria@gmail.com', '998521715', 'jr.carlos dellpeiane 4009 san martin de porres', 0, '0000-00-00 00:00:00', '2019-08-07 15:16:10'),
-(3, 'pedro', 7520324, 'sss@msil.com', '789456123', 'asdf', 0, '0000-00-00 00:00:00', '2019-08-07 15:57:25');
+(1, 'JOE', 70552204, 'chapiamadurand15@gmail.com', '999999999', 'jr.carlos dellpeiane 4009 san martin de porres', 43, '2019-08-15 12:39:34', '2019-08-15 17:39:34'),
+(2, 'greecy', 70552203, 'dgreeypasteleria@gmail.com', '998521715', 'jr.carlos dellpeiane 4009 san martin de porres', 1, '0000-00-00 00:00:00', '2019-08-15 16:45:22'),
+(3, 'JOElito', 752203699, 'dgreeypasteleria@gmail.com', '998521715', 'jr.carlos dellpeiane 4009', 17, '2019-08-13 11:50:39', '2019-08-13 16:50:39'),
+(4, 'pedro', 7894561, 'dgreeypasteleria@gmail.com', '998521715', 'jr.carlos dellpeiane 4009', 0, '0000-00-00 00:00:00', '2019-08-15 17:23:52');
 
 -- --------------------------------------------------------
 
@@ -171,7 +181,6 @@ INSERT INTO `comentarios` (`id`, `id_usuario`, `id_producto`, `calificacion`, `c
 (2, 86, 464, 4.5, 'Excelente', '2018-02-13 15:55:14'),
 (3, 87, 496, 4, 'El curso es muy bueno, pero puede ser mejor.', '2018-02-13 16:10:50'),
 (4, 88, 496, 4.5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n		cillum dolore eu fugiat nulla pariatur', '2018-02-13 17:17:48'),
-(6, 5, 496, 2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n		consequat. ', '2018-02-13 17:21:30'),
 (7, 12, 500, 0, '', '2018-03-27 23:19:33'),
 (8, 13, 447, 0, '', '2019-07-12 11:56:46'),
 (9, 1, 468, 0.5, 'asd', '2019-07-18 22:48:59'),
@@ -185,7 +194,18 @@ INSERT INTO `comentarios` (`id`, `id_usuario`, `id_producto`, `calificacion`, `c
 (17, 4, 464, 0, '', '2019-08-03 00:29:07'),
 (18, 4, 4, 0, '', '2019-08-03 01:41:19'),
 (19, 4, 3, 0, '', '2019-08-05 21:10:13'),
-(20, 4, 2, 0, '', '2019-08-05 21:14:00');
+(20, 4, 2, 0, '', '2019-08-05 21:14:00'),
+(21, 4, 3, 0, '', '2019-08-08 15:06:17'),
+(22, 4, 3, 0, '', '2019-08-08 23:22:18'),
+(23, 4, 3, 0, '', '2019-08-15 20:34:44'),
+(24, 4, 3, 0, '', '2019-08-15 20:44:16'),
+(25, 4, 1, 0, '', '2019-08-16 16:09:23'),
+(26, 4, 3, 0, '', '2019-08-16 16:09:24'),
+(27, 4, 1, 0, '', '2019-08-16 16:13:30'),
+(28, 4, 1, 0, '', '2019-08-16 16:42:49'),
+(29, 4, 1, 0, '', '2019-08-16 16:45:03'),
+(30, 4, 3, 0, '', '2019-08-16 16:45:03'),
+(31, 4, 8, 0, '', '2019-08-16 17:27:30');
 
 -- --------------------------------------------------------
 
@@ -241,8 +261,8 @@ CREATE TABLE `compras` (
 --
 
 INSERT INTO `compras` (`id`, `id_usuario`, `id_producto`, `envio`, `metodo`, `email`, `direccion`, `pais`, `pago`, `fecha`) VALUES
-(34, 4, 3, 2, 'paypal', 'chapiamadurand15-buyer@gmail.com', 'jr.peru123, lima, lima, 051', 'PE', 35, '2019-08-05 21:15:58'),
-(35, 4, 2, 2, 'paypal', 'chapiamadurand15-buyer@gmail.com', 'jr.peru123, lima, lima, 051', 'PE', 2, '2019-08-05 21:15:57');
+(45, 4, 3, 0, 'paypal', 'chapiamadurand15-buyer@gmail.com', 'jr.peru123, lima, lima, 051', 'PE', 10.5, '2019-08-16 16:45:03'),
+(46, 4, 8, 0, 'paypal', 'chapiamadurand15-buyer@gmail.com', 'jr.peru123, lima, lima, 051', 'PE', 18, '2019-08-16 17:27:30');
 
 -- --------------------------------------------------------
 
@@ -273,9 +293,7 @@ INSERT INTO `deseos` (`id`, `id_usuario`, `id_producto`, `fecha`) VALUES
 (9, 13, 469, '2019-07-12 11:57:17'),
 (10, 13, 468, '2019-07-12 11:57:19'),
 (11, 13, 501, '2019-07-12 19:35:32'),
-(18, 4, 2, '2019-07-21 03:31:55'),
-(19, 4, 1, '2019-08-05 20:51:46'),
-(20, 4, 3, '2019-08-05 20:51:49');
+(23, 4, 3, '2019-08-14 01:47:39');
 
 -- --------------------------------------------------------
 
@@ -295,7 +313,7 @@ CREATE TABLE `notificaciones` (
 --
 
 INSERT INTO `notificaciones` (`id`, `nuevosUsuarios`, `nuevasVentas`, `nuevasVisitas`) VALUES
-(1, 0, 0, 0);
+(1, 13, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -323,7 +341,7 @@ CREATE TABLE `plantilla` (
 --
 
 INSERT INTO `plantilla` (`id`, `barraSuperior`, `textoSuperior`, `colorFondo`, `colorTexto`, `logo`, `icono`, `redesSociales`, `apiFacebook`, `pixelFacebook`, `googleAnalytics`, `fecha`) VALUES
-(1, '#ff35d7', '#ffffff', '#ff35d7', '#ffffff', 'vistas/img/plantilla/logo.jpg', 'vistas/img/plantilla/icono.jpg', '[{\"red\":\"fa-facebook\",\"estilo\":\"facebookBlanco\",\"url\":\"http://facebook.com/TiendasTantum/\",\"activo\":1},{\"red\":\"fa-youtube\",\"estilo\":\"youtubeBlanco\",\"url\":\"http://youtube.com/\",\"activo\":0},{\"red\":\"fa-twitter\",\"estilo\":\"twitterBlanco\",\"url\":\"http://twitter.com/\",\"activo\":0},{\"red\":\"fa-google-plus\",\"estilo\":\"google-plusBlanco\",\"url\":\"http://google.com/\",\"activo\":0},{\"red\":\"fa-instagram\",\"estilo\":\"instagramBlanco\",\"url\":\"http://instagram.com/tiendastantum/\",\"activo\":1},{\"red\":\"fa-whatsapp\",\"estilo\":\"whatsappBlanco\",\"url\":\"https://api.whatsapp.com/send?phone=51945344223&text=Hola!%20Bienvenido%20a%20Tiendas%20tantum\",\"activo\":1}\r\n]\r\n', '      		\r\n<script>\r\n  window.fbAsyncInit = function() {\r\n    FB.init({\r\n      appId      : \'2395436377404827\',\r\n      cookie     : true,\r\n      xfbml      : true,\r\n      version    : \'v3.3\'\r\n    });\r\n      \r\n    FB.AppEvents.logPageView();   \r\n      \r\n  };\r\n\r\n  (function(d, s, id){\r\n     var js, fjs = d.getElementsByTagName(s)[0];\r\n     if (d.getElementById(id)) {return;}\r\n     js = d.createElement(s); js.id = id;\r\n     js.src = \"https://connect.facebook.net/en_US/sdk.js\";\r\n     fjs.parentNode.insertBefore(js, fjs);\r\n   }(document, \'script\', \'facebook-jssdk\'));\r\n</script>\r\n      		\r\n      		\r\n      		', '  			\r\n  			\r\n  			\r\n  			<!-- Facebook Pixel Code --> 	<script> 	  !function(f,b,e,v,n,t,s) 	  {if(f.fbq)return;n=f.fbq=function(){n.callMethod? 	  n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 	  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=\'2.0\'; 	  n.queue=[];t=b.createElement(e);t.async=!0; 	  t.src=v;s=b.getElementsByTagName(e)[0]; 	  s.parentNode.insertBefore(t,s)}(window, document,\'script\', 	  \'https://connect.facebook.net/en_US/fbevents.js\'); 	  fbq(\'init\', \'131737410786111\'); 	  fbq(\'track\', \'PageView\'); 	</script> 	<noscript><img height=\"1\" width=\"1\" style=\"display:none\" 	  src=\"https://www.facebook.com/tr?id=149877372404434&ev=PageView&noscript=1\" 	/></noscript> <!-- End Facebook Pixel Code -->    \r\n  			    \r\n  			    \r\n  			    \r\n  			', '  			\r\n  			\r\n  			  \r\n  				<!-- Global site tag (gtag.js) - Google Analytics --> 	<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-999999-1\"></script> 	<script> 	  window.dataLayer = window.dataLayer || []; 	  function gtag(){dataLayer.push(arguments);} 	  gtag(\'js\', new Date());  	  gtag(\'config\', \'UA-9999999-1\'); 	</script>      \r\n            \r\n            \r\n            \r\n            \r\n  			      \r\n  			      \r\n  			', '2019-08-05 22:20:28');
+(1, '#ff35d7', '#ffffff', '#ff35d7', '#ffffff', 'vistas/img/plantilla/logo.jpg', 'vistas/img/plantilla/icono.jpg', '[{\"red\":\"fa-facebook\",\"estilo\":\"facebookBlanco\",\"url\":\"http://facebook.com/TiendasTantum/\",\"activo\":1},{\"red\":\"fa-youtube\",\"estilo\":\"youtubeBlanco\",\"url\":\"http://youtube.com/\",\"activo\":0},{\"red\":\"fa-twitter\",\"estilo\":\"twitterBlanco\",\"url\":\"http://twitter.com/\",\"activo\":0},{\"red\":\"fa-google-plus\",\"estilo\":\"google-plusBlanco\",\"url\":\"http://google.com/\",\"activo\":0},{\"red\":\"fa-instagram\",\"estilo\":\"instagramBlanco\",\"url\":\"http://instagram.com/tiendastantum/\",\"activo\":1},{\"red\":\"fa-whatsapp\",\"estilo\":\"whatsappBlanco\",\"url\":\"https://api.whatsapp.com/send?phone=51945344223&text=Hola!%20Bienvenido%20a%20Tiendas%20tantum\",\"activo\":1}\r\n]\r\n', '\n      		\n      		      		\n\n<script>\n  window.fbAsyncInit = function() {\n    FB.init({\n      appId      : \'2209872515804142\',\n      cookie     : true,\n      xfbml      : true,\n      version    : \'v4.0\'\n    });\n      \n    FB.AppEvents.logPageView();   \n      \n  };\n\n  (function(d, s, id){\n     var js, fjs = d.getElementsByTagName(s)[0];\n     if (d.getElementById(id)) {return;}\n     js = d.createElement(s); js.id = id;\n     js.src = \"https://connect.facebook.net/en_US/sdk.js\";\n     fjs.parentNode.insertBefore(js, fjs);\n   }(document, \'script\', \'facebook-jssdk\'));\n</script>\n      		\n      		', '\n  			\n  			  			\n  			\n  			\n  			<!-- Facebook Pixel Code --> 	<script> 	  !function(f,b,e,v,n,t,s) 	  {if(f.fbq)return;n=f.fbq=function(){n.callMethod? 	  n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 	  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=\'2.0\'; 	  n.queue=[];t=b.createElement(e);t.async=!0; 	  t.src=v;s=b.getElementsByTagName(e)[0]; 	  s.parentNode.insertBefore(t,s)}(window, document,\'script\', 	  \'https://connect.facebook.net/en_US/fbevents.js\'); 	  fbq(\'init\', \'131737410786111\'); 	  fbq(\'track\', \'PageView\'); 	</script> 	<noscript><img height=\"1\" width=\"1\" style=\"display:none\" 	  src=\"https://www.facebook.com/tr?id=149877372404434&ev=PageView&noscript=1\" 	/></noscript> <!-- End Facebook Pixel Code -->    \n  			    \n  			    \n  			    \n  			    \n  			    \n  			', '\n  			\n  			  			\n  			\n  			  \n  				<!-- Global site tag (gtag.js) - Google Analytics --> 	<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-999999-1\"></script> 	<script> 	  window.dataLayer = window.dataLayer || []; 	  function gtag(){dataLayer.push(arguments);} 	  gtag(\'js\', new Date());  	  gtag(\'config\', \'UA-9999999-1\'); 	</script>      \n            \n            \n            \n            \n  			      \n  			      \n  			      \n  			      \n  			', '2019-08-08 16:08:18');
 
 -- --------------------------------------------------------
 
@@ -367,9 +385,9 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`, `estado`, `titulo`, `titular`, `descripcion`, `multimedia`, `detalles`, `precio`, `stock`, `portada`, `vistas`, `ventas`, `vistasGratis`, `ventasGratis`, `ofertadoPorCategoria`, `ofertadoPorSubCategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `peso`, `entrega`, `fecha`) VALUES
-(1, 1, 1, 'fisico', 'vestido-clasico-11', 1, 'Vestido Clásico', 'asdsadas...', 'asdsadas', '[{\"foto\":\"vistas/img/multimedia/tennis-verde/img-01.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-02.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-03.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-04.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-05.jpg\"}]', '{\"Talla\":[\"36\",\"38\",\"40\"],\"Color\":[\"rojo\",\"negro\",\"blanco\"],\"Marca\":[]}', 14, 0, 'vistas/img/productos/ropa/ropa02.jpg', 7, 0, 55, 12, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, 10, '2019-08-07 20:23:01'),
-(2, 1, 3, 'fisico', 'top-dama-11', 1, 'Top Dama', 'asd...', 'asd', '[{\"foto\":\"vistas/img/multimedia/tennis-verde/img-01.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-02.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-03.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-04.jpg\"},{\"foto\":\"vistas/img/multimedia/tennis-verde/img-05.jpg\"}]', '{\"Talla\":[\"36\",\"38\",\"40\"],\"Color\":[\"rojo\",\"negro\",\"blanco\"],\"Marca\":[]}', 2, 25, 'vistas/img/productos/ropa/ropa06.jpg', 7, 1, 56, 12, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, 2, '2019-08-07 20:30:16'),
-(3, 1, 1, 'fisico', 'jean-blushe', 1, 'jean blushe', 'jean blushe con ultimo mooda blebleble...', 'jean blushe con ultimo mooda blebleble', '[{\"foto\":\"vistas/img/multimedia/jean-blushe/images (2).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images (1).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images.jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/DVDA00428CE26.jpg\"}]', '{\"Talla\":[\"28\",\"30\",\"32\",\"34\"],\"Color\":[\"negro\",\"azul\",\"vintage\"],\"Marca\":[]}', 35, 5, 'vistas/img/productos/jean-blushe.jpg', 23, 1, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1.3, 2, '2019-08-07 20:20:36');
+(3, 1, 1, 'fisico', 'jean-blushe', 1, 'jean blushe', 'jean blushe con ultimo mooda blebleble...', 'jean blushe con ultimo mooda blebleble', '[{\"foto\":\"vistas/img/multimedia/jean-blushe/images (2).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images (1).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images.jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/DVDA00428CE26.jpg\"}]', '{\"Talla\":[\"28\",\"30\",\"32\",\"34\"],\"Color\":[\"negro\",\"azul\",\"vintage\"],\"Marca\":[]}', 35, 97, 'vistas/img/productos/jean-blushe.jpg', 19, 6, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1.3, 2, '2019-08-16 16:45:27'),
+(4, 2, 5, 'fisico', 'chompa-rihani', 1, 'chompa rihani', 'Chompa manga larga cuello redondo Mangas murciélago ...', 'Chompa manga larga cuello redondo Mangas murciélago ', '[{\"foto\":\"vistas/img/multimedia/chompa-rihani/grace-808-93_copia_2048x.jpg\"},{\"foto\":\"vistas/img/multimedia/chompa-rihani/grace-1010-125_copia_2048x.jpg\"}]', '{\"Talla\":[\"s\"],\"Color\":[\"negro\",\"marron\"],\"Marca\":[]}', 50, 9, 'vistas/img/productos/chompa-rihani.jpg', 10, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 0.3, 5, '2019-08-16 17:20:42'),
+(8, 1, 1, 'fisico', 'blusa-gasparin', 1, 'blusa gasparin', 'marca nueva de ropa para mujeres en blusas...', 'marca nueva de ropa para mujeres en blusas', '[{\"foto\":\"vistas/img/multimedia/blusa-gasparin/IMG_20190712_130327.jpg\"},{\"foto\":\"vistas/img/multimedia/blusa-gasparin/IMG_20190718_164103.jpg\"}]', '{\"Talla\":[\"m\",\"l\"],\"Color\":[\"amarillo\",\"rosado\",\"negro\"],\"Marca\":[]}', 12, 5, 'vistas/img/productos/blusa-gasparin.jpg', 2, 5, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 0.3, 10, '2019-08-16 17:27:49');
 
 -- --------------------------------------------------------
 
@@ -402,7 +420,8 @@ INSERT INTO `slide` (`id`, `nombre`, `imgFondo`, `tipoSlide`, `imgProducto`, `es
 (1, 'ZAPATOS AMARILLOS', 'vistas/img/slide/default/back_default.jpg', 'slideOpcion2', 'vistas/img/slide/slide1/calzado.png', '{\"top\":\"5\",\"right\":\"\",\"left\":\"5\",\"width\":\"50\"}', '{\"top\":\"20\",\"right\":\"10\",\"left\":\"\",\"width\":\"40\"}', '{\"texto\":\"Lorem Ipsum\",\"color\":\"#333\"}', '{\"texto\":\"Lorem ipsum dolor sit\",\"color\":\"#777\"}', '{\"texto\":\"Lorem ipsum dolor sit\",\"color\":\"#888\"}', 'VER PRODUCTO', '#', 1, '2018-01-31 22:46:41'),
 (2, 'CURSO', 'vistas/img/slide/default/back_default.jpg', 'slideOpcion1', 'vistas/img/slide/slide2/producto.jpg', '{\"top\":\"0\",\"right\":\"50\",\"left\":\"\",\"width\":\"50\"}', '{\"top\":\"20\",\"right\":\"\",\"left\":\"45\",\"width\":\"40\"}', '{\"texto\":\"Lorem Ipsum\",\"color\":\"#333\"}', '{\"texto\":\"Lorem ipsum dolor sit\",\"color\":\"#777\"}', '{\"texto\":\"Lorem ipsum dolor sit\",\"color\":\"#888\"}', 'VER PRODUCTO', '#', 2, '2019-07-22 21:23:59'),
 (3, 'MÓVIL', 'vistas/img/slide/slide3/fondo2.jpg', 'slideOpcion2', 'vistas/img/slide/slide3/iphone.png', '{\"top\":\"10\",\"right\":\"\",\"left\":\"10\",\"width\":\"35\"}', '{\"top\":\"15\",\"right\":\"15\",\"left\":\"\",\"width\":\"40\"}', '{\"texto\":\"Lorem Ipsum\",\"color\":\"#eee\"}', '{\"texto\":\"Lorem ipsum dolor sit\",\"color\":\"#ccc\"}', '{\"texto\":\"Lorem ipsum dolor sit\",\"color\":\"#aaa\"}', 'VER PRODUCTO', '#', 3, '2018-01-31 22:45:22'),
-(4, 'CHICA', 'vistas/img/slide/slide4/fondo3.jpg', 'slideOpcion1', '', '{\"top\":\"\",\"right\":\"\",\"left\":\"\",\"width\":\"\"}', '{\"top\":\"20\",\"right\":\"\",\"left\":\"10\",\"width\":\"40\"}', '{\"texto\":\"Lorem Ipsum\",\"color\":\"#333\"}', '{\"texto\":\"Lorem ipsum dolor sit\",\"color\":\"#777\"}', '{\"texto\":\"Lorem ipsum dolor sit\",\"color\":\"#888\"}', '', '', 4, '2018-01-31 22:46:04');
+(4, 'CHICA', 'vistas/img/slide/slide4/fondo3.jpg', 'slideOpcion1', '', '{\"top\":\"\",\"right\":\"\",\"left\":\"\",\"width\":\"\"}', '{\"top\":\"20\",\"right\":\"\",\"left\":\"10\",\"width\":\"40\"}', '{\"texto\":\"Lorem Ipsum\",\"color\":\"#333\"}', '{\"texto\":\"Lorem ipsum dolor sit\",\"color\":\"#777\"}', '{\"texto\":\"Lorem ipsum dolor sit\",\"color\":\"#888\"}', '', '', 4, '2018-01-31 22:46:04'),
+(5, 'coleccion', 'vistas/img/slide/slide5/fondo.jpg', 'slideOpcion2', '', '{\"top\":\"\",\"right\":\"\",\"left\":\"0\",\"width\":\"0\"}', '{\"top\":\"50\",\"right\":\"20\",\"left\":\"\",\"width\":\"40\"}', '{\"texto\":\"\",\"color\":\"#333\"}', '{\"texto\":\"\",\"color\":\"#777\"}', '{\"texto\":\"\",\"color\":\"#888\"}', 'VER PRODUCTO', 'http://localhost/aecommerce/modo-desarrollo/frontend/chompas', 5, '2019-08-12 15:48:04');
 
 -- --------------------------------------------------------
 
@@ -430,10 +449,11 @@ CREATE TABLE `subcategorias` (
 --
 
 INSERT INTO `subcategorias` (`id`, `subcategoria`, `id_categoria`, `ruta`, `estado`, `ofertadoPorCategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `fecha`) VALUES
-(1, 'Ropa para dama', 1, 'ropa-para-dama', 1, 0, 1, 0, 40, 'vistas/img/ofertas/Ropa-para-dama.jpg', '2017-11-24 23:59:59', '2018-03-14 02:12:47'),
-(2, 'Ropa para hombre', 1, 'ropa-para-hombre', 1, 0, 1, 0, 40, 'vistas/img/ofertas/Ropa-para-hombre.jpg', '2017-11-24 23:59:59', '2018-03-14 02:12:47'),
-(3, 'Ropa deportiva', 1, 'ropa-deportiva', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2018-03-14 02:12:47'),
-(4, 'Ropa infantil', 1, 'ropa-infantil', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2018-03-14 02:12:47');
+(1, 'Ropa para dama', 1, 'ropa-para-dama', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2019-08-09 00:48:29'),
+(2, 'Ropa para hombre', 1, 'ropa-para-hombre', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2019-08-09 00:46:55'),
+(3, 'Ropa deportiva', 1, 'ropa-deportiva', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2019-08-09 00:46:55'),
+(4, 'Ropa infantil', 1, 'ropa-infantil', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2019-08-09 00:46:55'),
+(5, 'Chompas Mujeres', 2, 'chompas-mujeres', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2019-08-12 15:37:42');
 
 -- --------------------------------------------------------
 
@@ -444,6 +464,7 @@ INSERT INTO `subcategorias` (`id`, `subcategoria`, `id_categoria`, `ruta`, `esta
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nombre` text COLLATE utf8_spanish_ci NOT NULL,
+  `dni` int(8) NOT NULL,
   `password` text COLLATE utf8_spanish_ci NOT NULL,
   `email` text COLLATE utf8_spanish_ci NOT NULL,
   `modo` text COLLATE utf8_spanish_ci NOT NULL,
@@ -457,8 +478,9 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `password`, `email`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`) VALUES
-(4, 'greecy', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'dgreeypasteleria@gmail.com', 'directo', '', 0, 'f5a87176710638a149440c54db670c65', '2019-08-03 00:30:25');
+INSERT INTO `usuarios` (`id`, `nombre`, `dni`, `password`, `email`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`) VALUES
+(12, 'greecy chapiama durand', 70552203, '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'dgreeypasteleria@gmail.com', 'directo', '', 1, 'f5a87176710638a149440c54db670c65', '2019-08-16 20:16:57'),
+(17, 'joe chapiama durand', 70552204, '$2a$07$asxx54ahjppf45sd87a5aubjMhyMibzwzergT05j1KCzrsGK7b6vC', 'chapiamadurand15@gmail.com', 'directo', '', 1, 'c750155bba7be51702b11387ff6ac2ec', '2019-08-16 21:18:52');
 
 -- --------------------------------------------------------
 
@@ -479,6 +501,13 @@ CREATE TABLE `ventas` (
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`id`, `codigo`, `id_cliente`, `id_administrador`, `productos`, `impuesto`, `neto`, `total`, `metodo_pago`, `fecha`) VALUES
+(1, 1, 1, 1, '[{\"id\":\"4\",\"titulo\":\"chompa rihani\",\"cantidad\":\"1\",\"stock\":\"9\",\"precio\":\"50\",\"total\":\"50\"},{\"id\":\"3\",\"titulo\":\"jean blushe\",\"cantidad\":\"2\",\"stock\":\"98\",\"precio\":\"35\",\"total\":\"70\"},{\"id\":\"2\",\"titulo\":\"Top Dama\",\"cantidad\":\"3\",\"stock\":\"27\",\"precio\":\"2\",\"total\":\"6\"}]', 22.68, 126, 148.68, 'Efectivo', '2019-08-15 17:39:34');
+
 -- --------------------------------------------------------
 
 --
@@ -498,7 +527,7 @@ CREATE TABLE `visitaspaises` (
 --
 
 INSERT INTO `visitaspaises` (`id`, `pais`, `codigo`, `cantidad`, `fecha`) VALUES
-(1, 'United States', 'US', 6, '2019-08-07 14:03:29'),
+(1, 'United States', 'US', 11, '2019-08-16 15:02:12'),
 (2, 'Japan', 'JP', 65, '2018-03-27 13:26:30'),
 (3, 'Spain', 'ES', 10, '2017-12-05 21:02:53'),
 (4, 'Colombia', 'CO', 5, '2017-12-05 21:02:55'),
@@ -621,7 +650,12 @@ INSERT INTO `visitaspersonas` (`id`, `ip`, `pais`, `visitas`, `fecha`) VALUES
 (108, '162.168.5.104', 'United States', 1, '2019-08-03 15:59:01'),
 (109, '162.168.5.104', 'United States', 1, '2019-08-05 13:08:05'),
 (110, '162.168.5.104', 'United States', 1, '2019-08-06 13:14:35'),
-(111, '162.168.5.104', 'United States', 1, '2019-08-07 14:03:28');
+(111, '162.168.5.104', 'United States', 1, '2019-08-07 14:03:28'),
+(112, '162.168.5.104', 'United States', 1, '2019-08-08 13:56:13'),
+(113, '162.168.5.104', 'United States', 1, '2019-08-12 14:32:40'),
+(114, '162.168.5.104', 'United States', 1, '2019-08-13 18:27:14'),
+(115, '162.168.5.104', 'United States', 1, '2019-08-15 14:42:18'),
+(116, '162.168.5.104', 'United States', 1, '2019-08-16 15:02:11');
 
 --
 -- Índices para tablas volcadas
@@ -753,22 +787,22 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT de la tabla `cabeceras`
 --
 ALTER TABLE `cabeceras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT de la tabla `comercio`
 --
@@ -778,12 +812,12 @@ ALTER TABLE `comercio`
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT de la tabla `deseos`
 --
 ALTER TABLE `deseos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
@@ -798,27 +832,27 @@ ALTER TABLE `plantilla`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `slide`
 --
 ALTER TABLE `slide`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `subcategorias`
 --
 ALTER TABLE `subcategorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `visitaspaises`
 --
@@ -828,7 +862,7 @@ ALTER TABLE `visitaspaises`
 -- AUTO_INCREMENT de la tabla `visitaspersonas`
 --
 ALTER TABLE `visitaspersonas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

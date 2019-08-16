@@ -660,7 +660,6 @@ SECCIÓN PERFIL
 									</div>
 
 								<br>
-
 								<label class="control-label text-muted text-uppercase" for="editarEmail">Cambiar Correo Electrónico:</label>
 
 								<div class="input-group">

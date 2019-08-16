@@ -1,5 +1,4 @@
 <?php
-
 $url = Ruta::ctrRuta();
 
 if(!isset($_SESSION["validarSesion"])){
@@ -74,6 +73,8 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
 
          $productosCompra = ControladorProductos::ctrListarProductos($ordenar, $item, $valor);
 
+          var_dump($productosCompra);
+          
          foreach ($productosCompra as $key => $value) {
 
             $item1 = "ventas";
@@ -82,10 +83,19 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
             $valor2 =$value["id"];
 
             $actualizarCompra = ControladorProductos::ctrActualizarProducto($item1, $valor1, $item2, $valor2);
+
+           
+            // REDUCIR STOCK
+             $item2 = "stock";
+             $valor2 = $value["stock"] - $cantidad[$i];
+             $item2a = "id";
+             $valor2a =$value["id"] ;
+
+             $nuevoStock= ControladorProductos::ctrActualizarProducto($item2, $valor2, $item2a, $valor2a);
             
          }
 
-         if($respuesta == "ok" && $actualizarCompra == "ok"){
+         if($respuesta == "ok" && $actualizarCompra == "ok" && $nuevoStock == "ok"){
 
             echo '<script>
 
@@ -179,6 +189,8 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
             $valor2 =$value["id"];
 
             $actualizarCompra = ControladorProductos::ctrActualizarProducto($item1, $valor1, $item2, $valor2);
+
+
             
          }
 

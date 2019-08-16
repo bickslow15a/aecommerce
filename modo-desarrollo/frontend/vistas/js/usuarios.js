@@ -87,7 +87,7 @@ function registroUsuario(){
 
 		if(!expresion.test(nombre)){
 
-			$("#regUsuario").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> No se permiten números ni caracteres especiales</div>')
+			$("#regUsuario").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> NOMBRE invalido no se permiten números ni caracteres especiales</div>')
 
 			return false;
 
@@ -101,6 +101,27 @@ function registroUsuario(){
 	}
 
 	/*=============================================
+	VALIDAR EL DNI
+	=============================================*/
+	var dni = $("#regDni").val();
+
+	if (dni != "") {
+
+		var expresion = /^\d{8,8}[0-9]*$/;
+
+		if (!expresion.test(dni)){
+			$("#regDni").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong>DNI invalido debe tener 8 digitos</div>')
+			return false;
+		}
+		console.log(dni);
+
+	} else {
+
+		$("#regDni").parent().before('<div class="alert alert-warning"><strong>ATENCIÓN:</strong> Este campo es obligatorio</div>')
+
+		return false;
+	}
+	/*=============================================
 	VALIDAR EL EMAIL
 	=============================================*/
 
@@ -112,7 +133,7 @@ function registroUsuario(){
 
 		if(!expresion.test(email)){
 
-			$("#regEmail").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> Escriba correctamente el correo electrónico</div>')
+			$("#regEmail").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> CORREO invalido escriba correctamente el correo electrónico</div>')
 
 			return false;
 
@@ -146,7 +167,7 @@ function registroUsuario(){
 
 		if(!expresion.test(password)){
 
-			$("#regPassword").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> No se permiten caracteres especiales</div>')
+			$("#regPassword").parent().before('<div class="alert alert-warning"><strong>ERROR:</strong> CONTRASEÑA invalida no se permiten caracteres especiales</div>')
 
 			return false;
 

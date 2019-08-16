@@ -75,7 +75,7 @@
 	<meta property="og:image"  content="<?php echo $servidor.$cabeceras['portada'];?>">
 	<meta property="og:type"  content="website">
 	<meta property="og:site_name" content="Tu logo">
-	<meta property="og:locale" content="es_CO">
+	<meta property="og:locale" content="es_PE">
 
 	<!--=====================================
 	Marcado para DATOS ESTRUCTURADOS GOOGLE

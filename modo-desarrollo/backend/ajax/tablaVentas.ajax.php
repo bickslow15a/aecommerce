@@ -50,11 +50,17 @@ class TablaVentas{
 		$traerProducto = ControladorProductos::ctrMostrarProductos($item, $valor);
 
 		$producto = $traerProducto[0]["titulo"];
-
+		
 		$imgProducto = "<img class='img-thumbnail' src='".$traerProducto[0]["portada"]."' width='100px'>";
 
 		$tipo = $traerProducto[0]["tipo"];
 
+
+		/*=============================================
+ 	 		TRAEMOS LAS TALLAS Y COLORES DEL PRODUCTO
+		=============================================*/ 
+		
+		 	
 
 		/*=============================================
 		TRAER CLIENTE
@@ -139,7 +145,7 @@ class TablaVentas{
 		=============================================*/
 		$datosJson	 .= '[
 			      		"'.($i+1).'",
-			      		"'.$producto.'",
+						"'.$producto.'",
 			      		"'.$imgProducto.'",
 			      		"'.$cliente.'",
 			      		"'.$imgCliente.'",
