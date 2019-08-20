@@ -462,10 +462,10 @@ MODAL AGREGAR CLIENTE
 MODAL AGREGAR TALLA Y COLOR 
 ======================================-->
 
-<button class="btn btn-default btn-xs hidden btnTallaColor" data-toggle="modal" data-target="#modalAgregarTallaColor" data-dismiss="modal">Agregar Talla y Color</button>
+<button class="btn btn-default btn-xs hidden btnTallaColor" data-toggle="modal" data-backdrop="static" data-target="#modalAgregarTallaColor" data-dismiss="modal">Agregar Talla y Color</button>
 
 
-<div id="modalAgregarTallaColor" class="modal fade" role="dialog">
+<div id="modalAgregarTallaColor" data-backdrop="static" class="modal fade" role="dialog">
   
   <div class="modal-dialog">
 
@@ -528,7 +528,7 @@ MODAL AGREGAR TALLA Y COLOR
 
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-primary guardarCaract"  >Guardar</button>
+          <button type="button" class="btn btn-primary guardarCaract" data-dismiss="modal" >Guardar</button>
 
         </div>
 
