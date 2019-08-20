@@ -269,7 +269,7 @@ $(".btnAgregarProducto").click(function(){
 
 	var datos = new FormData();
 	datos.append("traerProductos", "ok");
-		console.log(datos);
+		// console.log(datos);
 	$.ajax({
 
 		url:"ajax/productosfetch.ajax.php",
@@ -280,6 +280,7 @@ $(".btnAgregarProducto").click(function(){
       	processData: false,
       	dataType:"json",
       	success:function(respuesta){
+      		// console.log(respuesta);
       	 
       	    	$(".nuevoProducto").append(
 
@@ -299,6 +300,10 @@ $(".btnAgregarProducto").click(function(){
 
 	              '</select>'+  
 
+	              '<input type="hidden" class="form-control nuevaTalla" talladt name="agregarTalla" value="" >'+
+
+	              '<input type="hidden" class="form-control nuevaColor" colordt name="agregarColor" value="" >'+
+
 	            '</div>'+
 
 	          '</div>'+
@@ -317,7 +322,7 @@ $(".btnAgregarProducto").click(function(){
 
 	            '<div class="input-group">'+
 
-	              '<span class="input-group-addon"><i class="ion ion-social-pen></i></span>'+
+	              '<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>'+
 	                 
 	              '<input type="text" class="form-control nuevoPrecioProducto" precioReal="" name="nuevoPrecioProducto" readonly required>'+
 	 
@@ -373,6 +378,8 @@ SELECCIONAR PRODUCTO
 
 $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function(){
 
+
+
 	var nombreProducto = $(this).val();
 
 	var nuevaDescripcionProducto = $(this).parent().parent().parent().children().children().children(".nuevaDescripcionProducto");
@@ -380,6 +387,10 @@ $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function()
 	var nuevoPrecioProducto = $(this).parent().parent().parent().children(".ingresoPrecio").children().children(".nuevoPrecioProducto");
 
 	var nuevaCantidadProducto = $(this).parent().parent().parent().children(".ingresoCantidad").children(".nuevaCantidadProducto");
+
+	var nuevaTalla = $(this).parent().children(".nuevaTalla");
+
+	var nuevaColor = $(this).parent().children(".nuevaColor");
 
 	var datos = new FormData();
     datos.append("nombreProducto", nombreProducto);
@@ -395,21 +406,81 @@ $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function()
       	processData: false,
       	dataType:"json",
       	success:function(respuesta){
-      	    
-      	    $(nuevaDescripcionProducto).attr("idProducto", respuesta["id"]);
-      	    $(nuevaCantidadProducto).attr("stock", respuesta["stock"]);
-      	    $(nuevaCantidadProducto).attr("nuevoStock", Number(respuesta["stock"])-1);
-      	    $(nuevoPrecioProducto).val(respuesta["precio"]);
-      	    $(nuevoPrecioProducto).attr("precioReal", respuesta["precio"]);
+      		// console.log(respuesta);
+
+      		// ================================================================================== PALOMINO ============================================================================
+			var caract = JSON.parse(respuesta["detalles"]);
+			var talla = "Seleccione Talla: <br> <select  width='40px' id='talladt' name='talladt'";
+			for(var j = 0; j < (caract["Talla"]).length; j++){
+		  	talla += "<option value='"+caract["Talla"][j]+"'>"+caract["Talla"][j]+"</option>";
+		 	}
+		  	talla += "</select>";
+
+		  	// console.log(talla);
+
+			$(".selectTalla").html(talla);
+
+			var Color = "Seleccione Color: <br> <select  width='40px' name='Colordt' id='Colordt'>";
+			for(var j = 0; j < (caract["Color"]).length; j++){
+		  	Color += "<option value='"+caract["Color"][j]+"'>"+caract["Color"][j]+"</option>";
+		 	}
+		  	Color += "</select>";
+
+		  	// console.log(Color);
+
+			$(".selectColor").html(Color);
+
+
+			$(".guardarCaract").click(function(){
+
+				 $(nuevaTalla).val(document.getElementById("talladt").value);
+			     $(nuevaColor).val(document.getElementById("Colordt").value);	
+      	   		 $(nuevaDescripcionProducto).attr("idProducto", respuesta["id"]);
+      	   		 $(nuevaCantidadProducto).attr("stock", respuesta["stock"]);
+      	   		 $(nuevaCantidadProducto).attr("nuevoStock", Number(respuesta["stock"])-1);
+      	  		 $(nuevoPrecioProducto).val(respuesta["precio"]);
+      	   		 $(nuevoPrecioProducto).attr("precioReal", respuesta["precio"]);
+
+			     listarProductos()
+
+			})
+
+      	    // ================================================================================== PALOMINO - FIN ============================================================================
+
+
+
+
 
   	      // AGRUPAR PRODUCTOS EN FORMATO JSON
 
-	        listarProductos()
+
 
       	}
 
       })
+
+
+// ================================================================================== PALOMINO ============================================================================
+
+
+
+
+$(".btnTallaColor").click();
+
+
+// =============================================================================== PALOMINO - FIN ============================================================================================
+
+
+
+
+
 })
+
+
+
+
+
+
 
 /*=============================================
 MODIFICAR LA CANTIDAD

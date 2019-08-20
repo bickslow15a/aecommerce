@@ -20,6 +20,8 @@ class AjaxProductosfetch{
 	=============================================*/	
 
 	public $idProducto;
+	public $traerProductos;
+	public $nombreProducto;
 
 
 	public function ajaxTraerProductofetch(){
@@ -51,6 +53,10 @@ class AjaxProductosfetch{
 		echo json_encode($respuesta);
 		}
 	}
+
+
+
+	
 }
 
 
@@ -68,7 +74,7 @@ class AjaxProductosfetch{
 
 	if(isset($_POST["traerProductos"])){
 
-	$traerProductos = new AjaxProductos();
+	$traerProductos = new AjaxProductosfetch();
 	$traerProductos -> traerProductos = $_POST["traerProductos"];
 	$traerProductos -> ajaxTraerProductofetch();
 
@@ -80,7 +86,7 @@ class AjaxProductosfetch{
 
 	if(isset($_POST["nombreProducto"])){
 
-	$traerProductos = new AjaxProductos();
+	$traerProductos = new AjaxProductosfetch();
 	$traerProductos -> nombreProducto = $_POST["nombreProducto"];
 	$traerProductos -> ajaxTraerProductofetch();
 

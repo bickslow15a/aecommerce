@@ -321,6 +321,7 @@
 
 </div>
 
+
 <!--=====================================
 MODAL AGREGAR CLIENTE
 ======================================-->
@@ -453,3 +454,90 @@ MODAL AGREGAR CLIENTE
   </div>
 
 </div>
+
+
+
+<!-- ==================================================================== Palomino =========================================================================================== -->
+<!--=====================================
+MODAL AGREGAR TALLA Y COLOR 
+======================================-->
+
+<button class="btn btn-default btn-xs hidden btnTallaColor" data-toggle="modal" data-target="#modalAgregarTallaColor" data-dismiss="modal">Agregar Talla y Color</button>
+
+
+<div id="modalAgregarTallaColor" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <!-- <form role="form" method="post"> -->
+
+
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
+
+        <div class="modal-header" style="background:#3c8dbc; color:white">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Elija las características de la prenda</h4>
+
+        </div>
+
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+
+            <!-- ENTRADA PARA EL TALLA -->
+
+            <div class="form-group">
+              
+              <div class="input-group selectTalla">
+                
+                <span class="input-group-addon"><ion-icon name="resize"></ion-icon></span>
+            
+              </div>
+            
+            </div>
+
+            <!-- ENTRADA PARA EL COLOR -->
+            
+            <div class="form-group">
+              
+              <div class="input-group selectColor">
+                
+                <span class="input-group-addon"><ion-icon name="resize"></ion-icon></span>
+            
+              </div>
+            
+            </div>
+
+          </div>
+
+        </div>
+
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-primary guardarCaract"  >Guardar</button>
+
+        </div>
+
+<!--       </form>
+ -->
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ==================================================================== Palomino - FIN =========================================================================================== -->
