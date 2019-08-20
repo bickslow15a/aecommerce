@@ -1,5 +1,4 @@
 <?php
-
 error_reporting(0);
 $ventas = ControladorVentas::ctrMostrarVentas();
 $totalVentas = ControladorVentas::ctrMostrarTotalVentas();
@@ -15,9 +14,9 @@ foreach ($ventas as $key => $value) {
   	=============================================*/
   	if($value["metodo"] == "paypal"){
 
-  		 $totalPaypal += $value["pago"];
+		   $totalPaypal += $value["pago"];
 
-  		 $porcentajePaypal = $totalPaypal * 100 / $totalVentas["total"];
+  		 $porcentajePaypal =$totalPaypal * 100 / $totalVentas["total"];
   	}
 
   	/*=============================================
@@ -157,7 +156,7 @@ var line = new Morris.Line({
     pointStrokeColors: ['#efefef'],
     gridLineColor    : '#efefef',
     gridTextFamily   : 'Open Sans',
-    preUnits		 : 'S/.',
+    preUnits		 : '',
     gridTextSize     : 10
   });
 	

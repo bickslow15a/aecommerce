@@ -50,6 +50,7 @@ class TablaVentas{
 		$traerProducto = ControladorProductos::ctrMostrarProductos($item, $valor);
 
 		$producto = $traerProducto[0]["titulo"];
+		// $producto = $traerProducto[0]["detalles"];
 		
 		$imgProducto = "<img class='img-thumbnail' src='".$traerProducto[0]["portada"]."' width='100px'>";
 
@@ -57,10 +58,12 @@ class TablaVentas{
 
 
 		/*=============================================
- 	 		TRAEMOS LAS TALLAS Y COLORES DEL PRODUCTO
+ 	 	PEDIDOS Y CANTIDAD DE VENTAS
 		=============================================*/ 
 		
-		 	
+		$pedidos= $ventas[$i]["pedido"];
+
+		$cantidad = $ventas[$i]["cantidad"];
 
 		/*=============================================
 		TRAER CLIENTE
@@ -73,6 +76,17 @@ class TablaVentas{
 
 		$cliente = $traerCliente["nombre"];
 
+		/*=============================================
+		TRAER CLIENTE DNI
+		=============================================*/
+
+		$item2 = "id";
+		$valor2 = $ventas[$i]["id_usuario"];
+
+		$traerCliente = ControladorUsuarios::ctrMostrarUsuarios($item2, $valor2);
+
+		$dni = $traerCliente["dni"];
+	
 		/*=============================================
 		TRAER FOTO CLIENTE
 		=============================================*/
@@ -120,6 +134,18 @@ class TablaVentas{
 			$envio = "<button class='btn btn-success btn-xs'>Producto entregado</button>";
 
 		}
+		
+		/*=============================================
+				METODO DE PAGO
+		=============================================*/
+
+		if($ventas[$i]["metodo"] == "paypal"){
+
+			$pagado ="$"."".number_format($ventas[$i]["pago"],2);
+		
+		}else{
+			$pagado ="S/"."".number_format($ventas[$i]["pago"],2);
+		}
 
 		/*=============================================
 		LOGOS PAYPAL Y PAYU
@@ -146,10 +172,13 @@ class TablaVentas{
 		$datosJson	 .= '[
 			      		"'.($i+1).'",
 						"'.$producto.'",
+						"'.$pedidos.'",
+						"'.$cantidad.'",
 			      		"'.$imgProducto.'",
-			      		"'.$cliente.'",
+						"'.$cliente.'",
+						"'.$dni.'",
 			      		"'.$imgCliente.'",
-			      		"$ '.number_format($ventas[$i]["pago"],2).'",
+			      		"'.$pagado.'",
 			      		"'.$tipo.'",
 			      		"'.$envio.'",
 			      		"'.$metodo.'",	

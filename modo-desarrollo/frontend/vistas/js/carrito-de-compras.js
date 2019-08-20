@@ -1,5 +1,4 @@
 
-
 /*=============================================
 /*=============================================
 /*=============================================
@@ -825,7 +824,7 @@ function divisas(metodoPago){
 	if(metodoPago == "paypal"){
 
 		$("#cambiarDivisa").append(
-								   '<option value="">-Selecciones-</option>' +
+								   '<option value="">-Seleccione-</option>' +
 			                        '<option value="USD">USD</option>')
 			                    //    '<option value="EUR">EUR</option>'+
 			                    //    '<option value="GBP">GBP</option>'+
@@ -839,7 +838,7 @@ function divisas(metodoPago){
 		$("#cambiarDivisa").append(
 								   '<option value="">-Selecciones-</option>' +
 			                       '<option value="USD">USD</option>'+
-									'<option value="PEN">PEN</option>')
+								   '<option value="PEN">PEN</option>')
 			                    //    '<option value="COP">COP</option>'+
 			                    //    '<option value="MXN">MXN</option>'+
 			                    //    '<option value="CLP">CLP</option>'+
@@ -971,12 +970,42 @@ BOTÓN PAGAR PAYPAL
 
 $(".btnPagar").click(function(){
 
+
+
+
 	var tipo = $(this).attr("tipo");
+
+	// var cambiardivisa =$(this).attr("cambiarDivisa");
 
 	if(tipo == "fisico" && $("#seleccionarPais").val() == ""){
 
 		$(".btnPagar").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
+				
+		$('.alert').fadeIn();  
 
+		setTimeout(() => {
+
+			$(".alert").fadeOut();
+			$(".alert").remove();  
+
+		},2000);
+
+		return;
+
+	}
+	if(tipo == "fisico" && $("#cambiarDivisa").val() == ""){
+
+		$(".btnPagar").after('<div class="alert alert-warning">Seleccione la Moneda de cambio de Paypal</div>');
+ 
+				$('.alert').fadeIn(); 
+
+				setTimeout(() => {
+
+					$(".alert").fadeOut(); 
+					$(".alert").remove(); 
+
+				},2000);
+			
 		return;
 
 	}
@@ -1029,7 +1058,7 @@ $(".btnPagar").click(function(){
          success:function(respuesta){
 
                window.location = respuesta;
-console.log(respuesta);
+
          }
 
 	})

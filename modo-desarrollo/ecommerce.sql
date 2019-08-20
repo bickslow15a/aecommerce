@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-08-2019 a las 23:51:20
+-- Tiempo de generación: 20-08-2019 a las 15:59:27
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -100,7 +100,9 @@ INSERT INTO `cabeceras` (`id`, `ruta`, `titulo`, `descripcion`, `palabrasClaves`
 (18, 'blusa-sexy', 'blusa sexy', 'MATERIAL:GASA CREPÉ\n', 'BLUSAS,ROPAS,ROPAMUJER,MODAMUJER', 'vistas/img/cabeceras/default/default.jpg', '2019-08-16 17:07:57'),
 (19, 'blusa-sexy', 'blusa sexy', 'asd', 'asd', 'vistas/img/cabeceras/default/default.jpg', '2019-08-16 17:11:57'),
 (20, 'blusa-sexy', 'blusa sexy', 'asd', 'asd', 'vistas/img/cabeceras/default/default.jpg', '2019-08-16 17:13:09'),
-(21, 'blusa-gasparin', 'blusa gasparin', 'marca nueva de ropa para mujeres en blusas', 'blusas', 'vistas/img/cabeceras/default/default.jpg', '2019-08-16 17:23:42');
+(21, 'blusa-gasparin', 'blusa gasparin', 'marca nueva de ropa para mujeres en blusas', 'blusas', 'vistas/img/cabeceras/default/default.jpg', '2019-08-16 17:23:42'),
+(22, 'jean-cruzate', 'jean cruzate', 'cruzate new', 'cruzate', 'vistas/img/cabeceras/default/default.jpg', '2019-08-18 23:07:47'),
+(23, 'jean-cruzate', 'jean cruzate', 'cruzate new', 'cruzate', 'vistas/img/cabeceras/default/default.jpg', '2019-08-18 23:10:29');
 
 -- --------------------------------------------------------
 
@@ -205,7 +207,54 @@ INSERT INTO `comentarios` (`id`, `id_usuario`, `id_producto`, `calificacion`, `c
 (28, 4, 1, 0, '', '2019-08-16 16:42:49'),
 (29, 4, 1, 0, '', '2019-08-16 16:45:03'),
 (30, 4, 3, 0, '', '2019-08-16 16:45:03'),
-(31, 4, 8, 0, '', '2019-08-16 17:27:30');
+(31, 4, 8, 0, '', '2019-08-16 17:27:30'),
+(32, 5, 3, 0, '', '2019-08-18 20:41:00'),
+(33, 5, 3, 0, '', '2019-08-18 20:42:10'),
+(34, 5, 3, 0, '', '2019-08-18 20:42:44'),
+(35, 5, 3, 0, '', '2019-08-18 20:44:20'),
+(36, 5, 3, 0, '', '2019-08-18 20:46:27'),
+(37, 5, 3, 0, '', '2019-08-18 20:46:50'),
+(38, 5, 3, 0, '', '2019-08-18 20:47:06'),
+(39, 5, 3, 0, '', '2019-08-18 20:48:21'),
+(40, 5, 3, 0, '', '2019-08-18 20:49:24'),
+(41, 5, 3, 0, '', '2019-08-18 20:51:11'),
+(42, 5, 3, 0, '', '2019-08-18 20:53:00'),
+(43, 5, 3, 0, '', '2019-08-18 20:53:14'),
+(44, 5, 3, 0, '', '2019-08-18 20:53:44'),
+(45, 5, 3, 0, '', '2019-08-18 20:53:58'),
+(46, 5, 3, 0, '', '2019-08-18 20:55:35'),
+(47, 5, 3, 0, '', '2019-08-18 20:55:50'),
+(48, 5, 3, 0, '', '2019-08-18 20:57:04'),
+(49, 5, 3, 0, '', '2019-08-18 20:58:35'),
+(50, 5, 3, 0, '', '2019-08-18 20:59:12'),
+(51, 5, 3, 0, '', '2019-08-18 21:00:07'),
+(52, 5, 3, 0, '', '2019-08-18 21:00:37'),
+(53, 5, 3, 0, '', '2019-08-18 21:01:21'),
+(54, 5, 3, 0, '', '2019-08-18 21:01:36'),
+(55, 5, 3, 0, '', '2019-08-18 21:03:04'),
+(56, 5, 3, 0, '', '2019-08-18 21:03:16'),
+(57, 5, 3, 0, '', '2019-08-18 21:04:45'),
+(58, 5, 3, 0, '', '2019-08-18 21:05:04'),
+(59, 5, 3, 0, '', '2019-08-18 21:07:21'),
+(60, 5, 3, 0, '', '2019-08-18 21:10:52'),
+(61, 5, 3, 0, '', '2019-08-18 21:11:40'),
+(62, 5, 3, 0, '', '2019-08-18 21:12:02'),
+(63, 5, 3, 0, '', '2019-08-18 21:13:31'),
+(64, 5, 3, 0, '', '2019-08-18 21:15:58'),
+(65, 5, 3, 0, '', '2019-08-18 21:16:16'),
+(66, 5, 3, 0, '', '2019-08-18 21:19:05'),
+(67, 5, 3, 0, '', '2019-08-18 21:21:10'),
+(68, 5, 3, 0, '', '2019-08-18 21:21:48'),
+(69, 5, 3, 0, '', '2019-08-18 21:22:15'),
+(70, 5, 3, 0, '', '2019-08-18 21:22:37'),
+(71, 5, 3, 0, '', '2019-08-18 21:23:37'),
+(72, 5, 3, 0, '', '2019-08-18 21:26:53'),
+(73, 5, 3, 0, '', '2019-08-18 21:27:15'),
+(74, 5, 3, 0, '', '2019-08-18 21:27:29'),
+(75, 5, 3, 0, '', '2019-08-18 21:28:35'),
+(76, 5, 3, 0, '', '2019-08-18 21:51:05'),
+(77, 4, 8, 0, '', '2019-08-18 22:39:55'),
+(78, 4, 4, 0, '', '2019-08-18 22:39:55');
 
 -- --------------------------------------------------------
 
@@ -247,6 +296,8 @@ CREATE TABLE `compras` (
   `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL,
+  `pedido` text COLLATE utf8_spanish_ci NOT NULL,
+  `cantidad` int(11) NOT NULL,
   `envio` int(11) NOT NULL,
   `metodo` text COLLATE utf8_spanish_ci NOT NULL,
   `email` text COLLATE utf8_spanish_ci NOT NULL,
@@ -260,9 +311,10 @@ CREATE TABLE `compras` (
 -- Volcado de datos para la tabla `compras`
 --
 
-INSERT INTO `compras` (`id`, `id_usuario`, `id_producto`, `envio`, `metodo`, `email`, `direccion`, `pais`, `pago`, `fecha`) VALUES
-(45, 4, 3, 0, 'paypal', 'chapiamadurand15-buyer@gmail.com', 'jr.peru123, lima, lima, 051', 'PE', 10.5, '2019-08-16 16:45:03'),
-(46, 4, 8, 0, 'paypal', 'chapiamadurand15-buyer@gmail.com', 'jr.peru123, lima, lima, 051', 'PE', 18, '2019-08-16 17:27:30');
+INSERT INTO `compras` (`id`, `id_usuario`, `id_producto`, `pedido`, `cantidad`, `envio`, `metodo`, `email`, `direccion`, `pais`, `pago`, `fecha`) VALUES
+(91, 5, 3, 'jean blushe-28-azul', 3, 1, 'paypal', 'chapiamadurand15-buyer@gmail.com', 'jr.peru123, lima, lima, 051', 'PE', 31.5, '2019-08-19 00:57:26'),
+(92, 4, 8, 'blusa gasparin-m-rosado', 2, 0, 'paypal', 'chapiamadurand15-buyer@gmail.com', 'jr.carlos dellpeiane 4009, san martin de porres, s, lima, lima, 051', 'PE', 7.2, '2019-08-18 22:39:54'),
+(93, 4, 4, 'blusa gasparin-m-rosado', 2, 0, 'paypal', 'chapiamadurand15-buyer@gmail.com', 'jr.carlos dellpeiane 4009, san martin de porres, s, lima, lima, 051', 'PE', 15, '2019-08-18 22:39:55');
 
 -- --------------------------------------------------------
 
@@ -313,7 +365,7 @@ CREATE TABLE `notificaciones` (
 --
 
 INSERT INTO `notificaciones` (`id`, `nuevosUsuarios`, `nuevasVentas`, `nuevasVisitas`) VALUES
-(1, 13, 0, 0);
+(1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -385,9 +437,10 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`, `estado`, `titulo`, `titular`, `descripcion`, `multimedia`, `detalles`, `precio`, `stock`, `portada`, `vistas`, `ventas`, `vistasGratis`, `ventasGratis`, `ofertadoPorCategoria`, `ofertadoPorSubCategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `peso`, `entrega`, `fecha`) VALUES
-(3, 1, 1, 'fisico', 'jean-blushe', 1, 'jean blushe', 'jean blushe con ultimo mooda blebleble...', 'jean blushe con ultimo mooda blebleble', '[{\"foto\":\"vistas/img/multimedia/jean-blushe/images (2).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images (1).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images.jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/DVDA00428CE26.jpg\"}]', '{\"Talla\":[\"28\",\"30\",\"32\",\"34\"],\"Color\":[\"negro\",\"azul\",\"vintage\"],\"Marca\":[]}', 35, 97, 'vistas/img/productos/jean-blushe.jpg', 19, 6, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1.3, 2, '2019-08-16 16:45:27'),
-(4, 2, 5, 'fisico', 'chompa-rihani', 1, 'chompa rihani', 'Chompa manga larga cuello redondo Mangas murciélago ...', 'Chompa manga larga cuello redondo Mangas murciélago ', '[{\"foto\":\"vistas/img/multimedia/chompa-rihani/grace-808-93_copia_2048x.jpg\"},{\"foto\":\"vistas/img/multimedia/chompa-rihani/grace-1010-125_copia_2048x.jpg\"}]', '{\"Talla\":[\"s\"],\"Color\":[\"negro\",\"marron\"],\"Marca\":[]}', 50, 9, 'vistas/img/productos/chompa-rihani.jpg', 10, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 0.3, 5, '2019-08-16 17:20:42'),
-(8, 1, 1, 'fisico', 'blusa-gasparin', 1, 'blusa gasparin', 'marca nueva de ropa para mujeres en blusas...', 'marca nueva de ropa para mujeres en blusas', '[{\"foto\":\"vistas/img/multimedia/blusa-gasparin/IMG_20190712_130327.jpg\"},{\"foto\":\"vistas/img/multimedia/blusa-gasparin/IMG_20190718_164103.jpg\"}]', '{\"Talla\":[\"m\",\"l\"],\"Color\":[\"amarillo\",\"rosado\",\"negro\"],\"Marca\":[]}', 12, 5, 'vistas/img/productos/blusa-gasparin.jpg', 2, 5, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 0.3, 10, '2019-08-16 17:27:49');
+(3, 1, 1, 'fisico', 'jean-blushe', 1, 'jean blushe', 'jean blushe con ultimo mooda blebleble...', 'jean blushe con ultimo mooda blebleble', '[{\"foto\":\"vistas/img/multimedia/jean-blushe/images (2).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images (1).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/images.jpg\"},{\"foto\":\"vistas/img/multimedia/jean-blushe/DVDA00428CE26.jpg\"}]', '{\"Talla\":[\"28\",\"30\",\"32\",\"34\"],\"Color\":[\"negro\",\"azul\",\"vintage\"],\"Marca\":[]}', 35, 36, 'vistas/img/productos/jean-blushe.jpg', 24, 67, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1.3, 2, '2019-08-18 22:38:11'),
+(4, 2, 5, 'fisico', 'chompa-rihani', 1, 'chompa rihani', 'Chompa manga larga cuello redondo Mangas murciélago ...', 'Chompa manga larga cuello redondo Mangas murciélago ', '[{\"foto\":\"vistas/img/multimedia/chompa-rihani/grace-808-93_copia_2048x.jpg\"},{\"foto\":\"vistas/img/multimedia/chompa-rihani/grace-1010-125_copia_2048x.jpg\"}]', '{\"Talla\":[\"s\"],\"Color\":[\"negro\",\"marron\"],\"Marca\":[]}', 50, 8, 'vistas/img/productos/chompa-rihani.jpg', 12, 1, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 0.3, 5, '2019-08-18 23:25:13'),
+(8, 1, 1, 'fisico', 'blusa-gasparin', 1, 'blusa gasparin', 'marca nueva de ropa para mujeres en blusas...', 'marca nueva de ropa para mujeres en blusas', '[{\"foto\":\"vistas/img/multimedia/blusa-gasparin/IMG_20190712_130327.jpg\"},{\"foto\":\"vistas/img/multimedia/blusa-gasparin/IMG_20190718_164103.jpg\"}]', '{\"Talla\":[\"m\",\"l\"],\"Color\":[\"amarillo\",\"rosado\",\"negro\"],\"Marca\":[]}', 12, 3, 'vistas/img/productos/blusa-gasparin.jpg', 3, 7, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 0.3, 10, '2019-08-18 22:39:55'),
+(10, 1, 1, 'fisico', 'jean-cruzate', 1, 'jean cruzate', 'cruzate new...', 'cruzate new', '[{\"foto\":\"vistas/img/multimedia/jean-cruzate/descarga.jpg\"},{\"foto\":\"vistas/img/multimedia/jean-cruzate/descarga (1).jpg\"},{\"foto\":\"vistas/img/multimedia/jean-cruzate/jean.jpg\"}]', '{\"Talla\":[\"28\",\"30\",\"32\",\"34\"],\"Color\":[\"azul\",\"negro\"],\"Marca\":[]}', 35, 10, 'vistas/img/productos/jean-cruzate.jpg', 1, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 0, 5, '2019-08-18 23:10:55');
 
 -- --------------------------------------------------------
 
@@ -479,8 +532,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `dni`, `password`, `email`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`) VALUES
-(12, 'greecy chapiama durand', 70552203, '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'dgreeypasteleria@gmail.com', 'directo', '', 1, 'f5a87176710638a149440c54db670c65', '2019-08-16 20:16:57'),
-(17, 'joe chapiama durand', 70552204, '$2a$07$asxx54ahjppf45sd87a5aubjMhyMibzwzergT05j1KCzrsGK7b6vC', 'chapiamadurand15@gmail.com', 'directo', '', 1, 'c750155bba7be51702b11387ff6ac2ec', '2019-08-16 21:18:52');
+(4, 'greecy chapiama durand', 70552203, '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'dgreeypasteleria@gmail.com', 'directo', '', 0, 'f5a87176710638a149440c54db670c65', '2019-08-18 20:14:36'),
+(5, 'joe chapiama durand', 70552204, '$2a$07$asxx54ahjppf45sd87a5aubjMhyMibzwzergT05j1KCzrsGK7b6vC', 'chapiamadurand15@gmail.com', 'directo', '', 0, 'c750155bba7be51702b11387ff6ac2ec', '2019-08-18 20:14:58');
 
 -- --------------------------------------------------------
 
@@ -527,7 +580,7 @@ CREATE TABLE `visitaspaises` (
 --
 
 INSERT INTO `visitaspaises` (`id`, `pais`, `codigo`, `cantidad`, `fecha`) VALUES
-(1, 'United States', 'US', 11, '2019-08-16 15:02:12'),
+(1, 'United States', 'US', 12, '2019-08-18 19:46:41'),
 (2, 'Japan', 'JP', 65, '2018-03-27 13:26:30'),
 (3, 'Spain', 'ES', 10, '2017-12-05 21:02:53'),
 (4, 'Colombia', 'CO', 5, '2017-12-05 21:02:55'),
@@ -655,7 +708,8 @@ INSERT INTO `visitaspersonas` (`id`, `ip`, `pais`, `visitas`, `fecha`) VALUES
 (113, '162.168.5.104', 'United States', 1, '2019-08-12 14:32:40'),
 (114, '162.168.5.104', 'United States', 1, '2019-08-13 18:27:14'),
 (115, '162.168.5.104', 'United States', 1, '2019-08-15 14:42:18'),
-(116, '162.168.5.104', 'United States', 1, '2019-08-16 15:02:11');
+(116, '162.168.5.104', 'United States', 1, '2019-08-16 15:02:11'),
+(117, '162.168.5.104', 'United States', 1, '2019-08-18 19:46:40');
 
 --
 -- Índices para tablas volcadas
@@ -787,7 +841,7 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT de la tabla `cabeceras`
 --
 ALTER TABLE `cabeceras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT de la tabla `categorias`
 --
@@ -802,7 +856,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 --
 -- AUTO_INCREMENT de la tabla `comercio`
 --
@@ -812,7 +866,7 @@ ALTER TABLE `comercio`
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 --
 -- AUTO_INCREMENT de la tabla `deseos`
 --
@@ -832,7 +886,7 @@ ALTER TABLE `plantilla`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `slide`
 --
@@ -847,7 +901,7 @@ ALTER TABLE `subcategorias`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `ventas`
 --
@@ -862,7 +916,7 @@ ALTER TABLE `visitaspaises`
 -- AUTO_INCREMENT de la tabla `visitaspersonas`
 --
 ALTER TABLE `visitaspersonas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

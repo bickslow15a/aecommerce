@@ -89,6 +89,7 @@ class TablaUsuarios{
 			$datosJson	 .= '[
 				      "'.($i+1).'",
 				      "'.$usuarios[$i]["nombre"].'",
+				      "'.$usuarios[$i]["dni"].'",
 				      "'.$usuarios[$i]["email"].'",
 				      "'.$usuarios[$i]["modo"].'",
 				      "'.$foto.'",

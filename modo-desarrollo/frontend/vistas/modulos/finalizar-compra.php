@@ -54,11 +54,19 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
 
    $direccion = $dir.", ".$ciudad.", ".$estado.", ".$codigoPostal;
          
+
+   $datosCompra = json_decode($datosTransaccion);
+   
+   $ProductoPedido = $datosCompra->transactions[0]->item_list->items[0]->name;
+   $CantidadPedido = $datosCompra->transactions[0]->item_list->items[0]->quantity;
+   // $item =$datosCompra->item_list->items->name;
    #Actualizamos la base de datos
    for($i = 0; $i < count($productos); $i++){
-
+// chapiama--->>><<< cambio y agrego en la base de datos los campos pedido y cantidad e inserto en carrtimodelo::ctrnuevas compras los campos agregados.
          $datos = array("idUsuario"=>$_SESSION["id"],
                      "idProducto"=>$productos[$i],
+                     "pedido"=>$ProductoPedido,
+                     "cantidad"=>$CantidadPedido,
                      "metodo"=>"paypal",
                      "email"=>$emailComprador,
                      "direccion"=>$direccion,
@@ -73,7 +81,7 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
 
          $productosCompra = ControladorProductos::ctrListarProductos($ordenar, $item, $valor);
 
-          var_dump($productosCompra);
+        
           
          foreach ($productosCompra as $key => $value) {
 

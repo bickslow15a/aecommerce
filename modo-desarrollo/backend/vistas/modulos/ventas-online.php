@@ -69,8 +69,11 @@ return;
               
               <th style="width:10px">#</th>
               <th>Producto</th>
+              <th>Pedido</th>
+              <th>Cantidad</th>
               <th>Imagen Producto</th>
               <th>Cliente</th>
+              <th>DNI</th>
               <th>Foto Cliente</th>
               <th>Venta</th>
               <th>Tipo</th>  

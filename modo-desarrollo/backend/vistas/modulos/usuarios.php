@@ -47,6 +47,7 @@
               
               <th style="width:10px">#</th>
               <th>Nombre</th>
+              <th>DNI</th>
               <th>Email</th>
               <th>Modo</th>
               <th>Foto</th>
