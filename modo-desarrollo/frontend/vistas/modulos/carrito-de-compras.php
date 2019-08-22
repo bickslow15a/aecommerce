@@ -230,7 +230,7 @@ VENTANA MODAL PARA CHECKOUT
 
 						</center>
 						<center>
-						<img src="<?php echo $url; ?>vistas/img/plantilla/mercadopago.png" class="img-thumbnail">
+						<img src="<?php echo $url; ?>vistas/img/plantilla/mercadopago.jpg" class="img-thumbnail">
 						</center>
 					</figure>
 <!-- /*=================================================================
@@ -255,11 +255,11 @@ VENTANA MODAL PARA CHECKOUT
 						
 						<center>
 							
-							<input id="checkRecojo" type="radio" name="pago" value="recojo">Recojo en Tienda
+							<input id="checkRecojo" type="radio" name="pago" value="recojo">
 
 						</center>
 						<center>	
-						<img src="<?php echo $url; ?>vistas/img/plantilla/nose.jpg" class="img-thumbnail">
+						<img src="<?php echo $url; ?>vistas/img/plantilla/recojo.jpg" class="img-thumbnail img-responsive">
 						</center>
 					</figure>
 
