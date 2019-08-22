@@ -178,41 +178,51 @@ VENTANA MODAL PARA CHECKOUT
 
 				?>
 				
-				<div class="formEnvio row">
-					
+				<div class="formEnvio ">
+<!-- DEPARTAMENTO PROVINCIA DISTRITO -->
+					<div class="row">
+
 					<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
 
-					<div class="col-xs-12 seleccionePais">
-						
-						
+							<div class="col-xs-4 seleccioneDepartamento"></div>
+							
+							<div class="col-xs-4 seleccioneProvincia"></div>
+				
+							<div class="col-xs-4 seleccioneDistrito"></div>
 
 					</div>
+					<!--END  DEPARTAMENTO PROVINCIA DISTRITO -->
+ 				<br>
+					<!-- DIRECCION DE ENVIO NOMBRE COMPLETO TELEFONO -->
+					<div class="row">
+				
+							<div class="col-xs-12">
+								<input type="text" class="form-control" name="direccion" placeholder="Direccion de envio" required>
+							</div>
 
-				</div>
+					</div>
+					<!-- END DIRECCION DE ENVIO NOMBRE COMPLETO TELEFONO -->
+					<br>
+					<!--  TELEFONO -->
+					<div class="row">
+				
+							<div class="col-xs-6">
+								<input type="text" class="form-control" name="telefono" placeholder="Telefono o celular de contacto" required>
+							</div>
+
+					</div>
+					<!-- END TELEFONO -->
+					</div>
 
 				<br>
 
 				<div class="formaPago row">
 					
 					<h4 class="text-center well text-muted text-uppercase">Elige la forma de pago</h4>
-<!-- /*=================================================================
-                      PAYPAL
- /*============================================================= -->
-					<figure class="col-xs-12">
-						
-						<center>
-							
-							<input id="checkPaypal" type="radio" name="pago" value="paypal" checked>
-
-						</center>	
-						<center>
-						<img src="<?php echo $url; ?>vistas/img/plantilla/paypal.jpg" class="img-thumbnail">		
-						</center>
-					</figure>
-<!-- /*=================================================================
+					<!-- /*=================================================================
                       MERCADO PAGO
- /*============================================================= -->
-					<figure class="col-xs-12">
+ 					/*============================================================= -->
+					<figure class="col-xs-4">
 						
 						<center>
 							
@@ -223,18 +233,33 @@ VENTANA MODAL PARA CHECKOUT
 						<img src="<?php echo $url; ?>vistas/img/plantilla/mercadopago.png" class="img-thumbnail">
 						</center>
 					</figure>
- <!-- /*=================================================================
-                      RECOJO EN TIENDA
+<!-- /*=================================================================
+                      PAYPAL
  /*============================================================= -->
-					<figure class="col-xs-12">
+					<figure class="col-xs-4">
 						
 						<center>
 							
-							<input id="checkRecojo" type="radio" name="pago" value="recojo">
+							<input id="checkPaypal" type="radio" name="pago" value="paypal" checked>
+
+						</center>	
+						<center>
+						<img src="<?php echo $url; ?>vistas/img/plantilla/paypal.jpg" class="img-thumbnail">		
+						</center>
+					</figure>
+
+ <!-- /*=================================================================
+                      RECOJO EN TIENDA
+ /*============================================================= -->
+					<figure class="col-xs-4">
+						
+						<center>
+							
+							<input id="checkRecojo" type="radio" name="pago" value="recojo">Recojo en Tienda
 
 						</center>
 						<center>	
-						<img src="<?php echo $url; ?>vistas/img/plantilla/payu.jpg" class="img-thumbnail">
+						<img src="<?php echo $url; ?>vistas/img/plantilla/nose.jpg" class="img-thumbnail">
 						</center>
 					</figure>
 

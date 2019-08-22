@@ -669,11 +669,24 @@ $("#btnCheckout").click(function(){
 
 	if(tipoArray.find(checkTipo) == "fisico"){
 
-		$(".seleccionePais").html('<select class="form-control" id="seleccionarPais" required>'+
+		$(".seleccioneDepartamento").html('<select class="form-control" id="seleccioneDepartamento" required>'+
 
-						          '<option value="">Seleccione el país</option>'+
+						          '<option value=""> Departamento</option>'+
 
-					              '</select>');
+								  '</select>');
+								  
+		$(".seleccioneProvincia").html('<select class="form-control" id="seleccioneProvincia" required>' +
+
+			'<option value="">Provincia</option>' +
+
+			'</select>');
+
+
+		$(".seleccioneDistrito").html('<select class="form-control" id="seleccioneDistrito" required>' +
+
+			'<option value="">Distrito</option>' +
+
+			'</select>');
 
 
 		$(".formEnvio").show();
@@ -689,14 +702,14 @@ $("#btnCheckout").click(function(){
 			dataType:"json",
 			success: function(respuesta){
 
-				respuesta.forEach(seleccionarPais);
+				respuesta.forEach(seleccioneDepartamento);
 
-				function seleccionarPais(item, index){
+				function seleccioneDepartamento(item, index){
 
 					var pais = item.name;
 					var codPais = item.code;
 
-					$("#seleccionarPais").append('<option value="'+codPais+'">'+pais+'</option>');
+					$("#seleccioneDepartamento").append('<option value="'+codPais+'">'+pais+'</option>');
 
 				}
 
@@ -707,7 +720,7 @@ $("#btnCheckout").click(function(){
 		EVALUAR TASAS DE ENVÍO SI EL PRODUCTO ES FÍSICO
 		=============================================*/
 
-		$("#seleccionarPais").change(function(){
+		$("#seleccioneDepartamento").change(function(){
 
 			$(".alert").remove();
 
@@ -862,7 +875,7 @@ $("#cambiarDivisa").change(function(){
 
 	$(".alert").remove();
 
-	if($("#seleccionarPais").val() == ""){
+	if ($("#seleccioneDepartamento").val() == ""){
 
 		$("#cambiarDivisa").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
 
@@ -977,7 +990,7 @@ $(".btnPagar").click(function(){
 
 	// var cambiardivisa =$(this).attr("cambiarDivisa");
 
-	if(tipo == "fisico" && $("#seleccionarPais").val() == ""){
+	if (tipo == "fisico" && $("#seleccioneDepartamento").val() == ""){
 
 		$(".btnPagar").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
 				
@@ -1075,7 +1088,7 @@ BOTÓN PAGAR PAYU
 
 function pagarConPayu(){
 
-	if($("#seleccionarPais").val() == ""){
+	if ($("#seleccioneDepartamento").val() == ""){
 
 		$(".formPayu").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
 
