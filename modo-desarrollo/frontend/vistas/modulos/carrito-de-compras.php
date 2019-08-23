@@ -337,7 +337,7 @@ VENTANA MODAL PARA CHECKOUT
 
 					<div class="clearfix"></div>
 
-					<form class="formPayu" style="display:none">
+					<!-- <form class="formPayu" style="display:none">
 					 
 						<input name="merchantId" type="hidden" value=""/>
 						<input name="accountId" type="hidden" value=""/>
@@ -357,8 +357,56 @@ VENTANA MODAL PARA CHECKOUT
 						<input name="signature" type="hidden" value=""/>
 
 					  <input name="Submit" class="btn btn-block btn-lg btn-default backColor" type="submit"  value="PAGAR" >
-					</form>
-					
+					</form> -->
+
+<?php  
+  MercadoPago\SDK::setClientId("2027312840758745");
+  MercadoPago\SDK::setClientSecret("jtn2jK8oVW0Jzs1pjyKCvgQsev4HpIBf");
+?>
+                <?php
+  # Create a preference object
+  $preference = new MercadoPago\Preference();
+  # Create an item object
+  $item = new MercadoPago\Item();
+  $item->id = "1234";
+  $item->title = "Awesome Silk Watch";
+  $item->quantity = 5;
+  $item->currency_id = "PEN";
+  $item->unit_price = 92.56;
+  # Create a payer object
+  $payer = new MercadoPago\Payer();
+  $payer->email = "lola.runolfsdottir@yahoo.com";
+  # Setting preference properties
+  $preference->items = array($item);
+  $preference->payer = $payer;
+  # Save and posting preference
+  $preference->save();
+?>
+<?php
+  // ...
+  $payer = new MercadoPago\Payer();
+  $payer->name = "Charles";
+  $payer->surname = "Raya";
+  $payer->email = "charles@gmail.com";
+  $payer->date_created = "2018-06-02T12:58:41.425-04:00";
+  $payer->phone = array(
+    "area_code" => "",
+    "number" => "952-340-745"
+  );
+  $payer->identification = array(
+    "type" => "DNI",
+    "number" => "12345678"
+  );
+  $payer->address = array(
+    "street_name" => "Chalet Catalina Delagarza",
+    "street_number" => 1023,
+    "zip_code" => "26947"
+  );
+  // ...
+?>
+				
+					<a href="<?php echo $preference->init_point; ?>">Pay</a>
+				
 					<button class="btn btn-block btn-lg btn-default backColor btnPagar">PAGAR</button>
 
 				</div>
