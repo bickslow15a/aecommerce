@@ -233,9 +233,9 @@ VENTANA MODAL PARA CHECKOUT
 						<img src="<?php echo $url; ?>vistas/img/plantilla/mercadopago.jpg" class="img-thumbnail">
 						</center>
 					</figure>
-<!-- /*=================================================================
-                      PAYPAL
- /*============================================================= -->
+					<!-- /*=================================================================
+										PAYPAL
+					/*============================================================= -->
 					<figure class="col-xs-4">
 						
 						<center>
@@ -359,54 +359,50 @@ VENTANA MODAL PARA CHECKOUT
 					  <input name="Submit" class="btn btn-block btn-lg btn-default backColor" type="submit"  value="PAGAR" >
 					</form> -->
 
-<?php  
-  MercadoPago\SDK::setClientId("2027312840758745");
-  MercadoPago\SDK::setClientSecret("jtn2jK8oVW0Jzs1pjyKCvgQsev4HpIBf");
-?>
-                <?php
-  # Create a preference object
-  $preference = new MercadoPago\Preference();
-  # Create an item object
-  $item = new MercadoPago\Item();
-  $item->id = "1234";
-  $item->title = "Awesome Silk Watch";
-  $item->quantity = 5;
-  $item->currency_id = "PEN";
-  $item->unit_price = 92.56;
-  # Create a payer object
-  $payer = new MercadoPago\Payer();
-  $payer->email = "lola.runolfsdottir@yahoo.com";
-  # Setting preference properties
-  $preference->items = array($item);
-  $preference->payer = $payer;
-  # Save and posting preference
-  $preference->save();
-?>
-<?php
-  // ...
-  $payer = new MercadoPago\Payer();
-  $payer->name = "Charles";
-  $payer->surname = "Raya";
-  $payer->email = "charles@gmail.com";
-  $payer->date_created = "2018-06-02T12:58:41.425-04:00";
-  $payer->phone = array(
-    "area_code" => "",
-    "number" => "952-340-745"
-  );
-  $payer->identification = array(
-    "type" => "DNI",
-    "number" => "12345678"
-  );
-  $payer->address = array(
-    "street_name" => "Chalet Catalina Delagarza",
-    "street_number" => 1023,
-    "zip_code" => "26947"
-  );
-  // ...
-?>
+					<form action="<?php echo $url.'perfil'; ?>" method="POST">
+							<script
+								src="https://www.mercadopago.com.pe/integrations/v1/web-tokenize-checkout.js"
+								data-public-key="TEST-a21b80be-03de-491f-91bf-47ab614f5a0d"
+								data-transaction-amount="100.00">
+							</script>
+					</form>
+					<?php
+					if(isset($_REQUEST["token"])){
+
+					$token = $_REQUEST["token"];
+					// echo '<pre>'; print_r($token); echo '</pre>';
+					$payment_method_id = $_REQUEST["payment_method_id"];
+					// echo '<pre>'; print_r($payment_method_id); echo '</pre>';
+					$installments = $_REQUEST["installments"];
+					// echo '<pre>'; print_r($installments); echo '</pre>';
+					$issuer_id = $_REQUEST["issuer_id"];
+					// echo '<pre>'; print_r($issuer_id); echo '</pre>';
+
+					 MercadoPago\SDK::setAccessToken("TEST-2027312840758745-082115-d36bd420468be2ac6ded528fc1f61de0-254920013");
 				
-					<a href="<?php echo $preference->init_point; ?>">Pay</a>
+					$payment = new MercadoPago\Payment();
+					$payment->transaction_amount = 100;
+					$payment->token = $token;
+					$payment->description = "Intelligent Aluminum Shoes";
+					$payment->installments = $installments;
+					$payment->payment_method_id = $payment_method_id;
+					$payment->issuer_id = $issuer_id;
+					$payment->payer = array(
+					"email" => "abdul_bosco@hotmail.com"
+					);
+					// Guarda y postea el pago
+					$payment->save();
+					// echo '<pre>'; print_r($payment); echo '</pre>';
+		
+					// Imprime el estado del pago
+					echo $payment->status;
+					
+					}
+					?>
+
 				
+
+
 					<button class="btn btn-block btn-lg btn-default backColor btnPagar">PAGAR</button>
 
 				</div>

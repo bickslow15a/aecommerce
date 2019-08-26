@@ -846,19 +846,21 @@ function divisas(metodoPago){
 			                    //    '<option value="CAD">CAD</option>'+
 			                    //    '<option value="BRL">BRL</option>'
 
-	}else{
-
-		$("#cambiarDivisa").append(
-								   '<option value="">-Selecciones-</option>' +
-			                       '<option value="USD">USD</option>'+
-								   '<option value="PEN">PEN</option>')
-			                    //    '<option value="COP">COP</option>'+
-			                    //    '<option value="MXN">MXN</option>'+
-			                    //    '<option value="CLP">CLP</option>'+
-			                    //    '<option value="ARS">ARS</option>'+
-			                    //    '<option value="BRL">BRL</option>'
-
 	}
+	
+	// else{
+
+	// 	$("#cambiarDivisa").append(
+	// 							   '<option value="">-Selecciones-</option>' +
+	// 		                       '<option value="USD">USD</option>'+
+	// 							   '<option value="PEN">PEN</option>')
+	// 		                    //    '<option value="COP">COP</option>'+
+	// 		                    //    '<option value="MXN">MXN</option>'+
+	// 		                    //    '<option value="CLP">CLP</option>'+
+	// 		                    //    '<option value="ARS">ARS</option>'+
+	// 		                    //    '<option value="BRL">BRL</option>'
+
+	// }
 
 }
 

@@ -62,7 +62,7 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
    // $item =$datosCompra->item_list->items->name;
    #Actualizamos la base de datos
    for($i = 0; $i < count($productos); $i++){
-// chapiama--->>><<< cambio y agrego en la base de datos los campos pedido y cantidad e inserto en carrtimodelo::ctrnuevas compras los campos agregados.
+// chapiama--->>><<< cambio y agrego en la base de datos los campos pedido y cantidad e inserto en carritomodelo::ctrnuevas compras los campos agregados.
          $datos = array("idUsuario"=>$_SESSION["id"],
                      "idProducto"=>$productos[$i],
                      "pedido"=>$ProductoPedido,
